@@ -50,7 +50,7 @@ import {GitHubLink, steps} from "../consts";
         </div>
         {
             steps.map((s) => (
-                    <div class="node" style={`--angle:${s.angle}deg`} data-key={s.key}>
+                    <div class="node" style={`--angle:${s.angle}deg`} data-key={s.title}>
                         <button class="step bg-white dark:bg-gray-800" aria-haspopup="true" aria-expanded="false">
                             <span class="title">{s.title}</span>
                             <span class="desc">{s.subtitle}</span>

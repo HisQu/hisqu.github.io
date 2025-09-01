@@ -177,8 +177,10 @@ export interface Step {
     title: string;
     subtitle: string;
     description: string;
-    image: { src: Img; alt?: string };  // ← string | ImageMetadata
+    image: { src: Img; alt?: string }; 
     caption?: string;
+    tools: { name: string; href: string; image?: { src: Img; alt?: string } }[];
+    angle: number;
 }
 
 type RgPoint = { title: string; text: string }
