@@ -5,7 +5,7 @@ academic_title:
   prefix: Apl. Prof. Dr.
 description: Teilprojektleiter
 position: Teilprojektleiter
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 publications: []
 image: ""
 ---

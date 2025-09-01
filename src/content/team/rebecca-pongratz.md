@@ -4,7 +4,7 @@ name: Rebecca Pongratz
 academic_title:
   suffix: B.Sc.
 description: Wissenschaftliche Mitarbeiterin
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 position: Wissenschaftliche Mitarbeiterin
 publications: []
 image: ""

@@ -3,7 +3,7 @@ name: Jörg Hörnschemeyer
 academic_title:
   prefix: Dr.
 description: Teilprojektleiter
-group: Deutsches Historisches Institut Rom
+group: dhi-rom
 position: Teilprojektleiter
 publications: []
 image: ""

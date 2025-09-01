@@ -1,7 +1,9 @@
 ---
-import {getCollection} from 'astro:content';
+import { getCollection } from 'astro:content';
 import TeamMember from '../../components/TeamMember.astro';
 import Layout from '../../layouts/IndexLayout.astro';
+import { partners } from '../../consts';
+import { Image } from 'astro:assets';
 
 const team = await getCollection('team');
 
@@ -14,7 +16,11 @@ function groupBy(arr: any[], key: string) {
     }, {} as Record<string, any[]>);
 }
 
+// Expect team member frontmatter "group" to be the partner key (e.g. "fsu-jena")
 const grouped = groupBy(team, 'group');
+
+// Build partner lookup map
+const partnersMap = Object.fromEntries(partners.map(p => [p.key, p]));
 
 const compareGroups = ([ga]: [string, any[]], [gb]: [string, any[]]) =>
     String(ga).localeCompare(String(gb), 'de'); // or omit 'de' if you prefer default
@@ -43,28 +49,59 @@ const compareMembers = (a: any, b: any) => {
                 </p>
             </div>
 
-            {Object.entries(grouped).sort(compareGroups).map(([group, members]) => (
-                    <section class="mt-20" aria-labelledby={`team-group-${group}`}>
-                        <h2 id={`team-group-${group}`} class="sr-only">{group}</h2>
+            {Object.entries(grouped).sort(compareGroups).map(([groupKey, members]) => {
+                const partner = partnersMap[groupKey];
+                return (
+                    <section class="mt-20" aria-labelledby={`team-group-${groupKey}`}>
+                        <div class="flex items-center gap-4 mb-8">
+                            {partner ? (
+                                <h2 id={`team-group-${groupKey}`} class="flex items-center gap-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white m-0">
+                                    <span class="inline-flex items-center h-12">
+                                        {(() => {
+                                            const img = partner.srcLight || partner.srcDark;
+                                            if (img && typeof img === 'object' && 'src' in img) {
+                                                return (
+                                                    <Image src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-12 w-auto max-h-12 object-contain align-middle inline-block" loading="lazy" />
+                                                );
+                                            }
+                                            if (typeof img === 'string') {
+                                                return (
+                                                    <img src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-12 w-auto max-h-12 object-contain align-middle inline-block" loading="lazy" />
+                                                );
+                                            }
+                                            return null;
+                                        })()}
+                                    </span>
+                                    <span class="inline-flex items-center leading-tight">
+                                        {partner.unit} &middot; {partner.name}
+                                    </span>
+                                </h2>
+                            ) : (
+                                <h2 id={`team-group-${groupKey}`} class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                                    {groupKey || 'Sonstiges'}
+                                </h2>
+                            )}
+                        </div>
                         <ul
-                                role="list"
-                                class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+                            role="list"
+                            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
                         >
                             {members
-                                .slice() // avoid mutating grouped
+                                .slice()
                                 .sort(compareMembers)
                                 .map((member) => (
-                                        <li class="flex flex-col">
-                                            <a href=`/team/${member.id}`>
-                                                <div class="rounded-2xl">
-                                                    <TeamMember member={member.data}/>
-                                                </div>
-                                            </a>
-                                        </li>
+                                    <li class="flex flex-col">
+                                        <a href={` /team/${member.id}`.trim()}>
+                                            <div class="rounded-2xl">
+                                                <TeamMember member={member.data} />
+                                            </div>
+                                        </a>
+                                    </li>
                                 ))}
                         </ul>
                     </section>
-            ))}
+                );
+            })}
         </div>
     </section>
 </Layout>

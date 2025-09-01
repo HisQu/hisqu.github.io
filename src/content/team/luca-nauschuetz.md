@@ -2,7 +2,7 @@
 name: Luca Nauschütz
 academic_title: {}
 description: Wissenschaftlicher Hilfskraft
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 position: Wissenschaftlicher Hilfskraft
 publications: []
 image: ""

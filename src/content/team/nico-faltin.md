@@ -4,7 +4,7 @@ name: Nico Faltin
 academic_title:
   suffix: M.A.
 description: Wissenschaftlicher Mitarbeiter
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image: ""

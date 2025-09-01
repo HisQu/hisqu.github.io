@@ -1,7 +1,7 @@
 ---
 name: Tinghui Duan
 description: Wissenschaftlicher Mitarbeiter
-group: FactGrid
+group: factgrid
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image: ""

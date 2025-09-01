@@ -101,11 +101,13 @@ export type Partner = {
     className?: string;
     href?: string;
     leads?: { name: string; title: string }[];
+    numerical_position: number;
     summary?: string;
 };
 
 export const partners: Partner[] = [
     {
+        numerical_position: 1,
         key: "fsu-jena",
         name: "Friedrich-Schiller-Universität Jena",
         unit: "MEPHisto",
@@ -123,9 +125,11 @@ export const partners: Partner[] = [
             "Methodische Führung in Modellierung, Erklärung und Prozessen historischer Wissenschaften – von semantischer Erschließung bis orchestrierter Workflow-Integration."
     },
     {
+        numerical_position: 2,
         key: "germania-sacra",
-        name: "Germania Sacra",
-        institution: "Niedersächsische Akademie der Wissenschaften zu Göttingen",
+        name: "Akademie der Wissenschaften zu Göttingen",
+        unit: "Germania Sacra",
+        institution: "germania-sacra",
         href: "https://adw-goe.de/germania-sacra/",
         srcLight: gsLogo,
         srcDark: gsLogo,
@@ -140,9 +144,10 @@ export const partners: Partner[] = [
             "Fachliche Kuratierung, Editions-Expertise und Qualitätsstandards für historische Quellenkorpora."
     },
     {
+        numerical_position: 3,
         key: "dhi-rom",
         name: "Deutsches Historisches Institut in Rom",
-        unit: "Repertorium Germanicum",
+        unit: "Digital Humanities",
         href: "https://dhi-roma.it/",
         srcLight: dhiLogo,
         srcDark: dhiLogo,
@@ -156,6 +161,7 @@ export const partners: Partner[] = [
             "Leitender Anwendungsfall »Repertorium Germanicum«: praxisnahe Validierung und Zugang zu zentralen Quellen der spätmittelalterlichen Kirchengeschichte."
     },
     {
+        numerical_position: 4,
         key: "factgrid",
         name: "Forschungszentrum Gotha der Universität Erfurt",
         unit: "FactGrid",

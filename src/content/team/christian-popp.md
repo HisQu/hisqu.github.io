@@ -3,7 +3,7 @@ name: Christian Popp
 academic_title:
   prefix: Dr.
 description: Teilprojektleiter
-group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: germania-sacra
 position: Teilprojektleiter
 publications: []
 image: ""

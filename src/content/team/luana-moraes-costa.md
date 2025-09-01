@@ -1,7 +1,7 @@
 ---
 name: Luana Moraes Costa
 description: Wissenschaftliche Mitarbeiterin
-group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: germania-sacra
 position: Wissenschaftliche Mitarbeiterin
 publications: []
 image: ""

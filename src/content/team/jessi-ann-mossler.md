@@ -2,7 +2,7 @@
 name: Jessi Ann Moßler
 academic_title: {}
 description: Wissenschaftliche Hilfskraft
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 position: Wissenschaftliche Hilfskraft
 publications: []
 image: ""

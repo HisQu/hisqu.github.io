@@ -4,7 +4,7 @@ name: Johannes Mitschunas
 academic_title:
   suffix: M.Sc.
 description: Wissenschaftlicher Mitarbeiter
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image: ""

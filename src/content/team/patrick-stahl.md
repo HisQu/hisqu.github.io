@@ -1,9 +1,10 @@
 ---
+numerical_position: 7
 name: Patrick Stahl
 academic_title: {}
-description: Wissenschaftlicher Hilfskraft
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
-position: Wissenschaftlicher Hilfskraft
+description: Wissenschaftliche Hilfskraft
+group: fsu-jena
+position: Wissenschaftliche Hilfskraft
 publications: []
 image: ""
 ---

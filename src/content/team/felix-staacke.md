@@ -1,10 +1,10 @@
 ---
 name: Felix Staacke
-description: Wissenschaftlicher Mitarbeiter
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
-position: Wissenschaftlicher Mitarbeiter
+description: Wissenschaftliche Hilfskraft
+group: fsu-jena
+position: Wissenschaftliche Hilfskraft
 publications: []
 image: ""
 ---
 
-Felix Staacke ist wissenschaftlicher Mitarbeiter an der Friedrich-Schiller-Universität Jena.
+Felix Staacke ist wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena.

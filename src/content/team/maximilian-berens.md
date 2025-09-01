@@ -3,7 +3,7 @@ name: Maximilian Berens
 academic_title:
   suffix: M.A.
 description: Wissenschaftlicher Mitarbeiter
-group: Deutsches Historisches Institut Rom
+group: dhi-rom
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image: ""

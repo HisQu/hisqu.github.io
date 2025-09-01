@@ -3,7 +3,7 @@ name: Olaf Simons
 academic_title:
   prefix: Dr.
 description: Teilprojektleiter
-group: FactGrid
+group: factgrid
 position: Teilprojektleiter
 publications: []
 image: ""

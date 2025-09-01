@@ -5,7 +5,7 @@ academic_title:
   suffix: M.A.
 description: Projektkoordinator
 position: Projektkoordinator
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 publications: []
 image: ""
 ---

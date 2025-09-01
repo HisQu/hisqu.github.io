@@ -5,7 +5,7 @@ academic_title:
   prefix: Prof. Dr.
 description: Projektleiter
 position: Projektleiter
-group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
+group: fsu-jena
 publications: [ ]
 image: ""
 ---

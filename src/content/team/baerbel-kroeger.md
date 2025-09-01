@@ -4,7 +4,7 @@ academic_title:
   suffix: M.A.
 description: Teilprojektleiterin
 position: Teilprojektleiterin
-group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: germania-sacra
 publications: []
 image: ""
 ---
