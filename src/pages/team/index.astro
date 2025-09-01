@@ -22,8 +22,15 @@ const grouped = groupBy(team, 'group');
 // Build partner lookup map
 const partnersMap = Object.fromEntries(partners.map(p => [p.key, p]));
 
-const compareGroups = ([ga]: [string, any[]], [gb]: [string, any[]]) =>
-    String(ga).localeCompare(String(gb), 'de'); // or omit 'de' if you prefer default
+// Order groups by the partner's numerical_position; fallback to name if equal / missing
+const compareGroups = ([ga]: [string, any[]], [gb]: [string, any[]]) => {
+    const pa = partnersMap[ga];
+    const pb = partnersMap[gb];
+    const na = pa?.numerical_position ?? Number.POSITIVE_INFINITY;
+    const nb = pb?.numerical_position ?? Number.POSITIVE_INFINITY;
+    if (na !== nb) return na - nb; // ascending by numerical_position
+    return String(ga).localeCompare(String(gb), 'de');
+};
 
 const compareMembers = (a: any, b: any) => {
     const an = Number(a?.data?.numerical_position ?? Number.POSITIVE_INFINITY);
@@ -43,9 +50,8 @@ const compareMembers = (a: any, b: any) => {
                     Unsere Arbeitsgruppe
                 </h1>
                 <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis provident eligendi quaerat rerum,
-                    accusantium officiis non voluptas iusto, velit, quod laborum? Modi cum veritatis reiciendis
-                    exercitationem odit, nihil dignissimos vitae!
+                    Wir sind ein interdisziplinäres Team aus Historikern und Informatikern, das sich der Digitalisierung und semantischen Erschließung
+                    semistrukturierter Quellen &mdash; am Beispiel des Repertorium Germanicum &mdash; widmet.
                 </p>
             </div>
 
