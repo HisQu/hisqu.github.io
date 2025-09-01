@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+const { member } = Astro.props;
+
+const allPubs = await getCollection('publications');
+const publications = (member.publications || []).map((slug: string) => {
+  const pub = allPubs.find((p) => p.id === slug);
+  return pub && pub.data && pub.data.title ? pub.data.title : slug;
+});
+---
+
+<div class="team-member">
+  <h4>{member.name}</h4>
+  <p>
+    {member.title && <strong>{member.title}</strong>}
+    {member.title && member.position && ' – '}
+    {member.position}
+  </p>
+  {publications.length > 0 && (
+    <ul>
+      {publications.map((title: string) => (
+        <li>{title}</li>
+      ))}
+    </ul>
+  )}
+</div>

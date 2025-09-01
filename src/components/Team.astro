@@ -1,0 +1,60 @@
+---
+import { teamMembers } from '../team';
+import TeamMember from './TeamMember.astro';
+
+function groupBy(arr, key) {
+  return arr.reduce((acc, item) => {
+    const group = String(item[key] ?? '');
+    if (!acc[group]) acc[group] = [];
+    acc[group].push(item);
+    return acc;
+  }, {});
+}
+
+const grouped = groupBy(teamMembers, 'group');
+---
+
+
+<section class="team-section">
+  <h2>Our Team</h2>
+  {(Object.entries(grouped) as [string, any[]][]).map(([group, members]) => {
+    return (
+      <>
+        <div class="team-group">
+          <h3>{group}</h3>
+          <div class="team-list">
+            {(members as any[]).map((member) => (
+              <TeamMember member={member} />
+            ))}
+          </div>
+        </div>
+      </>
+    );
+  })}
+</section>
+
+
+
+<style>
+.team-section {
+  margin: 3rem 0;
+}
+.team-group {
+  margin-bottom: 2.5rem;
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.team-member {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.team-member h4 {
+  margin-top: 0;
+}
+</style>
