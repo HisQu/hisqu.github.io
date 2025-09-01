@@ -5,7 +5,7 @@ group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Luca Nauschütz
 ---
 

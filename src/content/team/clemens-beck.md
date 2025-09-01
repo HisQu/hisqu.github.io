@@ -1,11 +1,12 @@
 ---
+numerical_position: 4
 title: Clemens Beck, M.A.
 description: Projektkoordinator
 position: Projektkoordinator
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Clemens Beck, M.A.
 ---
 

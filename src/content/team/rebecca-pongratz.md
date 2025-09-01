@@ -1,11 +1,12 @@
 ---
+numerical_position: 5
 title: Rebecca Pongratz, B.Sc.
 description: Wissenschaftliche Mitarbeiterin
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftliche Mitarbeiterin
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Rebecca Pongratz, B.Sc.
 ---
 

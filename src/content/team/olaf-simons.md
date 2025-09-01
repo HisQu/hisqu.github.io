@@ -5,7 +5,7 @@ group: FactGrid
 position: Teilprojektleiter
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Dr. Olaf Simons
 ---
 

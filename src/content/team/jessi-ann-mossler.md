@@ -5,7 +5,7 @@ group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftliche Mitarbeiterin
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Jessi Ann Moßler
 ---
 

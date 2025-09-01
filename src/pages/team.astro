@@ -6,46 +6,61 @@ import Layout from '../layouts/IndexLayout.astro';
 const team = await getCollection('team');
 
 function groupBy(arr: any[], key: string) {
-  return arr.reduce((acc: Record<string, any[]>, item) => {
-    const group = String(item.data[key] ?? '');
-    if (!acc[group]) acc[group] = [];
-    acc[group].push(item);
-    return acc;
-  }, {} as Record<string, any[]>);
+    return arr.reduce((acc: Record<string, any[]>, item) => {
+        const group = String(item.data[key] ?? '');
+        if (!acc[group]) acc[group] = [];
+        acc[group].push(item);
+        return acc;
+    }, {} as Record<string, any[]>);
 }
 
 const grouped = groupBy(team, 'group');
+
+const compareGroups = ([ga]: [string, any[]], [gb]: [string, any[]]) =>
+    String(ga).localeCompare(String(gb), 'de'); // or omit 'de' if you prefer default
+
+const compareMembers = (a: any, b: any) => {
+    const an = Number(a?.data?.numerical_position ?? Number.POSITIVE_INFINITY);
+    const bn = Number(b?.data?.numerical_position ?? Number.POSITIVE_INFINITY);
+    if (an !== bn) return an - bn; // ascending; flip for descending
+    // optional tiebreaker by name:
+    return String(a?.data?.last_name ?? a?.data?.name ?? '')
+        .localeCompare(String(b?.data?.last_name ?? b?.data?.name ?? ''), 'de');
+};
 ---
 
 <Layout title="Team | HisQu" description="Meet the HisQu team: academic titles, positions, and publications.">
-  <section class="bg-white py-24 sm:py-32 dark:bg-gray-900">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h1 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-          Unsere Arbeitsgruppe
-        </h1>
-        <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis provident eligendi quaerat rerum, accusantium officiis non voluptas iusto, velit, quod laborum? Modi cum veritatis reiciendis exercitationem odit, nihil dignissimos vitae!
-        </p>
-      </div>
+    <section class="bg-white py-24 sm:py-32 dark:bg-gray-900">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+                <h1 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                    Unsere Arbeitsgruppe
+                </h1>
+                <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis provident eligendi quaerat rerum, accusantium officiis non voluptas iusto, velit, quod laborum? Modi cum veritatis reiciendis exercitationem odit, nihil dignissimos vitae!
+                </p>
+            </div>
 
-      {Object.entries(grouped).map(([group, members]) => (
-        <section class="mt-20" aria-labelledby={`team-group-${group}`}>
-          <h2 id={`team-group-${group}`} class="sr-only">{group}</h2>
-          <ul
-            role="list"
-            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-          >
-            {members.map((member) => (
-              <li class="flex flex-col" >
-                <div class="rounded-2xl">
-                  <TeamMember member={member.data} />
-                </div>
-              </li>
+            {Object.entries(grouped).sort(compareGroups).map(([group, members]) => (
+                    <section class="mt-20" aria-labelledby={`team-group-${group}`}>
+                        <h2 id={`team-group-${group}`} class="sr-only">{group}</h2>
+                        <ul
+                                role="list"
+                                class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+                        >
+                            {members
+                                .slice() // avoid mutating grouped
+              .sort(compareMembers)
+                                .map((member) => (
+                                        <li class="flex flex-col" key={member.id ?? member.slug ?? member.data?.name}>
+                                            <div class="rounded-2xl">
+                                                <TeamMember member={member.data} />
+                                            </div>
+                                        </li>
+                                ))}
+                        </ul>
+                    </section>
             ))}
-          </ul>
-        </section>
-      ))}
-    </div>
-  </section>
+        </div>
+    </section>
 </Layout>

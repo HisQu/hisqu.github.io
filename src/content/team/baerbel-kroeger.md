@@ -5,7 +5,7 @@ position: Teilprojektleiterin
 group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Bärbel Kröger, M.A.
 ---
 

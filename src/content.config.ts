@@ -2,6 +2,7 @@ const team = defineCollection({
 	loader: glob({ base: './src/content/team', pattern: '**/*.md' }),
 	schema: ({ image }) =>
 		z.object({
+			numerical_position: z.number().optional(), // for ordering team members
 			title: z.string(),
 			description: z.string(),
 			position: z.string().optional(),

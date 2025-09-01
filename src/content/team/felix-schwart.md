@@ -5,7 +5,7 @@ group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Felix Schwart
 ---
 

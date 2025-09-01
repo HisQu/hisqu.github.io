@@ -1,11 +1,12 @@
 ---
+numerical_position: 7
 title: Patrick Stahl
 description: Wissenschaftlicher Mitarbeiter
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Patrick Stahl
 ---
 

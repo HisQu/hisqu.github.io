@@ -1,11 +1,12 @@
 ---
+numerical_position: 1
 title: Prof. Dr. Clemens Beckstein
 description: Projektleiter
 position: Projektleiter
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 publications: []
 image:
-  src: ../../assets/team/placeholder.png
+  src: ""
   alt: Prof. Dr. Clemens Beckstein
 ---
 
