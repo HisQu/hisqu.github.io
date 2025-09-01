@@ -1,11 +1,11 @@
 ---
 title: Luca Nauschütz
 description: Wissenschaftlicher Mitarbeiter
-group: MEPHisto, Friedrich-Schiller-Universität Jena
+group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/nauschuetz.jpg
+  src: ../../assets/team/placeholder.png
   alt: Luca Nauschütz
 ---
 

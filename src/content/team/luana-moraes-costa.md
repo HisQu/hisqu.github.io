@@ -1,11 +1,11 @@
 ---
 title: Luana Moraes Costa
 description: Wissenschaftliche Mitarbeiterin
-group: Arbeitsstelle Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 position: Wissenschaftliche Mitarbeiterin
 publications: []
 image:
-  src: ../../assets/team/moraes-costa.jpg
+  src: "../../assets/team/placeholder.png"
   alt: Luana Moraes Costa
 ---
 

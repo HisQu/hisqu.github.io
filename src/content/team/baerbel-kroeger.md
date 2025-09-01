@@ -2,10 +2,10 @@
 title: Bärbel Kröger, M.A.
 description: Teilprojektleiterin
 position: Teilprojektleiterin
-group: Arbeitsstelle Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 publications: []
 image:
-  src: ../../assets/team/kroeger.jpg
+  src: ../../assets/team/placeholder.png
   alt: Bärbel Kröger, M.A.
 ---
 

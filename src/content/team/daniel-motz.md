@@ -1,7 +1,7 @@
 ---
 title: Daniel Motz, B.Sc.
 description: Wissenschaftlicher Assistent
-group: MEPHisto, Friedrich-Schiller-Universität Jena
+group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftlicher Assistent
 publications: []
 image:

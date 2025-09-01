@@ -1,11 +1,11 @@
 ---
 title: Nico Faltin, M.A.
 description: Wissenschaftlicher Mitarbeiter
-group: MEPHisto, Friedrich-Schiller-Universität Jena
+group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/faltin.jpg
+  src: ../../assets/team/placeholder.png
   alt: Nico Faltin, M.A.
 ---
 

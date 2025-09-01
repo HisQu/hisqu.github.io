@@ -7,8 +7,7 @@ const team = defineCollection({
 			position: z.string().optional(),
 			group: z.string(),
 			publications: z.array(z.string()).optional(),
-			image: z
-				.object({
+			image: z.object({
 					src: image(),
 					alt: z.string(),
 				})

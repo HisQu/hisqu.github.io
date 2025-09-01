@@ -1,11 +1,11 @@
 ---
 title: Dr. Christian Popp
 description: Teilprojektleiter
-group: Arbeitsstelle Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 position: Teilprojektleiter
 publications: []
 image:
-  src: ../../assets/team/popp.jpg
+  src: ../../assets/team/placeholder.png
   alt: Dr. Christian Popp
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: Daniel Lukas Osman
 description: Wissenschaftlicher Mitarbeiter
-group: Arbeitsstelle Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/osman.jpg
+  src: "../../assets/team/placeholder.png"
   alt: Daniel Lukas Osman
 ---
 

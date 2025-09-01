@@ -2,10 +2,10 @@
 title: Apl. Prof. Dr. Robert Gramsch-Stehfest
 description: Teilprojektleiter
 position: Teilprojektleiter
-group: MEPHisto, Friedrich-Schiller-Universität Jena
+group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 publications: []
 image:
-  src: ../../assets/team/gramsch.jpg
+  src: ../../assets/team/placeholder.png
   alt: Apl. Prof. Dr. Robert Gramsch-Stehfest
 ---
 

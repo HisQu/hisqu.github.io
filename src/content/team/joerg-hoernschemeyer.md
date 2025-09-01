@@ -5,7 +5,7 @@ group: Deutsches Historisches Institut Rom
 position: Teilprojektleiter
 publications: []
 image:
-  src: ../../assets/team/hoernschemeyer.jpg
+  src: ../../assets/team/placeholder.png
   alt: Dr. Jörg Hörnschemeyer
 ---
 

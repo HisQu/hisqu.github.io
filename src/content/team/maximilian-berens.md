@@ -5,7 +5,7 @@ group: Deutsches Historisches Institut Rom
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/berens.jpg
+  src: ../../assets/team/placeholder.png
   alt: Maximilian Berens, M.A.
 ---
 

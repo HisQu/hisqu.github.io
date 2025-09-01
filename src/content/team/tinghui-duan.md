@@ -5,7 +5,7 @@ group: FactGrid
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/duan.jpg
+  src: ../../assets/team/placeholder.png
   alt: Tinghui Duan
 ---
 

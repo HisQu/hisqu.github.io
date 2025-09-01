@@ -1,11 +1,11 @@
 ---
 const { member } = Astro.props;
+import { Image } from 'astro:assets';
 
 // Extract fields with fallbacks
-const name = member.name ?? '';
-const role = member.role ?? member.position ?? member.title ?? '';
-const imageUrl =
-  member.imageUrl ?? member.image ?? member.photo ?? null;
+const name = member.title ?? '';
+const role = member.position ?? '';
+const imageUrl = member.image.src ?? null;
 
 const xUrl = member.xUrl ?? member.twitter ?? member.x ?? null;
 const linkedinUrl = member.linkedinUrl ?? member.linkedin ?? null;
@@ -22,7 +22,7 @@ const initials = name
 ---
 
 {imageUrl ? (
-  <img
+  <Image
     class="aspect-3/2 w-full rounded-2xl object-cover"
     src={imageUrl}
     alt={name}

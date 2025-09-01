@@ -1,11 +1,11 @@
 ---
 title: Dr. Martin Kuric
 description: Wissenschaftlicher Mitarbeiter
-group: Arbeitsstelle Germania Sacra, Niedersächsische Akademie der Wissenschaften
+group: Germania Sacra, Niedersächsische Akademie der Wissenschaften
 position: Wissenschaftlicher Mitarbeiter
 publications: []
 image:
-  src: ../../assets/team/kuric.jpg
+  src: ../../assets/team/placeholder.png
   alt: Dr. Martin Kuric
 ---
 
