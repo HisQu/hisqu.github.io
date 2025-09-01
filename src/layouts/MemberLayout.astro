@@ -23,9 +23,8 @@ const displayName = [prefix, baseName].filter(Boolean).join(prefix ? ' ' : '') +
 const headTitle = `${displayName} — Team`;
 const headDescription = member.data.description;
 
-// Prepare SEO image only if valid; SEO expects { src, alt }
-const rawImg = member.data.image;
-const seoImage = { src: rawImg, alt: displayName };
+// Prepare SEO image only if valid; SEO expects ImageMetadata or string
+const seoImage = member.data.image;
 
 // Initials for placeholder avatar
 const initials = baseName
