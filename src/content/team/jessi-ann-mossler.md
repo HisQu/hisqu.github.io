@@ -1,12 +1,12 @@
 ---
-title: Jessi Ann Moßler
-description: Wissenschaftliche Mitarbeiterin
+name: Jessi Ann Moßler
+academic_title: {}
+description: Wissenschaftliche Hilfskraft
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
-position: Wissenschaftliche Mitarbeiterin
+position: Wissenschaftliche Hilfskraft
 publications: []
-image:
-  src: ""
-  alt: Jessi Ann Moßler
+image: ""
 ---
 
+Jessi Ann Moßler ist wissenschaftliche Mitarbeiterin an der Friedrich-Schiller-Universität Jena.
 Jessi Ann Moßler ist wissenschaftliche Mitarbeiterin an der Friedrich-Schiller-Universität Jena.

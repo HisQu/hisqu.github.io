@@ -1,12 +1,10 @@
 ---
-title: Tinghui Duan
+name: Tinghui Duan
 description: Wissenschaftlicher Mitarbeiter
 group: FactGrid
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image:
-  src: ""
-  alt: Tinghui Duan
+image: ""
 ---
 
 Tinghui Duan ist wissenschaftlicher Mitarbeiter bei FactGrid.

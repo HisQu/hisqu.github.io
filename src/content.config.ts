@@ -6,16 +6,18 @@ const team = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			numerical_position: z.number().optional(), // for ordering team members
-			title: z.string(),
+			name: z.string(),
+			academic_title: z
+				.object({
+					prefix: z.string().optional(),
+					suffix: z.string().optional(),
+				})
+				.optional(),
 			description: z.string(),
 			position: z.string().optional(),
 			group: z.string(),
 			publications: z.array(z.string()).optional(),
-			image: z.object({
-					src: image(),
-					alt: z.string(),
-				})
-				.optional(),
+			image: image(),
 		}),
 });
 

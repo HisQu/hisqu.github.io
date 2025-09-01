@@ -54,8 +54,7 @@ const compareMembers = (a: any, b: any) => {
                                 .slice() // avoid mutating grouped
                                 .sort(compareMembers)
                                 .map((member) => (
-                                        <li class="flex flex-col"
-                                            key={member.id}>
+                                        <li class="flex flex-col">
                                             <a href=`/team/${member.id}`>
                                                 <div class="rounded-2xl">
                                                     <TeamMember member={member.data}/>

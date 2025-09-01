@@ -2,10 +2,13 @@
 const { member } = Astro.props;
 import { Image } from 'astro:assets';
 
-// Extract fields with fallbacks
-const name = member.title ?? '';
+// Extract fields with fallbacks (new schema: name + academic_title {prefix,suffix})
+const baseName = member.name ?? member.title ?? '';
+const prefix = member.academic_title?.prefix ? member.academic_title.prefix.trim() : '';
+const suffix = member.academic_title?.suffix ? member.academic_title.suffix.trim() : '';
+const name = [prefix, baseName].filter(Boolean).join(prefix ? ' ' : '') + (suffix ? `, ${suffix}` : '');
 const role = member.position ?? '';
-const imageUrl = member.image.src ?? null;
+const rawImage = member.image ?? null;
 
 const xUrl = member.xUrl ?? member.twitter ?? member.x ?? null;
 const linkedinUrl = member.linkedinUrl ?? member.linkedin ?? null;
@@ -21,17 +24,27 @@ const initials = name
   : '?';
 ---
 
-{imageUrl ? (
-  <Image
-    class="aspect-3/2 w-full rounded-2xl object-cover"
-    src={imageUrl}
-    alt={name}
-  />
-) : (
-  <div class="aspect-3/2 w-full flex items-center justify-center rounded-2xl bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 text-3xl font-bold">
-    {initials}
-  </div>
-)}
+{(() => {
+  // If the image is an imported image metadata object (from image() schema or import), use <Image>
+  // (Removed imported image object handling as schema now stores plain string)
+  // If it's a string URL (remote or absolute path), use a normal img tag
+  if (rawImage && typeof rawImage === 'object' && 'src' in rawImage) {
+    return (
+      <Image
+        src={rawImage}
+        alt={name}
+        class="aspect-3/2 w-full rounded-2xl object-cover"
+        loading="lazy"
+      />
+    );
+  }
+  // Otherwise show placeholder initials
+  return (
+    <div class="aspect-3/2 w-full flex items-center justify-center rounded-2xl bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 text-3xl font-bold">
+      {initials}
+    </div>
+  );
+})()}
 
 <h3 class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900 dark:text-white">
   {name}

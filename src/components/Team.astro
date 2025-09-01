@@ -1,14 +1,28 @@
 ---
-import { teamMembers } from '../team';
 import TeamMember from './TeamMember.astro';
+import { getCollection } from 'astro:content';
 
-function groupBy(arr:any, key:any) {
-  return arr.reduce((acc:any, item:any) => {
-    const group = String(item[key] ?? '');
+// Fetch team collection entries
+const entries = await getCollection('team');
+
+// Normalize data (pull out the frontmatter data object)
+type TeamData = typeof entries[number]['data'];
+const teamMembers: TeamData[] = entries
+  .map(e => e.data)
+  .sort((a, b) => {
+    const ap = a.numerical_position ?? 9999;
+    const bp = b.numerical_position ?? 9999;
+    if (ap !== bp) return ap - bp;
+    return (a.name || '').localeCompare(b.name || '');
+  });
+
+function groupBy<T extends Record<string, any>>(arr: T[], key: keyof T) {
+  return arr.reduce((acc: Record<string, T[]>, item) => {
+    const group = String(item[key] ?? 'Sonstiges');
     if (!acc[group]) acc[group] = [];
     acc[group].push(item);
     return acc;
-  }, {});
+  }, {} as Record<string, T[]>);
 }
 
 const grouped = groupBy(teamMembers, 'group');
@@ -17,13 +31,13 @@ const grouped = groupBy(teamMembers, 'group');
 
 <section class="team-section">
   <h2>Our Team</h2>
-  {(Object.entries(grouped) as [string, any[]][]).map(([group, members]) => {
+  {(Object.entries(grouped) as [string, TeamData[]][]).map(([group, members]) => {
     return (
       <>
         <div class="team-group">
           <h3>{group}</h3>
           <div class="team-list">
-            {(members as any[]).map((member) => (
+            {members.map((member) => (
               <TeamMember member={member} />
             ))}
           </div>

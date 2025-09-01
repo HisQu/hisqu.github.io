@@ -14,78 +14,74 @@ type Props = {
 
 const {member} = Astro.props;
 
-const headTitle = `${member.data.title} — Team`;
+// Build full display name from new schema fields
+const baseName = member.data.name;
+const prefix = member.data.academic_title?.prefix?.trim() || '';
+const suffix = member.data.academic_title?.suffix?.trim() || '';
+const displayName = [prefix, baseName].filter(Boolean).join(prefix ? ' ' : '') + (suffix ? ", " + suffix : '');
+
+const headTitle = `${displayName} — Team`;
 const headDescription = member.data.description;
-const headImage = member.data.image?.src;
-const initials = member.data.title
-    ? member.data.title
-        .split(',')[0]
-        .split(' ')
-        .map((part:string) => part[0])
-        .join('')
-        .toUpperCase()
+
+// Prepare SEO image only if valid; SEO expects { src, alt }
+const rawImg = member.data.image;
+const seoImage = { src: rawImg, alt: displayName };
+
+// Initials for placeholder avatar
+const initials = baseName
+    ? baseName
+            .split(',')[0]
+            .split(' ')
+            .map((part:string) => part[0])
+            .join('')
+            .toUpperCase()
     : '?';
 ---
 
 <!doctype html>
 <html lang="en">
 <head>
-    <BaseHead
+        <BaseHead
             title={headTitle}
             description={headDescription}
-            image={headImage}
-    />
+            image={seoImage}
+        />
 </head>
 <body class="dark:bg-gray-900">
 <div class="glow"></div>
 <Header/>
 
 <div class="post single max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" transition:persist transition:name="post">
-    <!-- Header / Meta -->
-    <div class="version_wrapper">
-        <div class="version_info flex items-center gap-3 flex-wrap">
-            {member.data.group && (
-                    <span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-200">
-							{member.data.group}
-						</span>
-            )}
-            {member.data.position && (
-                    <span class="inline-flex items-center rounded-full bg-indigo-100 dark:bg-indigo-900/40 px-3 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-200">
-							{member.data.position}
-						</span>
-            )}
-            {typeof member.data.numerical_position === 'number' && (
-                    <span class="inline-flex items-center rounded-full bg-amber-100 dark:bg-amber-900/40 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-200">
-							Order: {member.data.numerical_position}
-						</span>
-            )}
-        </div>
-    </div>
-
     <!-- Profile -->
     <article class="content mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Image -->
         <div class="lg:col-span-4">
-            {member.data.image.src ? (
-                    <div class="overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-gray-800">
-                        <Image
-                                src={member.data.image.src}
-                                alt={member.data.image.alt}
-                                sizes="(min-width: 1024px) 320px, 100vw"
-                                loading="eager"
-                        />
-                    </div>
-            ) : (
-                    <div class="aspect-3/2 w-full flex items-center justify-center rounded-2xl bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 text-3xl font-bold">
-                        {initials}
-                    </div>
-            )}
+                        {(() => {
+                              const img = member.data.image;
+                            if (img && typeof img === 'object' && 'src' in img) {
+                                return (
+                                    <div class="overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-gray-800">
+                                        <Image
+                                            src={img}
+                                            alt={displayName}
+                                            sizes="(min-width: 1024px) 320px, 100vw"
+                                            loading="eager"
+                                        />
+                                    </div>
+                                );
+                            }
+                            return (
+                                <div class="aspect-3/2 w-full flex items-center justify-center rounded-2xl bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 text-3xl font-bold">
+                                    {initials}
+                                </div>
+                            );
+                        })()}
         </div>
 
         <!-- Text -->
         <div class="lg:col-span-8">
             <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                {member.data.title}
+                {displayName}
             </h1>
 
             <p class="mt-4 text-lg leading-7 text-gray-700 dark:text-gray-300">

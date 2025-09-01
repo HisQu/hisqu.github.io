@@ -4,12 +4,12 @@ import { SiteDescription, SiteTitle } from '../consts';
 import SEO, { type Props as SEOProps } from './SEO.astro';
 
 export type Props = Partial<SEOProps>;
-const { title = SiteTitle, name = SiteTitle, description = SiteDescription, ...seo } = Astro.props;
+const { title = SiteTitle, name = SiteTitle, description = SiteDescription, image, ...seo } = Astro.props;
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<SEO {title} {description} {name} {...seo} />
+<SEO {title} {description} {name} image={image} {...seo} />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

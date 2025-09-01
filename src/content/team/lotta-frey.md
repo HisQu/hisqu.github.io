@@ -1,12 +1,11 @@
 ---
-title: Lotta Frey
-description: Wissenschaftliche Mitarbeiterin
+name: Lotta Frey
+academic_title: {}
+description: Wissenschaftliche Hilfskraft
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
-position: Wissenschaftliche Mitarbeiterin
+position: Wissenschaftliche Hilfskraft
 publications: []
-image:
-  src: ""
-  alt: Lotta Frey
+image: ""
 ---
 
-Lotta Frey ist wissenschaftliche Mitarbeiterin an der Friedrich-Schiller-Universität Jena.
+Lotta Frey ist wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena.

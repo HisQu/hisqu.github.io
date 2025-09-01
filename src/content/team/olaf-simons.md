@@ -1,12 +1,12 @@
 ---
-title: Dr. Olaf Simons
+name: Olaf Simons
+academic_title:
+  prefix: Dr.
 description: Teilprojektleiter
 group: FactGrid
 position: Teilprojektleiter
 publications: []
-image:
-  src: ""
-  alt: Dr. Olaf Simons
+image: ""
 ---
 
 Dr. Olaf Simons ist Teilprojektleiter bei FactGrid.

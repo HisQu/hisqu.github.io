@@ -1,12 +1,12 @@
 ---
-title: Samuel Glowka, B.A.
+name: Samuel Glowka
+academic_title:
+  suffix: B.A.
 description: Wissenschaftlicher Mitarbeiter
 group: Arbeitsgruppe MEPHisto, Friedrich-Schiller-Universität Jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image:
-  src: ""
-  alt: Samuel Glowka, B.A.
+image: ""
 ---
 
 Samuel Glowka, B.A. ist wissenschaftlicher Mitarbeiter an der Friedrich-Schiller-Universität Jena.
