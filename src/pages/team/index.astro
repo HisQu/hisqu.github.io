@@ -1,7 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
-import TeamMember from '../components/TeamMember.astro';
-import Layout from '../layouts/IndexLayout.astro';
+import {getCollection} from 'astro:content';
+import TeamMember from '../../components/TeamMember.astro';
+import Layout from '../../layouts/IndexLayout.astro';
 
 const team = await getCollection('team');
 
@@ -37,7 +37,9 @@ const compareMembers = (a: any, b: any) => {
                     Unsere Arbeitsgruppe
                 </h1>
                 <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis provident eligendi quaerat rerum, accusantium officiis non voluptas iusto, velit, quod laborum? Modi cum veritatis reiciendis exercitationem odit, nihil dignissimos vitae!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis provident eligendi quaerat rerum,
+                    accusantium officiis non voluptas iusto, velit, quod laborum? Modi cum veritatis reiciendis
+                    exercitationem odit, nihil dignissimos vitae!
                 </p>
             </div>
 
@@ -50,12 +52,15 @@ const compareMembers = (a: any, b: any) => {
                         >
                             {members
                                 .slice() // avoid mutating grouped
-              .sort(compareMembers)
+                                .sort(compareMembers)
                                 .map((member) => (
-                                        <li class="flex flex-col" key={member.id ?? member.slug ?? member.data?.name}>
-                                            <div class="rounded-2xl">
-                                                <TeamMember member={member.data} />
-                                            </div>
+                                        <li class="flex flex-col"
+                                            key={member.id}>
+                                            <a href=`/team/${member.id}`>
+                                                <div class="rounded-2xl">
+                                                    <TeamMember member={member.data}/>
+                                                </div>
+                                            </a>
                                         </li>
                                 ))}
                         </ul>

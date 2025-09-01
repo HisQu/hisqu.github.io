@@ -1,8 +1,7 @@
 ---
-// src/pages/publications/index.astro
 import {getCollection} from 'astro:content';
-import Layout from '../../layouts/IndexLayout.astro'; // or your preferred layout
-import FormattedDate from '../../components/FormattedDate.astro'; // if you have it
+import Layout from '../../layouts/IndexLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
 import Image from 'astro/components/Image.astro';
 
 const publications = (await getCollection('publications'))
