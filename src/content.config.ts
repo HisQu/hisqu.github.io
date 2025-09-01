@@ -77,4 +77,4 @@ const events = defineCollection({
 		}),
 });
 
-export const collections = { blog, publications, events };
+export const collections = { blog, publications, events, team };
