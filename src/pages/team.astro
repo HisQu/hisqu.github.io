@@ -1,19 +1,20 @@
 ---
-import type { APITeamMember } from '../types/team';
-import { teamMembers } from '../team';
+import { getCollection } from 'astro:content';
 import TeamMember from '../components/TeamMember.astro';
 import Layout from '../layouts/IndexLayout.astro';
 
-function groupBy<T>(arr: T[], key: keyof T) {
-  return arr.reduce((acc: Record<string, T[]>, item) => {
-    const group = String(item[key] ?? '');
+const team = await getCollection('team');
+
+function groupBy(arr: any[], key: string) {
+  return arr.reduce((acc: Record<string, any[]>, item) => {
+    const group = String(item.data[key] ?? '');
     if (!acc[group]) acc[group] = [];
     acc[group].push(item);
     return acc;
-  }, {} as Record<string, T[]>);
+  }, {} as Record<string, any[]>);
 }
 
-const grouped = groupBy<APITeamMember>(teamMembers, 'group');
+const grouped = groupBy(team, 'group');
 ---
 
 <Layout title="Team | HisQu" description="Meet the HisQu team: academic titles, positions, and publications.">
@@ -38,7 +39,7 @@ const grouped = groupBy<APITeamMember>(teamMembers, 'group');
             {members.map((member) => (
               <li class="flex flex-col" >
                 <div class="rounded-2xl">
-                  <TeamMember member={member} />
+                  <TeamMember member={member.data} />
                 </div>
               </li>
             ))}
