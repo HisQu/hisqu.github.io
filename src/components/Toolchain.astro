@@ -1,7 +1,21 @@
 ---
-import Image from 'astro/components/Image.astro';
-import {analyse, archiv, erstellung, nachvollziehbarkeit, ontologie, rg, verarbeitung} from "../assets";
+import {rg} from "../assets";
 import {steps} from "../consts";
+
+interface RGPoint { title: string; text: string }
+interface Props {
+    title?: string; description?: string; eyebrow?: string;
+    rgTitle?: string; rgDescription?: string;
+    rgImage?: { src: any; alt?: string };
+    rgPoints?: RGPoint[];
+    gradientFrom?: string; gradientTo?: string; class?: string;
+}
+
+function resolveImg(src: any) {
+    if (!src) return '';
+    if (typeof src === 'object' && 'src' in src) return (src as any).src;
+    return String(src);
+}
 
 const {
     title = "Ein Forschungsprozess ohne Unterbrechungen nach den FAIR-Prinzipien",
@@ -9,12 +23,25 @@ const {
     eyebrow = "Ein lückenloser Prozess",
 
     rgTitle = `Die Quelle: Das Repertorium Germanicum`,
-    rgDescription = "Kurze Erläuterung des RG-Konzepts. Beschreibe hier prägnant, wofür RG steht und welchen Mehrwert es im HisQu-Workflow liefert.",
-    rgImage = {src: rg, alt: "Illustration"},
+    rgDescription = "Das Repertorium Germanicum (RG) erschließt die in den päpstlichen Registerserien überlieferten Bezüge zum Heiligen Römischen Reich (Personen, Orte, Institutionen, Rechtsakte). Es bildet damit eine der zentralen Grundlagen für prosopographische und regionalhistorische Analysen der spätmittelalterlichen Kurie und ihrer Kommunikations- und Interaktionsräume.",
+    rgImage = {src: rg, alt: "Schemahafte Darstellung der kurialen Register als Datenquelle"},
     rgPoints = [
-        {title: "Aufarbeitung wertvoller Informationen für die Mediävistik", text: "und so weiter bitte ändern"},
-        {title: "Buzzword", text: "Erhöht Nachvollziehbarkeit durch klare Zuständigkeiten und Datenflüsse."},
-        {title: "Schlagwort", text: "Kann mit wachsenden Anforderungen und Datenmengen mitwachsen."},
+        {
+            title: "Strukturierte Tiefenerschließung",
+            text: "Aus unstrukturierten Registereinträgen werden normalisierte Entitäten (Personen, Ämter, Orte, Institutionen, Ereignisse) mit kontrollierten Vokabularen extrahiert."
+        },
+        {
+            title: "Normdaten & Verknüpfungen",
+            text: "Verbindung zu GND, Geo-Referenzen und FactGrid/Wikibase schafft Linked-Data-Kontext und verhindert Redundanzen in der Forschung."
+        },
+        {
+            title: "Wissenschaftliche Nachvollziehbarkeit",
+            text: "Jeder Erschließungsschritt (Transkription, Normalisierung, Typisierung) wird modelliert und maschinenlesbar dokumentiert – Voraussetzung für Reproduzierbarkeit."
+        },
+        {
+            title: "Analytischer Mehrwert",
+            text: "Ermöglicht quer über Serien hinweg Abfragen zu Karrierewegen, Netzwerkbeziehungen, räumlichen Verdichtungen und institutionellen Wandlungsprozessen."
+        },
     ],
 
     gradientFrom = "#ff80b5",
@@ -56,14 +83,14 @@ const {
 
                 <!-- Visual (optional) -->
                 {rgImage?.src && (
-                        <div class="lg:col-span-7">
-                            <Image
-                                    src={rgImage.src}
-                                    alt={rgImage.alt ?? ""}
-                                    class="relative -z-0 w-full max-w-4xl rounded-xl shadow-xl ring-1 ring-gray-900/10 dark:ring-white/10"
-                                    loading="lazy"
-                            />
-                        </div>
+                    <div class="lg:col-span-7">
+                        <img
+                            src={resolveImg(rgImage.src)}
+                            alt={rgImage.alt ?? ""}
+                            class="relative -z-0 w-full max-w-4xl rounded-xl shadow-xl ring-1 ring-gray-900/10 dark:ring-white/10"
+                            loading="lazy"
+                        />
+                    </div>
                 )}
 
                 <!-- Text -->
@@ -71,17 +98,14 @@ const {
                     <h3 class="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">{rgTitle}</h3>
                     <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">{rgDescription}</p>
 
-                    <dl class="mt-10 space-y-6">
+                    <ul class="mt-10 space-y-4 list-disc pl-6 marker:text-gray-400 dark:marker:text-gray-500">
                         {rgPoints.map((p, idx) => (
-                                <div class="relative pl-10" aria-label={`rg-point-${idx}`}>
-                                    <!-- colourful dot -->
-                                    <span class="absolute left-0 top-1 inline-block size-6 rounded-full opacity-90"
-                                          style={`background-image: linear-gradient(to top right, ${gradientFrom}, ${gradientTo});`}></span>
-                                    <dt class="font-semibold text-gray-900 dark:text-white">{p.title}</dt>
-                                    <dd class="text-gray-600 dark:text-gray-300">{p.text}</dd>
-                                </div>
+                            <li aria-label={`rg-point-${idx}`} class="text-gray-600 dark:text-gray-300">
+                                <span class="block font-semibold text-gray-900 dark:text-white mb-1">{p.title}</span>
+                                <span>{p.text}</span>
+                            </li>
                         ))}
-                    </dl>
+                    </ul>
                 </div>
             </div>
 
@@ -114,14 +138,14 @@ const {
                                                         aria-label={`Öffne Tool: ${tool.name}`}
                                                 >
                                                     {tool.image?.src && (
-                                                            <Image
-                                                                    src={tool.image.src}
-                                                                    alt={tool.image.alt ?? ""}
-                                                                    width={24}
-                                                                    height={24}
-                                                                    class="h-6 w-6 rounded-md ring-1 ring-black/5 dark:ring-white/10"
-                                                                    loading="lazy"
-                                                            />
+                                                        <img
+                                                            src={resolveImg(tool.image.src)}
+                                                            alt={tool.image.alt ?? ""}
+                                                            width={24}
+                                                            height={24}
+                                                            class="h-6 w-6 rounded-md ring-1 ring-black/5 dark:ring-white/10"
+                                                            loading="lazy"
+                                                        />
                                                     )}
                                                     <span class="relative">
                   {tool.name}
@@ -139,11 +163,11 @@ const {
 
                         <!-- Bild-Spalte -->
                         <div class={`lg:col-span-6 ${i % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                            <Image
-                                    src={step.image.src}
-                                    alt={step.image.alt ?? ""}
-                                    class="w-full rounded-xl shadow-lg ring-1 ring-gray-900/10 dark:ring-white/10 bg-white p-2"
-                                    loading="lazy"
+                            <img
+                                src={resolveImg(step.image.src)}
+                                alt={step.image.alt ?? ""}
+                                class="w-full rounded-xl shadow-lg ring-1 ring-gray-900/10 dark:ring-white/10 bg-white p-2"
+                                loading="lazy"
                             />
                             {step.caption && (
                                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 italic">{step.caption}</p>
