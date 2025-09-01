@@ -14,8 +14,8 @@ const xUrl = member.xUrl ?? member.twitter ?? member.x ?? null;
 const linkedinUrl = member.linkedinUrl ?? member.linkedin ?? null;
 
 // Generate initials if no image
-const initials = name
-  ? name
+const initials = baseName
+  ? baseName
       .split(',')[0]
       .split(' ')
       .map((part:string) => part[0])

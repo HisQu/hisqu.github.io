@@ -20,7 +20,7 @@ const past = events
 <BaseLayout title="Events">
     {upcoming.length > 0 && (
             <>
-                <h2>Upcoming Events</h2>
+                <h2>Bevorstehende Veranstaltungen</h2>
                 <ul class="posts" transition:name="post">
                     {upcoming.map((ev) => (
                             <li class="post">
@@ -52,7 +52,7 @@ const past = events
 
                     {past.length > 0 && (
                             <>
-                                <h2>Past Events</h2>
+                                <h2>Vergangene Veranstaltungen</h2>
                                 <ul class="posts" transition:name="post">
                                     {past.map((ev) => (
                                             <li class="post">
