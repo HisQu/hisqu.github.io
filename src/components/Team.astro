@@ -2,8 +2,8 @@
 import { teamMembers } from '../team';
 import TeamMember from './TeamMember.astro';
 
-function groupBy(arr, key) {
-  return arr.reduce((acc, item) => {
+function groupBy(arr:any, key:any) {
+  return arr.reduce((acc:any, item:any) => {
     const group = String(item[key] ?? '');
     if (!acc[group]) acc[group] = [];
     acc[group].push(item);

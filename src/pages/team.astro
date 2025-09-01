@@ -1,0 +1,54 @@
+---
+import type { APITeamMember } from '../types/team';
+import { teamMembers } from '../team';
+import TeamMember from '../components/TeamMember.astro';
+import Layout from '../layouts/IndexLayout.astro';
+
+function groupBy<T>(arr: T[], key: keyof T) {
+  return arr.reduce((acc: Record<string, T[]>, item) => {
+    const group = String(item[key] ?? '');
+    if (!acc[group]) acc[group] = [];
+    acc[group].push(item);
+    return acc;
+  }, {} as Record<string, T[]>);
+}
+
+const grouped = groupBy<APITeamMember>(teamMembers, 'group');
+---
+
+<Layout title="Team | HisQu" description="Meet the HisQu team: academic titles, positions, and publications.">
+  <section class="bg-white py-24 sm:py-32 dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h1 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+          Our team
+        </h1>
+        <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
+          We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.
+        </p>
+      </div>
+
+      {Object.entries(grouped).map(([group, members]) => (
+        <section class="mt-20" aria-labelledby={`team-group-${group}`}>
+          <h2 id={`team-group-${group}`} class="sr-only">{group}</h2>
+          <ul
+            role="list"
+            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          >
+            {members.map((member) => (
+              <li class="flex flex-col" >
+                {/* 
+                  Wrapper applies the image/card spacing/outline rhythm from the Vue template.
+                  The TeamMember component handles actual content rendering.
+                */}
+                <div class="rounded-2xl">
+                  <TeamMember member={member} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </section>
+</Layout>

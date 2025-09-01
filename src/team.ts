@@ -25,77 +25,77 @@ export const teamMembers = [
   {
     name: "Johannes Mitschunas, M.Sc.",
     title: "M.Sc.",
-    position: "",
+    position: "Doktorand",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Nico Faltin, M.A.",
     title: "M.A.",
-    position: "",
+    position: "Wiss. Mitarbeiter",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Rebecca Pongratz, B.Sc.",
     title: "B.Sc.",
-    position: "",
+    position: "Wiss. Mitarbeiter",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Daniel Motz, B.Sc.",
     title: "B.Sc.",
-    position: "",
+    position: "Wiss. Assistent",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Samuel Glowka, B.A.",
     title: "B.A.",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Patrick Stahl",
     title: "",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Jessi Ann Moßler",
     title: "",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Lotta Frey",
     title: "",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Felix Staacke",
     title: "",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Tobias Eckardt",
     title: "",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
   {
     name: "Luca Nauschütz",
     title: "",
-    position: "",
+    position: "Wiss. Hilfskraft",
     group: "MEPHisto, Friedrich-Schiller-Universität Jena",
     publications: []
   },
@@ -118,7 +118,7 @@ export const teamMembers = [
   {
     name: "Dr. Martin Kuric",
     title: "Dr.",
-    position: "",
+    position: "Post Doc",
     group: "Arbeitsstelle Germania Sacra, Niedersächsische Akademie der Wissenschaften",
     publications: []
   },
