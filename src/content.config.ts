@@ -1,3 +1,20 @@
+const team = defineCollection({
+	loader: glob({ base: './src/content/team', pattern: '**/*.md' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			position: z.string().optional(),
+			group: z.string(),
+			publications: z.array(z.string()).optional(),
+			image: z
+				.object({
+					src: image(),
+					alt: z.string(),
+				})
+				.optional(),
+		}),
+});
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
