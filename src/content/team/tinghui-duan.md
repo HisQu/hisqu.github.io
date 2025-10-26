@@ -4,7 +4,7 @@ description: Wissenschaftlicher Mitarbeiter
 group: factgrid
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image: ""
+image: "../../assets/team/HisQU_Fotos_-01.jpg"
 ---
 
 # Tinghui Duan, M.A. (Wissenschaftlicher Mitarbeiter bei **FactGrid**)
