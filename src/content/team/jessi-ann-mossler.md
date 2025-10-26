@@ -8,5 +8,10 @@ publications: []
 image: ""
 ---
 
-Jessi Ann Moßler ist wissenschaftliche Mitarbeiterin an der Friedrich-Schiller-Universität Jena.
-Jessi Ann Moßler ist wissenschaftliche Mitarbeiterin an der Friedrich-Schiller-Universität Jena.
+# Jessie Ann Moßler (Wissenschaftliche Mitarbeiterin)
+
+## Kurzvita
+Jessie Ann Moßler ist wissenschaftliche Mitarbeiterin an der Friedrich-Schiller-Universität Jena. Parallel dazu studiert sie Angewandte Informatik im 9. Fachsemester an der Friedrich-Schiller-Universität Jena.
+
+## Ausbildung
+- Studium der Angewandten Informatik (9. Fachsemester), Friedrich-Schiller-Universität Jena
