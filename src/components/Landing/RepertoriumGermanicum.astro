@@ -3,17 +3,20 @@ import { Icon } from 'astro-icon/components';
 import { rg, rg2_improved, rg2_normal } from '../../assets';
 import Image from 'astro/components/Image.astro';
 ---
-<section class="fullscreen-section overflow-hidden flex flex-col justify-end gap-12 pt-40 pb-20" id="repertorium-germanicum" aria-label="Repertorium Germanicum hero">
+
+<section class="fullscreen-section overflow-hidden flex flex-col justify-center gap-6 pt-16 pb-8 md:justify-end md:gap-12 md:pt-40 md:pb-20" id="repertorium-germanicum" aria-label="Repertorium Germanicum hero">
   <div class="">
     <span class="text-lg md:text-4xl font-bold text-white text-center block ">
       Die Quelle: Das Repertorium Germanicum
     </span>
   </div>
-  <div class="flex flex-row gap-16 w-full h-full justify-between max-w-7xl items-center px-4 md:px-16">
-    <div class="relative h-full w-full max-w-2xl">
-      <div class="image-compare-container relative h-full rounded-xl overflow-hidden">
-        <div class="absolute inset-0">
-          <img src={rg2_improved.src} alt="Repertorium Germanicum Improved" class="w-full h-full object-contain" />
+
+  <div class="flex flex-col md:flex-row gap-8 md:gap-16 w-full h-auto md:h-full justify-center md:justify-between max-w-7xl items-center px-4 md:px-16">
+    
+    <div class="relative w-full max-w-2xl">
+      <div class="image-compare-container relative rounded-xl overflow-hidden">
+        <div class="">
+          <img src={rg2_improved.src} alt="Repertorium Germanicum Improved" class="w-full h-auto object-contain" />
         </div>
         
         <div class="image-overlay absolute inset-0" style="clip-path: inset(0 0 0 100%);">
@@ -29,22 +32,27 @@ import Image from 'astro/components/Image.astro';
         </div>
       </div>
     </div>
-    <div class="flex flex-col h-full justify-center gap-8" id="facts">
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 px-5 rounded-xl border-gray-700 border">
-      <span class="text-white font-semibold text-base">Strukturierte Tiefenerschließung</span>
-      <span class="text-sm ">Aus unstrukturierten Registereinträgen werden normalisierte Entitäten (Personen, Ämter, Orte, Institutionen, Ereignisse) mit kontrollierten Vokabularen extrahiert.</span>
+
+    <div class="grid grid-cols-2 gap-4 w-full max-w-md md:max-w-md md:flex md:flex-col md:h-full md:justify-center md:gap-8" id="facts">
+      
+      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
+        <span class="text-white font-semibold text-base">Strukturierte Tiefenerschließung</span>
+        <span class="text-sm hidden md:block">Aus unstrukturierten Registereinträgen werden normalisierte Entitäten (Personen, Ämter, Orte, Institutionen, Ereignisse) mit kontrollierten Vokabularen extrahiert.</span>
       </div>
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 px-5 rounded-xl border-gray-700 border">
-      <span class="text-white font-semibold text-base">Normdaten & Verknüpfungen</span>
-      <span class="text-sm ">Verbindung zu GND, Geo-Referenzen und FactGrid/Wikibase schafft Linked-Data-Kontext und verhindert Redundanzen in der Forschung</span>
+      
+      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
+        <span class="text-white font-semibold text-base">Normdaten & Verknüpfungen</span>
+        <span class="text-sm hidden md:block">Verbindung zu GND, Geo-Referenzen und FactGrid/Wikibase schafft Linked-Data-Kontext und verhindert Redundanzen in der Forschung</span>
       </div>
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 px-5 rounded-xl border-gray-700 border">
-      <span class="text-white font-semibold text-base">Wissenschaftliche Nachvollziehbarkeit</span>
-      <span class="text-sm ">Jeder Erschließungsschritt (Transkription, Normalisierung, Typisierung) wird modelliert und maschinenlesbar dokumentiert – Voraussetzung für Reproduzierbarkeit.</span>
+      
+      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
+        <span class="text-white font-semibold text-base">Wissenschaftliche Nachvollziehbarkeit</span>
+        <span class="text-sm hidden md:block">Jeder Erschließungsschritt (Transkription, Normalisierung, Typisierung) wird modelliert und maschinenlesbar dokumentiert – Voraussetzung für Reproduzierbarkeit.</span>
       </div>
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 px-5 rounded-xl border-gray-700 border">
-      <span class="text-white font-semibold text-base">Analytischer Mehrwert</span>
-      <span class="text-sm ">Ermöglicht quer über Serien hinweg Abfragen zu Karrierewegen, Netzwerkbeziehungen, räumlichen Verdichtungen und institutionellen Wandlungsprozessen.</span>
+      
+      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
+        <span class="text-white font-semibold text-base">Analytischer Mehrwert</span>
+        <span class="text-sm hidden md:block">Ermöglicht quer über Serien hinweg Abfragen zu Karrierewegen, Netzwerkbeziehungen, räumlichen Verdichtungen und institutionellen Wandlungsprozessen.</span>
       </div>
     </div>
   </div>
@@ -190,6 +198,7 @@ import Image from 'astro/components/Image.astro';
     transform: translateX(0);
   }
   
+  /* Staggering remains correct for both mobile grid and desktop flex */
   #facts.is-visible .fact-item:nth-child(1) {
     transition-delay: 0.2s;
   }
