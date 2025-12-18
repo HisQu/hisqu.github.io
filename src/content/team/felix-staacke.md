@@ -7,4 +7,9 @@ publications: []
 image: ""
 ---
 
-Felix Staacke ist wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena.
+# Felix Staake (wissenschaftliche Hilfskraft)
+
+Felix Staake ist studentische Hilfskraft an der Friedrich-Schiller-Universität Jena. Er studiert Informatik und Geschichte auf Lehramt seit dem Wintersemester 2021/2022.
+
+## Ausbildung
+- Lehramtsstudium (Germanistik und Geschichte), Friedrich-Schiller-Universität Jena
