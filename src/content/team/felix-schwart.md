@@ -4,7 +4,7 @@ description: Wissenschaftlicher Mitarbeiter
 group: germania-sacra
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Foto_felix_schwart.jpg"
 ---
 
 # Felix Schwart (Wissenschaftlicher Mitarbeiter)
