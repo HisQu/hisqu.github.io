@@ -1,14 +1,14 @@
 ---
 name: Lotta Frey
 academic_title: {}
-description: Wissenschaftliche Hilfskraft
+description: studentische Hilfskraft
 group: fsu-jena
-position: Wissenschaftliche Hilfskraft
+position: studentische Hilfskraft
 publications: []
 image: ""
 ---
 
-# Lotta Frey (wissenschaftliche Hilfskraft)
+# Lotta Frey (studentische Hilfskraft)
 
 ## Kurzvita
 Lotta Frey ist studentische Hilfskraft an der Friedrich-Schiller-Universität Jena. Sie studiert Informatik im Bachelor (B.Sc.).
