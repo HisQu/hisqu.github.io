@@ -8,9 +8,12 @@ publications: []
 image: ""
 ---
 
-# Daniel Lukas Osman (wissenschaftliche Mitarbeiter)
+# Daniel Lukas Osman (Wissenschaftlicher Mitarbeiter)
 
-Daniel Osman ist wissenschaftlicher Mitarbeiter an der Universität Göttingen und arbeitet in der Außenstelle Germania Sacra. Er studierte Geschichte und Philosophie im Bachelor und derzeit Digital Humanities.
+## Kurzvita
+Daniel Lukas Osman ist wissenschaftlicher Mitarbeiter an der Universität Göttingen und arbeitet in der Außenstelle Germania Sacra. Er studierte Geschichte und Philosophie im Bachelor und befindet sich derzeit im Studium der Digital Humanities.
 
 ## Ausbildung
-- Bachelor of Arts Geschichte und Philosophie
+- Studium der Digital Humanities — laufend
+- B.A. Geschichte und Philosophie
+
