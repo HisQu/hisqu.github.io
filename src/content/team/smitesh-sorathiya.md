@@ -5,10 +5,10 @@ description: Wissenschaftlicher Mitarbeiter
 group: germania-sacra
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Foto_smitesh.jpeg"
 ---
 
-# Smitesh Sorathiya (Wissenschaftlicher Mitarbeiter; M.Sc. Applied Data Science)
+# Smitesh Sorathiya (Wissenschaftlicher Mitarbeiter)
 
 ## Kurzvita
 Smitesh Sorathiya ist wissenschaftlicher Mitarbeiter an der Arbeitsstelle Germania Sacra. Er studiert Applied Data Science (M.Sc.) im 5. Fachsemester an der Universität Göttingen. Sein Schwerpunkt liegt auf domänenübergreifenden Anwendungen datengetriebener Methoden.
