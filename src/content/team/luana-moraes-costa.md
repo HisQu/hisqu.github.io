@@ -4,7 +4,7 @@ description: Wissenschaftliche Mitarbeiterin
 group: germania-sacra
 position: Wissenschaftliche Mitarbeiterin
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Fotos_Luana_Costa.jpg"
 ---
 
 # Luana Moraes Costa (Wissenschaftliche Mitarbeiterin)
