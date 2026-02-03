@@ -28,8 +28,9 @@ Die Dissertation rekonstruiert mittels historischer Netzwerkanalyse die Interakt
 
 ### Herausgeberschaften
 - Gramsch-Stehfest, R.; Knüpfer, C.; Oertel, C.; **Beck, C.** (Hgg.): _Das Frontend als „Flaschenhals“? Mediävistische Ressourcen im WWW und ihre digitalen Nutzungspotentiale für Historiker_ (= ZfdG/Sonderbände, 5). **Eingereicht**.
+- **Beck, C.**; Düring, M.; Petz, C.; Rollinger, C.; Weis, J. (Hgg.): _Journal of Historical Network Research_ **11** (2025).
+- **Beck, C.**; Düring, M.; Petz, C.; Rollinger, C.; Weis, J. (Hgg.): _Journal of Historical Network Research_ **10** (2024).
 - **Beck, C.**; Düring, M.; Petz, C.; Rollinger, C.; van Vugt, I. (Hgg.): _Journal of Historical Network Research_ **8** (2023).
-- **Beck, C.**; Düring, M.; Petz, C.; Rollinger, C.; Weis, J. (Hgg.): _Journal of Historical Network Research_ **9** (2024).
 - **Beck, C.**; Düring, M.; Gramsch-Stehfest, R.; Rollinger, C.; Stark, M. (Hgg.): _Journal of Historical Network Research_ **7** (2022).
 - **Beck, C.**; Düring, M.; Gramsch-Stehfest, R.; Rollinger, C.; Stark, M. (Hgg.): _Journal of Historical Network Research_ **6** (2021).
 
@@ -50,4 +51,4 @@ Die Dissertation rekonstruiert mittels historischer Netzwerkanalyse die Interakt
 ## Kontakt
 - E-Mail: [clemens.beck@uni-jena.de](mailto:clemens.beck@uni-jena.de)  
 - Telefon: +49 3641 9-44774 · Fax: +49 3641 9-44772  
-- Büro: JenTower, Raum 19S07, Leutragraben 1, 07743 Jena
+- Büro: Raum 1033, Inseplatz 5, 07743 Jena
