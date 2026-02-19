@@ -6,37 +6,82 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
+import NavBar from '../components/Navbar/NavBar.astro';
 
 type Props = {
-	blogpost: CollectionEntry<'blog'>;
+	blogpost: CollectionEntry<'blog'> | CollectionEntry<'events'> | CollectionEntry<'publications'>;
 };
 
 const { blogpost } = Astro.props;
+const title = blogpost.data.title;
+const description = blogpost.data.description;
+const image = 'image' in blogpost.data ? blogpost.data.image : undefined;
+const date = 'date' in blogpost.data ? blogpost.data.date : undefined;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead
-			title={blogpost.data.title}
-			description={blogpost.data.description}
-			image={blogpost.data.image}
+			title={title}
+			description={description}
+			image={image as any}
 		/>
 	</head>
-	<body class="dark:bg-gray-900">
+	<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
 		<div class="glow"></div>
-		<Header />
-		<div class="post single max-w-7xl mx-auto" transition:persist transition:name="post">
-			<div class="version_wrapper">
-				<div class="version_info">
-					<FormattedDate class="date" date={blogpost.data.date} />
-				</div>
+		<NavBar />
+		<div class="post single max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20" transition:persist transition:name="post">
+			<div class="post-meta mb-8">
+				{date && <FormattedDate class="date text-slate-400 text-sm" date={date} />}
 			</div>
-			<div class="content">
+			<div class="content prose prose-invert max-w-none">
 				<slot />
 			</div>
 		</div>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.post-meta {
+		border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+		padding-bottom: 1rem;
+	}
+	:global(.content h1),
+	:global(.content h2),
+	:global(.content h3),
+	:global(.content h4),
+	:global(.content h5) {
+		color: #f1f5f9;
+	}
+	:global(.content p),
+	:global(.content li) {
+		color: #cbd5e1;
+	}
+	:global(.content a) {
+		color: #a78bfa;
+	}
+	:global(.content a:hover) {
+		color: #c4b5fd;
+	}
+	:global(.content img) {
+		border-radius: 0.75rem;
+		border: 1px solid rgba(71, 85, 105, 0.5);
+	}
+	:global(.content blockquote) {
+		border-left-color: rgba(139, 92, 246, 0.6);
+		color: #94a3b8;
+	}
+	:global(.content code) {
+		background: rgba(30, 41, 59, 0.6);
+		color: #e2e8f0;
+		padding: 0.15em 0.4em;
+		border-radius: 0.25rem;
+	}
+	:global(.content pre) {
+		background: rgba(15, 23, 42, 0.8);
+		border: 1px solid rgba(71, 85, 105, 0.4);
+		border-radius: 0.75rem;
+	}
+</style>

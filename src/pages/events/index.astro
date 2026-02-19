@@ -6,10 +6,6 @@ import Image from 'astro/components/Image.astro';
 
 const events = await getCollection('events');
 
-title: "HisQu"
-date: "2025-10-13"
-
-// Split upcoming vs past (compare by start date)
 const now = new Date().getTime();
 const upcoming = events
     .filter(e => e.data.start.getTime() >= now)
@@ -20,68 +16,70 @@ const past = events
     .sort((a, b) => b.data.start.getTime() - a.data.start.getTime());
 ---
 
-<BaseLayout title="Events">
-    {upcoming.length > 0 && (
-            <>
-                <h2>Bevorstehende Veranstaltungen</h2>
-                <ul class="posts" transition:name="post">
-                    {upcoming.map((ev) => (
-                            <li class="post">
-                                <div class="version_wrapper">
-                                    <div class="version_info">
-                                        <a href={`/events/${ev.id}`}>
-                                            <FormattedDate class="date" date={ev.data.start}/>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    {ev.data.image && (
-                                            <a href={`/events/${ev.id}`}>
-                                                <Image src={ev.data.image.src} alt={ev.data.image.alt} class="post-image"
-                                                     loading="lazy"/>
-                                            </a>
-                                    )}
-                                    <h3 class="title">
-                                        <a href={`/events/${ev.id}`}>{ev.data.title}</a>
-                                    </h3>
-                                    {ev.data.location && <p class="location">{ev.data.location}</p>}
-                                    <p class="description">{ev.data.description}</p>
-                                </div>
-                            </li>
-                        ))}
-                        </ul>
-                        </>
-                        )}
+<BaseLayout title="Events | HisQu">
+    <main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-24">
+        <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl mb-4">Veranstaltungen</h1>
+        <p class="text-slate-300 text-lg mb-16">Vergangene und bevorstehende Events des HisQu-Projekts.</p>
 
-                    {past.length > 0 && (
-                            <>
-                                <h2>Vergangene Veranstaltungen</h2>
-                                <ul class="posts" transition:name="post">
-                                    {past.map((ev) => (
-                                            <li class="post">
-                                                <div class="version_wrapper">
-                                                    <div class="version_info">
-                                                        <a href={`/events/${ev.id}`}>
-                                                            <FormattedDate class="date" date={ev.data.start}/>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="content">
-                                                    {ev.data.image && (
-                                                            <a href={`/events/${ev.id}`}>
-                                                                <Image src={ev.data.image.src} alt={ev.data.image.alt}
-                                                                     class="post-image" loading="lazy"/>
-                                                            </a>
-                                                    )}
-                                                    <h3 class="title">
-                                                        <a href={`/events/${ev.id}`}>{ev.data.title}</a>
-                                                    </h3>
-                                                    {ev.data.location && <p class="location">{ev.data.location}</p>}
-                                                    <p class="description">{ev.data.description}</p>
-                                                </div>
-                                            </li>
-                                        ))}
-                                        </ul>
-                                        </>
-                                        )}
-                                        </BaseLayout>
+        {upcoming.length > 0 && (
+            <>
+                <h2 class="text-2xl font-semibold text-white mb-8 pb-3 border-b border-purple-500/30">Bevorstehende Veranstaltungen</h2>
+                <ul class="space-y-8 mb-20">
+                    {upcoming.map((ev) => (
+                        <li class="landing-card group">
+                            <div class="flex flex-col sm:flex-row gap-6">
+                                {ev.data.image && (
+                                    <a href={`/events/${ev.id}`} class="shrink-0">
+                                        <Image src={ev.data.image.src} alt={ev.data.image.alt}
+                                               class="w-full sm:w-48 h-32 object-cover rounded-xl" loading="lazy"/>
+                                    </a>
+                                )}
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-purple-400 text-sm font-medium mb-1">
+                                        <FormattedDate date={ev.data.start}/>
+                                        {ev.data.location && <span class="text-slate-500"> · {ev.data.location}</span>}
+                                    </p>
+                                    <h3 class="text-xl font-semibold text-white mb-2 mt-0">
+                                        <a href={`/events/${ev.id}`} class="hover:text-purple-300 transition-colors">{ev.data.title}</a>
+                                    </h3>
+                                    <p class="text-slate-400 line-clamp-2">{ev.data.description}</p>
+                                </div>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </>
+        )}
+
+        {past.length > 0 && (
+            <>
+                <h2 class="text-2xl font-semibold text-white mb-8 pb-3 border-b border-purple-500/30">Vergangene Veranstaltungen</h2>
+                <ul class="space-y-8">
+                    {past.map((ev) => (
+                        <li class="landing-card group opacity-80 hover:opacity-100 transition-opacity">
+                            <div class="flex flex-col sm:flex-row gap-6">
+                                {ev.data.image && (
+                                    <a href={`/events/${ev.id}`} class="shrink-0">
+                                        <Image src={ev.data.image.src} alt={ev.data.image.alt}
+                                               class="w-full sm:w-48 h-32 object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all" loading="lazy"/>
+                                    </a>
+                                )}
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-slate-500 text-sm font-medium mb-1">
+                                        <FormattedDate date={ev.data.start}/>
+                                        {ev.data.location && <span> · {ev.data.location}</span>}
+                                    </p>
+                                    <h3 class="text-xl font-semibold text-slate-300 mb-2 mt-0">
+                                        <a href={`/events/${ev.id}`} class="hover:text-white transition-colors">{ev.data.title}</a>
+                                    </h3>
+                                    <p class="text-slate-500 line-clamp-2">{ev.data.description}</p>
+                                </div>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </>
+        )}
+    </main>
+</BaseLayout>
+

@@ -3,12 +3,36 @@ import { Image } from 'astro:assets';
 import {GitHubLink, SiteDescription, SiteTitle, dfg} from "../consts";
 ---
 
-<footer>
+<footer class="site-footer">
 	<p>© 2025, {SiteTitle} &mdash; {SiteDescription}</p>
-	<Image src={dfg.srcDark} class="w-48 rounded-md" alt="Funded by the Deutsche Forschungsgemeinschaft"/>
+	<Image src={(dfg.srcDark ?? dfg.srcLight) as any} class="w-48 rounded-md" alt="Funded by the Deutsche Forschungsgemeinschaft"/>
 	<div class="footer_links">
 		<a href={GitHubLink}>GitHub</a>
 		<a href="/legal">Imprint/GDPR</a>
 		<a href="/contact">Contact</a>
 	</div>
 </footer>
+
+<style>
+	.site-footer {
+		display: flex;
+		padding: 2em 2rem;
+		color: #64748b;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		border-top: 1px solid rgba(71, 85, 105, 0.3);
+	}
+
+	.site-footer a {
+		margin-left: 1em;
+		color: #64748b;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.site-footer a:hover {
+		color: #a78bfa;
+	}
+</style>

@@ -8,44 +8,41 @@ const publications = (await getCollection('publications'))
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout title="Publications">
-    <h2>Publikationen</h2>
-    <ul class="posts" transition:name="post">
-        {publications.map((pub) => (
-                <li class="post">
-                    <div class="version_wrapper">
-                        <div class="version_info">
-                            <a href={`/publications/${pub.id}`}>
-                                <FormattedDate class="date" date={pub.data.date}/>
-                            </a>
-                        </div>
-                    </div>
+<Layout title="Publikationen | HisQu">
+    <main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-24">
+        <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl mb-4">Publikationen</h1>
+        <p class="text-slate-300 text-lg mb-16">Wissenschaftliche Veröffentlichungen des HisQu-Projekts.</p>
 
-                    <div class="content">
+        <ul class="space-y-8">
+            {publications.map((pub) => (
+                <li class="landing-card group">
+                    <div class="flex flex-col sm:flex-row gap-6">
                         {pub.data.image && (
-                                <a href={`/publications/${pub.id}`}>
-                                    <Image
-                                            src={pub.data.image.src}
-                                            alt={pub.data.image.alt}
-                                            class="post-image"
-                                            loading="lazy"
-                                    />
-                                </a>
+                            <a href={`/publications/${pub.id}`} class="shrink-0">
+                                <Image
+                                    src={pub.data.image.src}
+                                    alt={pub.data.image.alt}
+                                    class="w-full sm:w-40 h-28 object-cover rounded-xl"
+                                    loading="lazy"
+                                />
+                            </a>
                         )}
-
-                        <h2 class="title">
-                            <a href={`/publications/${pub.id}`}>{pub.data.title}</a>
-                        </h2>
-
-                        {pub.data.authors && (
-                                <p class="authors">{pub.data.authors.join(', ')}</p>
-                        )}
-
-                        {pub.data.venue && <p class="venue">{pub.data.venue}</p>}
-
-                        <p class="description">{pub.data.description}</p>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-purple-400 text-sm font-medium mb-1">
+                                <FormattedDate date={pub.data.date}/>
+                                {pub.data.venue && <span class="text-slate-500"> · {pub.data.venue}</span>}
+                            </p>
+                            <h2 class="text-xl font-semibold text-white mb-2 mt-0">
+                                <a href={`/publications/${pub.id}`} class="hover:text-purple-300 transition-colors">{pub.data.title}</a>
+                            </h2>
+                            {pub.data.authors && (
+                                <p class="text-slate-400 text-sm mb-2">{pub.data.authors.join(', ')}</p>
+                            )}
+                            <p class="text-slate-400 line-clamp-2">{pub.data.description}</p>
+                        </div>
                     </div>
                 </li>
             ))}
-            </ul>
-            </BaseLayout>
+        </ul>
+    </main>
+</Layout>

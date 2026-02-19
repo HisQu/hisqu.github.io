@@ -8,17 +8,19 @@ import {ContactPageEmailLink, GitHubIssuesLink, MatrixLink} from "../consts";
     }
 </style>
 
-<Layout>
-    <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
-        <div class="mx-auto max-w-2xl sm:text-center"><h2
-                class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white mt-0">
-            Kontakt</h2>
-            <p class="mt-2 text-lg/8 text-gray-600 dark:text-gray-400">
+<Layout title="Kontakt | HisQu">
+    <main class="isolate px-6 py-24 sm:py-32 lg:px-8">
+        <div class="mx-auto max-w-2xl sm:text-center">
+            <h2 class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl mt-0">
+                Kontakt
+            </h2>
+            <p class="mt-2 text-lg/8 text-slate-300">
                 Bitte wählen Sie die für Sie am ehesten zutreffende Option.
-            </p></div>
+            </p>
+        </div>
         <div class="mx-auto mt-20 max-w-lg space-y-16">
             <div class="flex gap-x-6">
-                <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-purple-600 dark:bg-purple-500">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-purple-600">
                     <!-- ChatBubbleLeftRightIcon -->
                     <svg class="size-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          aria-hidden="true">
@@ -26,14 +28,14 @@ import {ContactPageEmailLink, GitHubIssuesLink, MatrixLink} from "../consts";
                               d="M2.25 12.75c0 2.5 2.25 4.5 5.25 4.5h.75c.414 0 .75.336.75.75v2.25l2.25-2.25a.75.75 0 0 1 .53-.22h3c3 0 5.25-2 5.25-4.5v-6c0-2.5-2.25-4.5-5.25-4.5h-6c-3 0-5.25 2-5.25 4.5v6z"/>
                     </svg>
                 </div>
-                <div><h3 class="mt-0 text-base/7 font-semibold text-gray-900 dark:text-white">Interesse an einer Zusammenarbeit</h3>
-                    <p class="mt-2 text-base/7 text-gray-600 dark:text-gray-400">Ut cursus est ut amet. Lobortis eget
+                <div><h3 class="mt-0 text-base/7 font-semibold text-white">Interesse an einer Zusammenarbeit</h3>
+                    <p class="mt-2 text-base/7 text-slate-300">Ut cursus est ut amet. Lobortis eget
                         egestas leo vitae eget porttitor risus blandit. Nunc a in lorem vel iaculis porttitor.</p>
-                    <p class="mt-4 text-sm/6 font-semibold"><a href={ContactPageEmailLink} class="text-purple-600 dark:text-purple-400">
+                    <p class="mt-4 text-sm/6 font-semibold"><a href={ContactPageEmailLink} class="text-purple-400 hover:text-purple-300">
                         Write us an email <span aria-hidden="true">&rarr;</span></a></p></div>
             </div>
             <div class="flex gap-x-6">
-                <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-purple-600 dark:bg-purple-500">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-purple-600">
                     <!-- BugAntIcon -->
                     <svg class="size-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          aria-hidden="true">
@@ -41,15 +43,14 @@ import {ContactPageEmailLink, GitHubIssuesLink, MatrixLink} from "../consts";
                               d="M12 2.25v1.5M5.636 5.636l1.061 1.061M18.364 5.636l-1.061 1.061M21.75 12h-1.5M3.75 12h-1.5M5.636 18.364l1.061-1.061M18.364 18.364l-1.061-1.061M12 20.25v1.5M8.25 12c0-2.071 1.679-3.75 3.75-3.75s3.75 1.679 3.75 3.75-1.679 3.75-3.75 3.75S8.25 14.071 8.25 12z"/>
                     </svg>
                 </div>
-                <div><h3 class="text-base/7 font-semibold text-gray-900 dark:text-white">Flaws und Bugs melden</h3>
-                    <p class="mt-2 text-base/7 text-gray-600 dark:text-gray-400">Expedita qui non ut quia ipsum
+                <div><h3 class="text-base/7 font-semibold text-white">Flaws und Bugs melden</h3>
+                    <p class="mt-2 text-base/7 text-slate-300">Expedita qui non ut quia ipsum
                         voluptatum ipsam pariatur. Culpa vitae ipsum minus eius vero quo quibusdam.</p>
-                    <p class="mt-4 text-sm/6 font-semibold"><a href={GitHubIssuesLink}
-                                                               class="text-purple-600 dark:text-purple-400">
+                    <p class="mt-4 text-sm/6 font-semibold"><a href={GitHubIssuesLink} class="text-purple-400 hover:text-purple-300">
                         Report on GitHub <span aria-hidden="true">&rarr;</span></a></p></div>
             </div>
             <div class="flex gap-x-6">
-                <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-purple-600 dark:bg-purple-500">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-purple-600">
                     <!-- ComputerDesktopIcon -->
                     <svg class="size-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          aria-hidden="true">
@@ -57,14 +58,13 @@ import {ContactPageEmailLink, GitHubIssuesLink, MatrixLink} from "../consts";
                               d="M3.75 4.5h16.5v12H3.75zM8.25 18.75h7.5"/>
                     </svg>
                 </div>
-                <div><h3 class="text-base/7 font-semibold text-gray-900 dark:text-white">Anwendersupport</h3>
-                    <p class="mt-2 text-base/7 text-gray-600 dark:text-gray-400">Sint aut modi porro consequatur
+                <div><h3 class="text-base/7 font-semibold text-white">Anwendersupport</h3>
+                    <p class="mt-2 text-base/7 text-slate-300">Sint aut modi porro consequatur
                         architecto commodi qui consequatur. Dignissimos adipisci minima.</p>
-                    <p class="mt-4 text-sm/6 font-semibold"><a href={MatrixLink}
-                                                               class="text-purple-600 dark:text-purple-400">
+                    <p class="mt-4 text-sm/6 font-semibold"><a href={MatrixLink} class="text-purple-400 hover:text-purple-300">
                         Chat with us on Matrix <span aria-hidden="true">&rarr;</span></a>
                     </p></div>
             </div>
         </div>
-    </div>
+    </main>
 </Layout>

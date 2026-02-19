@@ -43,13 +43,13 @@ const compareMembers = (a: any, b: any) => {
 ---
 
 <Layout title="Team | HisQu" description="Meet the HisQu team: academic titles, positions, and publications.">
-    <section class="bg-white py-24 sm:py-32 dark:bg-gray-900">
+    <main class="py-24 sm:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:mx-0">
-                <h1 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                <h1 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
                     Unsere Arbeitsgruppe
                 </h1>
-                <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
+                <p class="mt-6 text-lg/8 text-slate-300">
                     Wir sind ein interdisziplinäres Team aus Historikern und Informatikern, das sich der Digitalisierung und semantischen Erschließung
                     semistrukturierter Quellen &mdash; am Beispiel des Repertorium Germanicum &mdash; widmet.
                 </p>
@@ -61,7 +61,7 @@ const compareMembers = (a: any, b: any) => {
                     <section class="mt-20" aria-labelledby={`team-group-${groupKey}`}>
                         <div class="flex items-center gap-4 mb-8">
                             {partner ? (
-                                <h2 id={`team-group-${groupKey}`} class="flex items-center gap-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white m-0">
+                                <h2 id={`team-group-${groupKey}`} class="flex items-center gap-4 text-2xl font-semibold tracking-tight text-white m-0">
                                     <span class="inline-flex items-center h-12">
                                         {(() => {
                                             const img = partner.srcLight || partner.srcDark;
@@ -83,7 +83,7 @@ const compareMembers = (a: any, b: any) => {
                                     </span>
                                 </h2>
                             ) : (
-                                <h2 id={`team-group-${groupKey}`} class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                                <h2 id={`team-group-${groupKey}`} class="text-2xl font-semibold tracking-tight text-white">
                                     {groupKey || 'Sonstiges'}
                                 </h2>
                             )}
@@ -109,5 +109,5 @@ const compareMembers = (a: any, b: any) => {
                 );
             })}
         </div>
-    </section>
+    </main>
 </Layout>

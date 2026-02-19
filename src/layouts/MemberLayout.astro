@@ -5,7 +5,7 @@ import "../styles/global.scss";
 import type {CollectionEntry} from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import NavBar from '../components/Navbar/NavBar.astro';
 import {Image} from 'astro:assets';
 
 type Props = {
@@ -50,9 +50,9 @@ const orcidUrl = member.data.orcid
 <head>
     <BaseHead title={headTitle} description={headDescription} image={seoImage}/>
 </head>
-<body class="dark:bg-gray-900">
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
 <div class="glow"></div>
-<Header/>
+<NavBar/>
 
 <!-- ── HERO HEADER ─────────────────────────────────────────────── -->
 <div class="member-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-2">
@@ -147,7 +147,7 @@ const orcidUrl = member.data.orcid
 
 <!-- ── BODY CONTENT ─────────────────────────────────────────────── -->
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-    <div class="prose dark:prose-invert mt-10 max-w-none">
+    <div class="prose prose-invert mt-10 max-w-none">
         <slot/>
     </div>
 </div>
@@ -188,12 +188,8 @@ const orcidUrl = member.data.orcid
         border-radius: 1rem;
         object-fit: cover;
         aspect-ratio: 3/4;
-        box-shadow: 0 4px 24px rgba(0,0,0,.12);
-        border: 1px solid colors.color(gray, 100);
-
-        @media (prefers-color-scheme: dark) {
-            border-color: colors.color(gray, 700);
-        }
+        box-shadow: 0 4px 24px rgba(0,0,0,.4);
+        border: 1px solid rgba(71, 85, 105, 0.5);
     }
 
     &__initials {
@@ -203,15 +199,11 @@ const orcidUrl = member.data.orcid
         align-items: center;
         justify-content: center;
         border-radius: 1rem;
-        background: colors.color(gray, 100);
-        color: colors.color(gray, 500);
+        background: rgba(30, 41, 59, 0.6);
+        color: colors.color(gray, 400);
         font-size: 2.5rem;
         font-weight: 700;
-
-        @media (prefers-color-scheme: dark) {
-            background: colors.color(gray, 800);
-            color: colors.color(gray, 400);
-        }
+        border: 1px solid rgba(71, 85, 105, 0.5);
     }
 
     /* Identity column */
@@ -225,12 +217,8 @@ const orcidUrl = member.data.orcid
         font-weight: 800;
         letter-spacing: -.02em;
         line-height: 1.15;
-        color: colors.color(gray, 900);
+        color: #f1f5f9;
         margin: 0 0 .85rem;
-
-        @media (prefers-color-scheme: dark) {
-            color: #f1f5f9;
-        }
     }
 
     /* Badges */
@@ -247,14 +235,10 @@ const orcidUrl = member.data.orcid
 
     &__desc {
         font-size: 1rem;
-        color: colors.color(gray, 600);
+        color: #94a3b8;
         margin: 0 0 1.25rem;
         max-width: 56ch;
         line-height: 1.6;
-
-        @media (prefers-color-scheme: dark) {
-            color: colors.color(gray, 300);
-        }
     }
 
     /* Metadata definition list */
@@ -267,31 +251,19 @@ const orcidUrl = member.data.orcid
 
         dt {
             font-weight: 600;
-            color: colors.color(gray, 500);
+            color: #64748b;
             white-space: nowrap;
-
-            @media (prefers-color-scheme: dark) {
-                color: colors.color(gray, 400);
-            }
         }
 
         dd {
-            color: colors.color(gray, 800);
+            color: #cbd5e1;
             margin: 0;
 
-            @media (prefers-color-scheme: dark) {
-                color: colors.color(gray, 200);
-            }
-
             a {
-                color: colors.color(purple, 600);
+                color: #a78bfa;
                 text-decoration: none;
 
-                &:hover { text-decoration: underline; }
-
-                @media (prefers-color-scheme: dark) {
-                    color: colors.color(purple, 300);
-                }
+                &:hover { text-decoration: underline; color: #c4b5fd; }
             }
         }
     }
@@ -313,23 +285,15 @@ const orcidUrl = member.data.orcid
     letter-spacing: .02em;
 
     &--position {
-        background: colors.color(purple, 100);
-        color: colors.color(purple, 700);
-
-        @media (prefers-color-scheme: dark) {
-            background: colors.color(purple, 800);
-            color: colors.color(purple, 200);
-        }
+        background: rgba(139, 92, 246, 0.2);
+        color: #c4b5fd;
+        border: 1px solid rgba(139, 92, 246, 0.4);
     }
 
     &--group {
-        background: colors.color(gray, 100);
-        color: colors.color(gray, 700);
-
-        @media (prefers-color-scheme: dark) {
-            background: colors.color(gray, 800);
-            color: colors.color(gray, 300);
-        }
+        background: rgba(30, 41, 59, 0.6);
+        color: #94a3b8;
+        border: 1px solid rgba(71, 85, 105, 0.5);
     }
 }
 
@@ -361,7 +325,6 @@ const orcidUrl = member.data.orcid
 .member-divider {
     margin: 2rem 0 0;
     border: none;
-    border-top: 3px solid colors.color(purple, 500);
-    opacity: .25;
+    border-top: 3px solid rgba(139, 92, 246, 0.4);
 }
 </style>
