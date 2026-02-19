@@ -16,8 +16,8 @@ const { showFooter = true, ...head } = Astro.props;
     <head>
         <BaseHead {...head} />
     </head>
-    <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        <div class="glow"></div>    
+    <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen bg-fixed">
+        <div class="glow"></div>
         <NavBar />
         <slot />
         {showFooter && <Footer />}
