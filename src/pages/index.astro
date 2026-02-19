@@ -25,49 +25,39 @@ import RepertoriumGermanicum from "../components/Landing/RepertoriumGermanicum.a
   import { gsap } from "gsap";
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Wähle alle Sektionen aus, die beobachtet werden sollen
-    const sections = document.querySelectorAll(".fullscreen-section:not(#repertorium-germanicum)");
+    const sections = document.querySelectorAll(".fullscreen-section");
+    const scrollRoot = document.getElementById("presentation-container");
+    const isMobile = window.innerWidth < 768;
 
-    // Definiere die Optionen für den Observer
     const options: IntersectionObserverInit = {
-      root: null, // Beobachtet den Viewport
-      threshold: 0.5, // Löst aus, wenn 50% der Sektion sichtbar sind
+      root: scrollRoot,
+      threshold: isMobile ? 0.2 : 0.4,
     };
 
-    // Erstelle den Observer
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        // Wenn die Sektion den Viewport betritt...
+        const content = entry.target.querySelector(".content-container");
+        if (!content) return;
+
         if (entry.isIntersecting) {
-          const content = entry.target.querySelector(".content-container");
-          
-          if (content) {
-            gsap.to(content, {
-              opacity: 1,
-              y: 0,
-              duration: 1.5,
-              ease: "power3.out",
-              delay: 0.3,
-            });
-          }
+          gsap.to(content, {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            delay: 0.2,
+          });
         } else {
-          // Optional: Setze die Animation zurück, wenn die Sektion den Viewport verlässt
-          const content = entry.target.querySelector(".content-container");
-          if (content) {
-            gsap.to(content, {
-              opacity: 0,
-              y: 30, // zurück zum Startzustand
-              duration: 0.7,
-              ease: "power3.in",
-            });
-          }
+          gsap.to(content, {
+            opacity: 0,
+            y: 30,
+            duration: 0.6,
+            ease: "power3.in",
+          });
         }
       });
     }, options);
 
-    // Starte die Beobachtung für jede Sektion
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
   });
 </script>

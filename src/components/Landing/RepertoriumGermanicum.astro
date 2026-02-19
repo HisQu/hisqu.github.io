@@ -1,58 +1,63 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { rg, rg2_improved, rg2_normal } from '../../assets';
+import { rg2_improved, rg2_normal } from '../../assets';
 import Image from 'astro/components/Image.astro';
 ---
 
-<section class="fullscreen-section overflow-hidden flex flex-col justify-center gap-6 pt-16 pb-8 md:justify-end md:gap-12 md:pt-40 md:pb-20" id="repertorium-germanicum" aria-label="Repertorium Germanicum hero">
-  <div class="">
-    <span class="text-lg md:text-4xl font-bold text-white text-center block ">
-      Die Quelle: Das Repertorium Germanicum
-    </span>
-  </div>
+<section class="fullscreen-section" id="repertorium-germanicum" aria-label="Repertorium Germanicum">
+  <div class="content-container section-inner flex flex-col items-center justify-center py-20 md:py-0 w-full gap-6 md:gap-10">
 
-  <div class="flex flex-col md:flex-row gap-8 md:gap-16 w-full h-auto md:h-full justify-center md:justify-between max-w-7xl items-center px-4 md:px-16">
-    
-    <div class="relative w-full max-w-2xl">
-      <div class="image-compare-container relative rounded-xl overflow-hidden">
-        <div class="">
-          <img src={rg2_improved.src} alt="Repertorium Germanicum Improved" class="w-full h-auto object-contain" />
-        </div>
-        
-        <div class="image-overlay absolute inset-0" style="clip-path: inset(0 0 0 100%);">
-          <img src={rg2_normal.src} alt="Repertorium Germanicum Original" class="w-full h-full object-contain" />
-        </div>
-        
-        <div class="slider-line absolute top-0 bottom-0 w-0.5 bg-purple-900 shadow-lg" style="left: 100%;">
-          <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl cursor-ew-resize flex items-center justify-center">
-            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
+    <!-- Section badge -->
+    <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2">
+      <Icon name="lucide:book-open" size={14} class="text-purple-400" />
+      <span class="text-purple-300 text-xs md:text-sm font-medium">Anwendungsfall</span>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 w-full max-w-md md:max-w-md md:flex md:flex-col md:h-full md:justify-center md:gap-8" id="facts">
-      
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
-        <span class="text-white font-semibold text-base">Strukturierte Tiefenerschließung</span>
-        <span class="text-sm hidden md:block">Aus unstrukturierten Registereinträgen werden normalisierte Entitäten (Personen, Ämter, Orte, Institutionen, Ereignisse) mit kontrollierten Vokabularen extrahiert.</span>
+    <h2 class="section-title text-2xl sm:text-3xl md:text-5xl text-white text-center -mt-2">
+      Die Quelle: Das
+      <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+        Repertorium Germanicum
+      </span>
+    </h2>
+
+    <div class="flex flex-col lg:flex-row gap-6 md:gap-10 w-full items-center justify-center">
+
+      <!-- Image compare -->
+      <div class="relative w-full max-w-xl lg:max-w-2xl flex-shrink-0">
+        <div class="image-compare-container relative rounded-xl overflow-hidden select-none">
+          <img src={rg2_improved.src} alt="Repertorium Germanicum Improved" class="w-full h-auto object-contain" />
+          <div class="image-overlay absolute inset-0" style="clip-path: inset(0 0 0 100%);">
+            <img src={rg2_normal.src} alt="Repertorium Germanicum Original" class="w-full h-full object-contain" />
+          </div>
+          <div class="slider-line absolute top-0 bottom-0 w-0.5 bg-purple-500 shadow-lg" style="left: 100%;">
+            <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl cursor-ew-resize flex items-center justify-center">
+              <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-xs text-slate-400 mt-2">← ziehen zum Vergleichen →</p>
       </div>
-      
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
-        <span class="text-white font-semibold text-base">Normdaten & Verknüpfungen</span>
-        <span class="text-sm hidden md:block">Verbindung zu GND, Geo-Referenzen und FactGrid/Wikibase schafft Linked-Data-Kontext und verhindert Redundanzen in der Forschung</span>
-      </div>
-      
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
-        <span class="text-white font-semibold text-base">Wissenschaftliche Nachvollziehbarkeit</span>
-        <span class="text-sm hidden md:block">Jeder Erschließungsschritt (Transkription, Normalisierung, Typisierung) wird modelliert und maschinenlesbar dokumentiert – Voraussetzung für Reproduzierbarkeit.</span>
-      </div>
-      
-      <div class="fact-item bg-gray-800/20 flex flex-col gap-2 max-w-md p-4 md:px-5 rounded-xl border-gray-700 border">
-        <span class="text-white font-semibold text-base">Analytischer Mehrwert</span>
-        <span class="text-sm hidden md:block">Ermöglicht quer über Serien hinweg Abfragen zu Karrierewegen, Netzwerkbeziehungen, räumlichen Verdichtungen und institutionellen Wandlungsprozessen.</span>
+
+      <!-- Facts grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 w-full lg:max-w-sm" id="facts">
+        <div class="fact-item landing-card flex flex-col gap-1">
+          <span class="text-white font-semibold text-sm md:text-base">Strukturierte Tiefenerschließung</span>
+          <span class="text-slate-300 text-xs md:text-sm leading-relaxed">Aus unstrukturierten Registereinträgen werden normalisierte Entitäten mit kontrollierten Vokabularen extrahiert.</span>
+        </div>
+        <div class="fact-item landing-card flex flex-col gap-1">
+          <span class="text-white font-semibold text-sm md:text-base">Normdaten & Verknüpfungen</span>
+          <span class="text-slate-300 text-xs md:text-sm leading-relaxed">Verbindung zu GND, Geo-Referenzen und FactGrid/Wikibase schafft Linked-Data-Kontext.</span>
+        </div>
+        <div class="fact-item landing-card flex flex-col gap-1">
+          <span class="text-white font-semibold text-sm md:text-base">Wissenschaftliche Nachvollziehbarkeit</span>
+          <span class="text-slate-300 text-xs md:text-sm leading-relaxed">Jeder Erschließungsschritt wird modelliert und maschinenlesbar dokumentiert.</span>
+        </div>
+        <div class="fact-item landing-card flex flex-col gap-1">
+          <span class="text-white font-semibold text-sm md:text-base">Analytischer Mehrwert</span>
+          <span class="text-slate-300 text-xs md:text-sm leading-relaxed">Ermöglicht Abfragen zu Karrierewegen, Netzwerkbeziehungen und räumlichen Verdichtungen.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -60,155 +65,81 @@ import Image from 'astro/components/Image.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // --- Select Elements ---
-    const section = document.getElementById('solution-section');
+    const section = document.getElementById('repertorium-germanicum');
     const container = document.querySelector('.image-compare-container');
-    const overlay = document.querySelector('.image-overlay');
-    const sliderLine = document.querySelector('.slider-line');
+    const overlay = document.querySelector('.image-overlay') as HTMLElement | null;
+    const sliderLine = document.querySelector('.slider-line') as HTMLElement | null;
     const handle = document.querySelector('.slider-handle');
     const factsContainer = document.getElementById('facts');
     const scrollContainer = document.getElementById('presentation-container');
-    
-    if (!container || !overlay || !sliderLine || !handle || !section || !factsContainer || !scrollContainer) return;
-    
+
+    if (!container || !overlay || !sliderLine || !handle || !section || !factsContainer) return;
+
     let isDragging = false;
 
-    // --- Helper Function to Set Slider Position ---
-    const setSliderPercentage = (percentage) => {
+    const setSliderPercentage = (percentage: number) => {
       const p = Math.max(0, Math.min(100, percentage));
       overlay.style.clipPath = `inset(0 0 0 ${p}%)`;
       sliderLine.style.left = `${p}%`;
     };
 
-    // --- Manual Drag Logic ---
-    const updateSliderFromEvent = (e) => {
+    const updateSliderFromEvent = (e: MouseEvent | TouchEvent) => {
       const rect = container.getBoundingClientRect();
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      let x = clientX - rect.left;
-      
-      const percentage = (x / rect.width) * 100;
-      setSliderPercentage(percentage);
+      const clientX = 'touches' in e ? (e as TouchEvent).touches[0].clientX : (e as MouseEvent).clientX;
+      setSliderPercentage(((clientX - rect.left) / rect.width) * 100);
     };
-    
+
     const removeAnimationClass = () => {
       overlay.classList.remove('slider-animating');
       sliderLine.classList.remove('slider-animating');
     };
 
-    const startDragging = (e) => {
-      isDragging = true;
-      removeAnimationClass();
-      updateSliderFromEvent(e);
-      e.preventDefault();
-    };
-    
-    const stopDragging = () => {
-      isDragging = false;
-    };
-    
-    const onMove = (e) => {
-      if (!isDragging) return;
-      updateSliderFromEvent(e);
-    };
-    
-    // Mouse events
-    handle.addEventListener('mousedown', startDragging);
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', stopDragging);
-    
-    // Touch events
-    handle.addEventListener('touchstart', startDragging);
-    document.addEventListener('touchmove', onMove);
-    document.addEventListener('touchend', stopDragging);
-    
-    // Click on container to move slider
-    container.addEventListener('click', (e) => {
-      if (!isDragging) {
-        removeAnimationClass();
-        updateSliderFromEvent(e);
-      }
-    });
+    const startDragging = (e: MouseEvent | TouchEvent) => { isDragging = true; removeAnimationClass(); updateSliderFromEvent(e); e.preventDefault(); };
+    const stopDragging = () => { isDragging = false; };
+    const onMove = (e: MouseEvent | TouchEvent) => { if (isDragging) updateSliderFromEvent(e); };
 
-    // --- Viewport Animation Logic ---
+    handle.addEventListener('mousedown', startDragging as EventListener);
+    document.addEventListener('mousemove', onMove as EventListener);
+    document.addEventListener('mouseup', stopDragging);
+    handle.addEventListener('touchstart', startDragging as EventListener, { passive: false });
+    document.addEventListener('touchmove', onMove as EventListener, { passive: false });
+    document.addEventListener('touchend', stopDragging);
+
+    container.addEventListener('click', (e) => { if (!isDragging) { removeAnimationClass(); updateSliderFromEvent(e as MouseEvent); } });
+
+    const root = scrollContainer ?? null;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Use isIntersecting AND a bounding rect check for more reliability
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
-          // 1. Trigger info box animation
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           factsContainer.classList.add('is-visible');
-          
-          // 2. Trigger slider animation
           overlay.classList.add('slider-animating');
           sliderLine.classList.add('slider-animating');
-          
-          setTimeout(() => {
-            setSliderPercentage(25);
-          }, 50); 
-          
-          // 3. Stop observing to prevent re-animation
+          setTimeout(() => setSliderPercentage(25), 50);
           observer.unobserve(section);
         }
       });
-    }, {
-      root: scrollContainer, 
-      // *** THE FIX ***
-      // Wait until 75% of the section is visible.
-      // This stops it from firing too early during a scroll-snap.
-      threshold: 0.75 
-    });
+    }, { root, threshold: 0.5 });
 
-    // Start observing the section
     observer.observe(section);
   });
 </script>
 
 <style>
-  /* ... your styles ... */
-  .image-compare-container {
-    user-select: none;
-    -webkit-user-select: none;
-    overflow: hidden;
-  }
-  
-  .slider-handle {
-    transition: transform 0.1s ease;
-  }
-  
-  .slider-handle:active {
-    transform: translate(-50%, -50%) scale(0.95); /* Centered transform */
-  }
+  .image-compare-container { user-select: none; -webkit-user-select: none; }
+  .slider-handle { transition: transform 0.1s ease; }
+  .slider-handle:active { transform: translate(-50%, -50%) scale(0.9); }
+  .image-overlay.slider-animating { transition: clip-path 1.5s cubic-bezier(0.25, 1, 0.5, 1); }
+  .slider-line.slider-animating { transition: left 1.5s cubic-bezier(0.25, 1, 0.5, 1); }
 
-  /* --- Animation for Slider --- */
-  .image-overlay.slider-animating {
-    transition: clip-path 1.5s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-  .slider-line.slider-animating {
-    transition: left 1.5s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  /* --- Animation for Info Boxes --- */
   .fact-item {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(24px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  
-  #facts.is-visible .fact-item {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  /* Staggering remains correct for both mobile grid and desktop flex */
-  #facts.is-visible .fact-item:nth-child(1) {
-    transition-delay: 0.2s;
-  }
-  #facts.is-visible .fact-item:nth-child(2) {
-    transition-delay: 0.4s;
-  }
-  #facts.is-visible .fact-item:nth-child(3) {
-    transition-delay: 0.6s;
-  }
-  #facts.is-visible .fact-item:nth-child(4) {
-    transition-delay: 0.8s;
-  }
+  #facts.is-visible .fact-item { opacity: 1; transform: translateX(0); }
+  #facts.is-visible .fact-item:nth-child(1) { transition-delay: 0.15s; }
+  #facts.is-visible .fact-item:nth-child(2) { transition-delay: 0.3s; }
+  #facts.is-visible .fact-item:nth-child(3) { transition-delay: 0.45s; }
+  #facts.is-visible .fact-item:nth-child(4) { transition-delay: 0.6s; }
 </style>
+

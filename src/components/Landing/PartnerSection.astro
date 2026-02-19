@@ -14,49 +14,53 @@ import type { Partner } from '../../consts';
 import { dfgLogo } from '../../assets';
 ---
 
-<section class="fullscreen-section flex flex-col items-center justify-center text-white px-6 py-12 overflow-hidden">
-  <div class="max-w-7xl content-container mx-auto text-center flex flex-col justify-center h-full">
-    
-    <div class="mb-0 md:mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-white md:mb-4">
-        Meet the <span class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Partners</span>
-      </h2>
-      <p class="text-lg text-slate-300 max-w-4xl mx-auto hidden md:block">
-        HisQu wird von führenden Einrichtungen der Digital Humanities und Geschichtswissenschaft getragen. Der Verbund verbindet methodische Exzellenz mit langjähriger Forschungsdaten-Kompetenz.
-      </p>
+<section class="fullscreen-section" id="partners-section">
+  <div class="content-container section-inner flex flex-col items-center justify-center py-20 md:py-0 w-full gap-6 md:gap-8">
+
+    <!-- Section badge -->
+    <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2">
+      <Icon name="lucide:users" size={14} class="text-purple-400" />
+      <span class="text-purple-300 text-xs md:text-sm font-medium">Unsere Partner</span>
     </div>
+
+    <h2 class="section-title text-3xl sm:text-4xl md:text-5xl text-white text-center -mt-2">
+      Meet the <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Partners</span>
+    </h2>
+
+    <p class="text-sm md:text-base text-slate-300 max-w-2xl text-center leading-relaxed -mt-2">
+      HisQu wird von führenden Einrichtungen der Digital Humanities und Geschichtswissenschaft getragen.
+    </p>
 
     <!-- DESKTOP PARTNER DISPLAY -->
-    <div id="partners-container" class="w-full hidden md:flex items-center justify-center gap-4 transition-all duration-500 ease-in-out">
+    <div id="partners-container" class="w-full hidden md:flex items-center justify-center gap-4">
       {partners.map((partner) => (
-        <a 
+        <a
           href={partner.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="partner-item relative h-[300px] flex-1 bg-slate-900/40 border border-slate-700/50 rounded-2xl transition-all duration-700 ease-in-out overflow-hidden cursor-pointer"
+          class="partner-item relative h-[260px] flex-1 bg-slate-900/40 border border-slate-700/50 rounded-2xl transition-all duration-700 ease-in-out overflow-hidden cursor-pointer"
           data-key={partner.key}
         >
-          <div class="logo-container absolute inset-0 flex-col items-center justify-center p-4">
-            <Image 
-                src={partner.srcDark !== undefined ? partner.srcDark : (partner.srcLight !== undefined ? partner.srcLight : mephisto03)} 
-                alt={`${partner.name} Logo`}
-                class="w-auto object-contain transition-all duration-500 ease-in-out h-full"
-              />
-
+          <div class="logo-container absolute inset-0 flex items-center justify-center p-4">
+            <Image
+              src={partner.srcDark !== undefined ? partner.srcDark : (partner.srcLight !== undefined ? partner.srcLight : mephisto03)}
+              alt={`${partner.name} Logo`}
+              class="w-auto object-contain max-h-full"
+              width={300}
+              height={200}
+            />
           </div>
-          
-
-          <div class="info-card absolute inset-0 pb-6 px-6 pt-2 flex flex-col justify-between bg-slate-800/80 backdrop-blur-sm opacity-0 transition-opacity duration-500">
+          <div class="info-card absolute inset-0 p-5 flex flex-col justify-between bg-slate-800/90 backdrop-blur-sm opacity-0 transition-opacity duration-500">
             <div>
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="text-xl font-bold text-left leading-tight">{partner.name}</h3>
-                <Icon name="lucide:arrow-up-right" size={20} class="text-slate-400 flex-shrink-0 ml-2 absolute top-3 right-3" />
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-base font-bold text-left leading-tight">{partner.name}</h3>
+                <Icon name="lucide:arrow-up-right" size={16} class="text-slate-400 flex-shrink-0 ml-2" />
               </div>
-              <p class="text-sm text-left text-slate-300 leading-relaxed">{partner.summary}</p>
+              <p class="text-xs text-left text-slate-300 leading-relaxed">{partner.summary}</p>
             </div>
-            <div class="pt-4 border-t border-slate-700/50 text-left">
+            <div class="pt-3 border-t border-slate-700/50 text-left">
               <p class="text-xs text-slate-400 uppercase tracking-wide mb-1">Team</p>
-              <p class="text-sm text-slate-300">
+              <p class="text-xs text-slate-300">
                 {partner.leads!.map(lead => `${lead.title} ${lead.name}`).join(' · ')}
               </p>
             </div>
@@ -65,66 +69,61 @@ import { dfgLogo } from '../../assets';
       ))}
     </div>
 
-    <!-- MOBILE PARTNER DISPLAY LIST VIEW -->
-    <div class="flex flex-col md:hidden">
+    <!-- MOBILE PARTNER LIST -->
+    <div class="flex flex-col gap-3 w-full md:hidden">
       {partners.map((partner) => (
-        <a 
+        <a
           href={partner.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="mb-6 last:mb-0 p-3 bg-slate-900/40 border border-slate-700/50 rounded-2xl transition-all duration-500 ease-in-out flex items-center space-x-4"
+          class="landing-card flex items-center gap-4"
           data-key={partner.key}
         >
-          <div class="w-20 h-20 flex-shrink-0">
-            <Image 
-                src={partner.srcDark !== undefined ? partner.srcDark : (partner.srcLight !== undefined ? partner.srcLight : mephisto03)} 
-                alt={`${partner.name} Logo`}
-                class="w-full h-full object-contain"
-              />       
+          <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center">
+            <Image
+              src={partner.srcDark !== undefined ? partner.srcDark : (partner.srcLight !== undefined ? partner.srcLight : mephisto03)}
+              alt={`${partner.name} Logo`}
+              class="w-full h-full object-contain"
+              width={64}
+              height={64}
+            />
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between items-start">
+              <span class="text-white text-sm font-semibold leading-tight">{partner.name}</span>
+              <Icon name="lucide:arrow-up-right" size={16} class="text-slate-400 flex-shrink-0 ml-2" />
             </div>
-          <div class="flex-1">
-            <div class="flex justify-between items-start mb-2">
-              <span class="text-sm text-left leading-tight">{partner.name}</span>
-              <Icon name="lucide:arrow-up-right" size={20} class="text-slate-400 flex-shrink-0 ml-2" />
-            </div>  
-            <div class="pt-2 border-t border-slate-700/50 text-left">
-              <p class="text-xs text-slate-400 uppercase tracking-wide mb-1">Team</p>
-              <p class="text-[10px] text-slate-300">
-                {partner.leads!.map(lead => `${lead.title} ${lead.name}`).join(' · ')}
-              </p>
-            </div>
+            <p class="text-slate-400 text-xs mt-0.5">
+              {partner.leads!.map(lead => `${lead.title} ${lead.name}`).join(' · ')}
+            </p>
           </div>
         </a>
       ))}
     </div>
 
-    <div class="mt-6 pt-6 border-t border-slate-700/50 w-full max-w-4xl mx-auto hidden md:block">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-             <div>
-               <div class="text-2xl font-bold text-purple-400">4</div>
-               <div class="text-slate-300 text-xs">Führende Institutionen</div>
-             </div>
-             <div>
-               <div class="text-2xl font-bold text-blue-400">15+</div>
-               <div class="text-slate-300 text-xs">Wissenschaftler:innen</div>
-             </div>
-             <div>
-               <div class="text-2xl font-bold text-green-400">3</div>
-               <div class="text-slate-300 text-xs">Länder</div>
-             </div>
-             <div>
-               <div class="text-2xl font-bold text-pink-400">6</div>
-               <div class="text-slate-300 text-xs">Forschungsbereiche</div>
-             </div>
-        </div>
+    <!-- Stats row -->
+    <div class="w-full grid grid-cols-4 gap-3 text-center border-t border-slate-700/50 pt-5">
+      <div>
+        <div class="text-xl md:text-2xl font-bold text-purple-400">4</div>
+        <div class="text-slate-400 text-xs mt-0.5">Institutionen</div>
+      </div>
+      <div>
+        <div class="text-xl md:text-2xl font-bold text-blue-400">15+</div>
+        <div class="text-slate-400 text-xs mt-0.5">Wissenschaftler:innen</div>
+      </div>
+      <div>
+        <div class="text-xl md:text-2xl font-bold text-green-400">3</div>
+        <div class="text-slate-400 text-xs mt-0.5">Länder</div>
+      </div>
+      <div>
+        <div class="text-xl md:text-2xl font-bold text-pink-400">6</div>
+        <div class="text-slate-400 text-xs mt-0.5">Forschungsbereiche</div>
+      </div>
     </div>
-    <div class="w-full flex justify-center h-fit mt-5 md:mt-16">
-      <Image 
-          src={dfgLogo} 
-          alt="DFG Logo"
-          class="mx-auto object-contain w-2/3 rounded-md md:rounded-xl max-w-sm"
-        />
-    </div>
+
+    <!-- DFG Logo -->
+    <Image src={dfgLogo} alt="DFG Logo" class="mx-auto object-contain w-2/3 max-w-xs rounded-lg" />
+
   </div>
 </section>
 
@@ -132,81 +131,56 @@ import { dfgLogo } from '../../assets';
   import { gsap } from "gsap";
 
   const container = document.querySelector('#partners-container') as HTMLElement;
-  const items = gsap.utils.toArray('.partner-item') as HTMLElement[];
-  
-  let expansionTimer: number | null = null;
-  let activeItem: HTMLElement | null = null;
+  if (!container) { /* do nothing on mobile */ }
+  else {
+    const items = gsap.utils.toArray('.partner-item') as HTMLElement[];
+    let expansionTimer: number | null = null;
+    let activeItem: HTMLElement | null = null;
+    const EXPANSION_DELAY = 700;
+    const ANIMATION_DURATION = 0.5;
 
-  // Konfiguration
-  const EXPANSION_DELAY = 800; // 0.8 Sekunden Verzögerung
-  const ANIMATION_DURATION = 0.6; // Dauer der Animation
-
-  // Funktion zum Erweitern eines Elements
-  function expandItem(item: HTMLElement) {
-    if (activeItem === item) return; // Nicht erneut ausführen, wenn bereits aktiv
-
-    // Wenn ein anderes Element aktiv ist, klappe es zuerst ein
-    if (activeItem) {
-      collapseItem(activeItem);
+    function expandItem(item: HTMLElement) {
+      if (activeItem === item) return;
+      if (activeItem) collapseItem(activeItem);
+      activeItem = item;
+      const otherItems = items.filter(i => i !== item);
+      const infoCard = item.querySelector('.info-card');
+      const logo = item.querySelector('.logo-container');
+      gsap.timeline({ defaults: { duration: ANIMATION_DURATION, ease: 'power3.inOut' } })
+        .to(item, { flexGrow: 8 }, 0)
+        .to(otherItems, { flexGrow: 1 }, 0)
+        .to(logo, { opacity: 0, scale: 0.8 }, 0)
+        .to(infoCard, { opacity: 1, delay: 0.15 }, 0);
     }
-    
-    activeItem = item;
 
-    const otherItems = items.filter(i => i !== item);
-    const infoCard = item.querySelector('.info-card');
-    const logo = item.querySelector('.logo-container');
+    function collapseItem(item: HTMLElement) {
+      if (activeItem !== item) return;
+      activeItem = null;
+      const infoCard = item.querySelector('.info-card');
+      const logo = item.querySelector('.logo-container');
+      gsap.timeline({ defaults: { duration: ANIMATION_DURATION, ease: 'power3.inOut' } })
+        .to(items, { flexGrow: 1 }, 0)
+        .to(infoCard, { opacity: 0, duration: 0 }, 0)
+        .to(logo, { opacity: 1, scale: 1, delay: 0.15 }, 0);
+    }
 
-    gsap.timeline({ defaults: { duration: ANIMATION_DURATION, ease: 'power3.inOut' } })
-      .to(item, { flexGrow: 8 }, 0) // Das aktive Element wachsen lassen
-      .to(otherItems, { flexGrow: 1 }, 0) // Die anderen schrumpfen
-      .to(logo, { opacity: 0, scale: 0.8 }, 0) // Logo ausblenden
-      .to(infoCard, { opacity: 1, delay: 0.2 }, 0); // Info-Karte einblenden
-  }
-
-  // Funktion zum Einklappen eines Elements
-  function collapseItem(item: HTMLElement) {
-    if (activeItem !== item) return;
-
-    activeItem = null;
-    const infoCard = item.querySelector('.info-card');
-    const logo = item.querySelector('.logo-container');
-
-    gsap.timeline({ defaults: { duration: ANIMATION_DURATION, ease: 'power3.inOut' } })
-      .to(items, { flexGrow: 1 }, 0) // Alle Elemente auf Normalgröße
-      .to(infoCard, { opacity: 0, delay: 0, duration: 0 }, 0) // Info-Karte ausblenden
-      .to(logo, { opacity: 1, scale: 1, delay: 0.2 }, 0); // Logo einblenden
-  }
-
-  // Event Listener für jedes Partner-Element
-  items.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      // 1. Sofortiges "Anschwellen" als visuelles Feedback
-      gsap.to(item, { scale: 1.03, duration: 0.3 });
-
-      // 2. Timer für die verzögerte Expansion starten
-      if (expansionTimer) clearTimeout(expansionTimer);
-      expansionTimer = window.setTimeout(() => {
-        expandItem(item);
-      }, EXPANSION_DELAY);
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        gsap.to(item, { scale: 1.02, duration: 0.3 });
+        if (expansionTimer) clearTimeout(expansionTimer);
+        expansionTimer = window.setTimeout(() => expandItem(item), EXPANSION_DELAY);
+      });
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, { scale: 1.0, duration: 0.3 });
+        if (expansionTimer) { clearTimeout(expansionTimer); expansionTimer = null; }
+      });
     });
 
-    item.addEventListener('mouseleave', () => {
-      // 1. "Anschwellen" zurücksetzen
-      gsap.to(item, { scale: 1.0, duration: 0.3 });
-      
-      // 2. Timer stoppen, um die Expansion zu verhindern
-      if (expansionTimer) {
-        clearTimeout(expansionTimer);
-        expansionTimer = null;
-      }
+    container.addEventListener('mouseleave', () => {
+      if (activeItem) collapseItem(activeItem);
     });
-  });
-
-  // Wenn die Maus den gesamten Container verlässt, alles zurücksetzen
-  container.addEventListener('mouseleave', () => {
-    if (activeItem) {
-      collapseItem(activeItem);
-    }
-  });
-
+  }
 </script>
+
+
+

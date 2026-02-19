@@ -2,160 +2,71 @@
 import { Icon } from 'astro-icon/components';
 ---
 <section class="fullscreen-section" id="problem-section">
-  <div class="content-container h-full flex items-center flex-col justify-end md:justify-center px-6 max-w-6xl w-full pb-16 md:pb-0">
-    <div id="hero-headline" class="text-4xl md:text-7xl text-white mb-6 leading-tight text-center">
-        Das Problem der
-        <br />
-        <span class="bg-gradient-to-r from-[#FF0000] via-[#FF0000] to-[#FFA500] bg-clip-text text-transparent ">
-          Digital Humanities
-        </span>
-    </div>
-    <div>
-      <span class="text-gray-200 text-sm md:text-base font-medium max-w-2xl mx-auto text-center mb-5 md:mb-12 leading-relaxed hidden md:block">
-        In den digitalen Geisteswissenschaften dominieren bislang digitale Editionen und punktuelle "Insel-Lösungen" – Tools und Skripte, die nur für ein spezifisches Forschungsproblem entwickelt wurden.
+  <div class="content-container section-inner flex flex-col items-center justify-center py-20 md:py-0 w-full">
+
+    <h2 class="section-title text-3xl sm:text-4xl md:text-6xl text-white mb-4 md:mb-6 text-center">
+      Das Problem der
+      <br />
+      <span class="bg-gradient-to-r from-red-400 via-red-500 to-orange-400 bg-clip-text text-transparent">
+        Digital Humanities
       </span>
+    </h2>
+
+    <p class="text-sm md:text-base text-slate-300 max-w-2xl text-center mb-6 md:mb-10 leading-relaxed">
+      In den digitalen Geisteswissenschaften dominieren bislang digitale Editionen und punktuelle "Insel-Lösungen" – Tools und Skripte, die nur für ein spezifisches Forschungsproblem entwickelt wurden.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-5 w-full">
+
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-red-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:database" size={20} class="text-red-400" />
+          </div>
+          <span class="text-white font-bold text-sm md:text-base">Fragmentierte Datenlandschaft</span>
+        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Historische Daten sind über verschiedene Systeme verstreut und schwer zugänglich.
+        </p>
+      </div>
+
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-red-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:trending-down" size={20} class="text-red-400" />
+          </div>
+          <span class="text-white font-bold text-sm md:text-base">Ineffiziente Workflows</span>
+        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Manuelle Prozesse verlangsamen die Forschung und führen zu Datenverlusten.
+        </p>
+      </div>
+
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-red-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:repeat" size={20} class="text-red-400" />
+          </div>
+          <span class="text-white font-bold text-sm md:text-base">Fehlende Reproduzierbarkeit</span>
+        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Forschungsergebnisse sind schwer nachvollziehbar und nicht FAIR-konform, was auch die Wiederverwendbarkeit der Daten einschränkt.
+        </p>
+      </div>
+
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-red-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:chart-no-axes-combined" size={20} class="text-red-400" />
+          </div>
+          <span class="text-white font-bold text-sm md:text-base">Begrenzte Skalierbarkeit</span>
+        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Aktuelle Tools können nicht mit der wachsenden Datenmenge mithalten und sind nicht für die Zukunft gerüstet.
+        </p>
+      </div>
+
     </div>
-    <!-- Problem Section Grid-->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-2 w-full">
-
-
-      <!-- First Container -->
-      <div class="border-2 border-gray-700 bg-gray-800/20 rounded-xl p-4 md:p-6 flex flex-col max-w-lg">
-        <div class="flex flex-row items-center space-x-3 md:space-x-4 mb-3 md:mb-6">
-          <!-- Icon Container -->
-          <div class="bg-red-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:database" size={24} class="text-red-400 scale-[0.7] md:scale-100" />
-          </div>
-          <!-- Text Container -->
-           <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">Fragmentierte Datenlandschaft</span>
-           </div>
-        </div>
-        <!-- Description -->
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm small-height">Historische Daten sind über verschiedene Systeme verstreut und schwer zugänglich</span>
-        </div>
-      </div>
-
-
-      <!-- Second Container -->
-      <div class="border-2 border-gray-700 bg-gray-800/20 rounded-xl p-4 md:p-6 flex flex-col max-w-lg">
-        <div class="flex flex-row items-center space-x-3 md:space-x-4 mb-3 md:mb-6">
-          <!-- Icon Container -->
-          <div class="bg-red-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:trending-down" size={24} class="text-red-400 scale-[0.7] md:scale-100" />
-          </div>
-          <!-- Text Container -->
-           <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">Ineffiziente Workflows</span>
-           </div>
-        </div>
-        <!-- Description -->
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm small-height">Manuelle Prozesse verlangsamen die Forschung und führen zu Datenverlusten</span>
-        </div>
-      </div>
-
-
-      <!-- Third Container -->
-      <div class="border-2 border-gray-700 bg-gray-800/20 rounded-xl p-4 md:p-6 flex flex-col max-w-lg">
-        <div class="flex flex-row items-center space-x-3 md:space-x-4 mb-3 md:mb-6">
-          <!-- Icon Container -->
-          <div class="bg-red-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:repeat" size={24} class="text-red-400 scale-[0.7] md:scale-100" />
-          </div>
-          <!-- Text Container -->
-           <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">Fehlende Reproduzierbarkeit</span>
-           </div>
-        </div>
-        <!-- Description -->
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm small-height">Forschungsergebnisse sind schwer nachvollziehbar und nicht FAIR-konform, was auch die Wiederverwendbarkeit der Daten einschränkt</span>
-        </div>
-      </div>
-
-
-      <!-- Fourth Container -->
-      <div class="border-2 border-gray-700 bg-gray-800/20 rounded-xl p-4 md:p-6 flex flex-col max-w-lg">
-        <div class="flex flex-row items-center space-x-3 md:space-x-4 mb-3 md:mb-6">
-          <!-- Icon Container -->
-          <div class="bg-red-400/20 p-1 md:p-2rounded-lg">
-            <Icon name="lucide:chart-no-axes-combined" size={24} class="text-red-400 scale-[0.7] md:scale-100" />
-          </div>
-          <!-- Text Container -->
-           <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">Begrenzte Skalierbarkeit</span>
-           </div>
-        </div>
-        <!-- Description -->
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm small-height">Aktuelle Tools können nicht mit der wachsenden Datenmenge mithalten und sind nicht für die Zukunft gerüstet</span>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-
-
-<style>
-  #hero-headline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 900; /* Extra bold */
-  }
-  #problem-headline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800; /* Bold */
-  }
-
-  .hero-badge {
-    position: relative;
-    transform-origin: center;
-  }
-
-  .hero-badge::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #f59e0b, #06b6d4);
-    background-size: 300% 300%;
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    animation: gradient-shift 3s ease infinite;
-  }
-
-  .hero-badge:hover::before {
-    opacity: 0.3;
-  }
-
-  .hero-badge:hover {
-    transform: scale(1.02);
-    border-color: transparent;
-  }
-.hero-badge:hover span {
-    font-weight: 500;
-    color: white;
-  }
-  @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  .small-height {
-    display: inline-block;
-    line-height: 1.4rem; /* Match the height for vertical centering */
-  }
-</style>

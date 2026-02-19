@@ -9,52 +9,116 @@ body {
 /* STYLING FÜR LANDING */
 #presentation-container {
   height: 100vh;
-  overflow-y: scroll; /* Nur dieser Container ist scrollbar */
-  scroll-snap-type: y mandatory; /* Zwingt das Snapping auf der Y-Achse */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* override body padding from layout.scss */
+  padding: 0;
+  margin: 0;
+  max-width: none;
 }
 
 #presentation-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari und Opera */
+  display: none;
 }
 
 /* Jede einzelne Sektion */
 .fullscreen-section {
-  height: 100vh; /* Jede Sektion füllt den gesamten Viewport */
+  min-height: 100vh;
   width: 100%;
-  scroll-snap-align: start; /* Richtet den Anfang der Sektion am Anfang des Containers aus */
+  scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Für zukünftige Positionierungen */
-  overflow: hidden; /* Verhindert, dass Inhalte überlaufen */
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Wende overflow: hidden auf ALLE Sektionen an, AUSSER der Blog-Sektion */
-.fullscreen-section:not(#blog-section) {
+.fullscreen-section:not(.blog-section) {
   overflow: hidden;
 }
 
 /* Spezielle Ausrichtung für die Blog-Sektion */
 .fullscreen-section.blog-section {
-  align-items: flex-start; /* Startet oben statt in der Mitte */
-  overflow-y: auto; /* Erlaubt scrollen innerhalb der Sektion */
-  padding-top: 4rem; /* Genug Abstand für die Navbar (ca. 6rem) + etwas extra */
+  align-items: flex-start;
+  overflow-y: auto;
+  padding-top: 5rem;
+  scroll-snap-align: start;
+  height: 100vh;
 }
 
-/* Blog-Container - kein extra padding mehr nötig, da die Section es hat */
+/* Blog-Container */
 .blog-container {
   width: 100%;
 }
+
 /* Der zu animierende Inhalt */
 .content-container {
-  /* Startzustand für die Animation: Unsichtbar und leicht nach unten verschoben */
   opacity: 0;
   transform: translateY(30px);
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+/* Mobile: disable mandatory snap to allow free scrolling on small screens */
+@media (max-width: 767px) {
+  #presentation-container {
+    scroll-snap-type: y proximity;
+  }
+
+  .fullscreen-section {
+    min-height: 100svh;
+    scroll-snap-align: start;
+  }
+
+  .fullscreen-section.blog-section {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    overflow-y: visible;
+  }
+}
+
+/* Consistent section inner padding */
+.section-inner {
+  width: 100%;
+  max-width: 72rem; /* max-w-6xl */
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Consistent section title */
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Consistent card style */
+.landing-card {
+  background: rgba(30, 41, 59, 0.4); /* slate-800/40 */
+  border: 1.5px solid rgba(71, 85, 105, 0.5); /* slate-700/50 */
+  border-radius: 0.875rem;
+  padding: 1.25rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .landing-card {
+    padding: 1.5rem;
+  }
+}
+
+.landing-card:hover {
+  border-color: rgba(139, 92, 246, 0.4); /* purple-500/40 */
+}
+
+

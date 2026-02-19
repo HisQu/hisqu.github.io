@@ -1,192 +1,86 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<section class="fullscreen-section min-h-screen" id="solution-section">
-  <div class="content-container h-full flex items-center flex-col justify-start px-4 max-w-6xl pt-24 md:pt-28">
-    <div id="hero-headline" class="text-2xl md:text-3xl text-white mb-0 md:mb-6 leading-tight text-center bg-gray-800/30 w-full px-4 md:px-16 py-3 md:py-10 rounded-2xl border-2 border-gray-700">
-      <div id="sparkles-badge" class="h-12 w-12 md:w-24 md:h-24 mx-auto mb-3 md:mb-8 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 flex items-center justify-center">
-        <Icon name="lucide:sparkles" size={36} class="text-white scale-50 md:scale-100" />
-      </div>
-        Ein einheitlicher Hermeneutischer Zirkel
-        <br />
-        <span class="text-gray-300 bg-clip-text text-sm md:text-base font-normal line-height-small mt-2">
-          6 integrierte Schritte führen von der Quellendigitalisierung bis zur wissenschaftlichen Nachnutzung – ohne Medienbrüche, vollständig dokumentiert und reproduzierbar.
-        </span>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 mt-4 w-full">
+<section class="fullscreen-section" id="solution-section">
+  <div class="content-container section-inner flex flex-col items-center justify-center py-20 md:py-0 w-full">
 
+    <h2 class="section-title text-3xl sm:text-4xl md:text-6xl text-white mb-3 md:mb-4 text-center">
+      Ein einheitlicher
+      <br />
+      <span class="bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+        Hermeneutischer Zirkel
+      </span>
+    </h2>
 
-      <div class="feature-card border-2 border-gray-700 bg-gray-800/20 w-full rounded-xl p-3 md:p-6 flex flex-col">
-        <div class="flex flex-row items-center space-x-4 mb-4 md:mb-6">
-          <div class="bg-green-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:target" size={24} class="text-green-400 scale-70 md:scale-100" />
+    <p class="text-sm md:text-base text-slate-300 max-w-2xl text-center mb-6 md:mb-10 leading-relaxed">
+      6 integrierte Schritte führen von der Quellendigitalisierung bis zur wissenschaftlichen Nachnutzung – ohne Medienbrüche, vollständig dokumentiert und reproduzierbar.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-5 w-full">
+
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-green-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:target" size={20} class="text-green-400" />
           </div>
-          <div id="problem-headline" class="text-lg">
-             <span class="text-white font-bold text-lg md:text-xl">Geschlossener Datenzyklus</span>
-           </div>
+          <span class="text-white font-bold text-sm md:text-base">Geschlossener Datenzyklus</span>
         </div>
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm line-height-extra-small">Nahtlose Integration aller Forschungsschritte von der Digitalisierung bis zur Nachnutzung</span>
-        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Nahtlose Integration aller Forschungsschritte von der Digitalisierung bis zur Nachnutzung.
+        </p>
       </div>
 
-
-      <div class="feature-card border-2 border-gray-700 bg-gray-800/20 w-full rounded-xl p-3 md:p-6 flex flex-col">
-        <div class="flex flex-row items-center space-x-4 mb-4 md:mb-6">
-          <div class="bg-green-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:brain" size={24} class="text-green-400 scale-70 md:scale-100" />
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-green-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:brain" size={20} class="text-green-400" />
           </div>
-          <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">KI-unterstützte Prozesse</span>
-           </div>
+          <span class="text-white font-bold text-sm md:text-base">KI-unterstützte Prozesse</span>
         </div>
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm line-height-extra-small">Large Language Models optimieren Annotation, Extraktion und Qualitätskontrolle</span>
-        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Large Language Models optimieren Annotation, Extraktion und Qualitätskontrolle.
+        </p>
       </div>
 
-
-      <div class="feature-card border-2 border-gray-700 bg-gray-800/20 w-full rounded-xl p-3 md:p-6 flex flex-col">
-        <div class="flex flex-row items-center space-x-4 mb-4 md:mb-6">
-          <div class="bg-green-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:circle-check-big" size={24} class="text-green-400 scale-70 md:scale-100" />
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-green-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:circle-check-big" size={20} class="text-green-400" />
           </div>
-          <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">FAIR-Prinzipien</span>
-           </div>
+          <span class="text-white font-bold text-sm md:text-base">FAIR-Prinzipien</span>
         </div>
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm line-height-extra-small">Findable, Accessible, Interoperable und Reusable - für maximale Nachnutzbarkeit</span>
-        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Findable, Accessible, Interoperable und Reusable – für maximale Nachnutzbarkeit.
+        </p>
       </div>
 
-
-      <div class="feature-card border-2 border-gray-700 bg-gray-800/20 w-full rounded-xl p-3 md:p-6 flex flex-col">
-        <div class="flex flex-row items-center space-x-4 mb-4 md:mb-6">
-          <div class="bg-green-400/20 p-1 md:p-2 rounded-lg">
-            <Icon name="lucide:message-square" size={24} class="text-green-400 scale-70 md:scale-100" />
+      <div class="landing-card flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <div class="bg-green-400/20 p-2 rounded-lg flex-shrink-0">
+            <Icon name="lucide:message-square" size={20} class="text-green-400" />
           </div>
-          <div id="problem-headline" class="text-lg">
-            <span class="text-white font-bold text-lg md:text-xl">Interaktive Workflows</span>
-           </div>
+          <span class="text-white font-bold text-sm md:text-base">Interaktive Workflows</span>
         </div>
-        <div class="-mt-2">
-          <span class="text-gray-300 text-xs md:text-sm line-height-extra-small">Benutzerfreundliche Tools für komplexe geisteswissenschaftliche Forschungsprozesse</span>
-        </div>
+        <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+          Benutzerfreundliche Tools für komplexe geisteswissenschaftliche Forschungsprozesse.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
 
 <script>
   import { gsap } from "gsap";
-  
-  // Dein GSAP-Code ist bereits perfekt und benötigt keine Änderungen.
-  // Er animiert das Badge unabhängig von der Bildschirmgröße.
-  
-  // Animate the sparkles badge
-  gsap.set("#sparkles-badge", {
-    transformOrigin: "center center"
-  });
-  
-  // Combined rotation and scale animation
-  gsap.to("#sparkles-badge", {
-    rotation: 360,
-    duration: 8,
-    ease: "none",
-    repeat: -1
-  });
-  
-  gsap.to("#sparkles-badge", {
-    scale: 1.1,
-    duration: 2,
-    ease: "power2.inOut",
-    yoyo: true,
-    repeat: -1
-  });
+
+  const badge = document.querySelector('#solution-section .inline-flex svg');
+  if (badge) {
+    gsap.to(badge, {
+      rotation: 360, duration: 8, ease: "none", repeat: -1, transformOrigin: "center center"
+    });
+  }
 </script>
 
 
 
-<style>
-  /* Diese Styles sind in Ordnung */
-  .line-height-small {
-     display: inline-block;
-    line-height: 1.4rem; /* Match the height for vertical centering */
-  }
-  .line-height-extra-small {
-     display: inline-block;
-    line-height: 1.2rem; /* Match the height for vertical centering */
-  }
-  #hero-headline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 900; /* Extra bold */
-  }
-  #problem-headline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800; /* Bold */
-  }
 
-  /* DEIN CSS WAR FEHLERHAFT:
-    1. '.hero-badge' wurde doppelt definiert.
-    2. Die Klasse '.hero-badge' wurde im HTML nirgends verwendet.
-    3. Die Keyframes 'sparkle-float' und 'sparkle-rotate' waren 
-       überflüssig, da GSAP die Animation bereits im <script> durchführt.
-
-    KORREKTUR:
-    Ich habe die Styles repariert und auf die neue Klasse '.feature-card' 
-    angewendet, die ich den vier Kacheln oben im HTML gegeben habe.
-    Jetzt hast du einen schönen Hover-Effekt mit Farbverlauf!
-  */
-
-  .feature-card {
-    position: relative;
-    transform-origin: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    /* Setzt die Tailwind-Randfarbe explizit für die Transition */
-    border-color: rgb(55 65 81); 
-  }
-
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    /* -2px, um den 2px-Rand (border-2) zu überlappen */
-    top: -2px; 
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #f59e0b, #06b6d4);
-    background-size: 300% 300%;
-    /* Erbt die 'rounded-xl' Abrundung von der .feature-card */
-    border-radius: inherit; 
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    /* Diese Animation wird für den :before-Gradienten benötigt */
-    animation: gradient-shift 3s ease infinite;
-  }
-
-  .feature-card:hover {
-    transform: scale(1.02);
-    /* Macht den ursprünglichen grauen Rand durchsichtig */
-    border-color: transparent; 
-  }
-
-  .feature-card:hover::before {
-    /* Zeigt den animierten Gradienten-Rand */
-    opacity: 0.9; 
-  }
-
-  /* Diese Animation wird vom ::before-Element oben verwendet */
-  @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-</style>

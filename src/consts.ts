@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SiteTitle = "HisQu";
-export const SiteDescription = "e-Research Project";
+export const SiteDescription = "e-Research Projekt";
 export const GitHubLink = "https://github.com/HisQu";
 export const MatrixLink =
   "https://matrix.to/#/!PcrBuOrnEqLlUmmMNv:uni-goettingen.de?via=uni-goettingen.de&via=uni-jena.de&via=matrix.org";
@@ -36,6 +36,7 @@ export const steps: Step[] = [
       src: erstellung,
       alt: "Visualisierung der Digitalisierung historischer Quellen",
     },
+    tools: [],
     angle: -90,
   },
   {
@@ -85,6 +86,7 @@ export const steps: Step[] = [
 
 Ein visueller Editor bildet die einzelnen Schritte samt Abhängigkeiten ab und ermöglicht ihre Verwaltung mit zeitgemäßen Werkzeugen wie Git-Integration und automatisch generiertem Wiki.`,
     image: { src: nachvollziehbarkeit, alt: "Visueller Workflow-Editor" },
+    tools: [],
     angle: 205,
   },
 ];

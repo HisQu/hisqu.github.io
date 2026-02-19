@@ -21,46 +21,42 @@ const isEven = basis % 2 === 0;
 ---
 
 <section class="fullscreen-section" id={`step-${step.id}`}>
-  <div class="content-container h-full flex items-end md:items-center pb-16 md:pb-0 justify-center px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-8 lg:gap-12 items-center">
-      
-      <div class={`space-y-8 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-        <div>
-          <div class={`hidden md:inline-flex justify-center items-center space-x-3 bg-gradient-to-r ${step.color} bg-opacity-10 border border-white/10 rounded-full px-2 md:px-6 py-1 md:py-3 mb-6`}>
-            <div class={`text-gray-700 bg-gradient-to-r ${step.color} bg-clip-text`}>
-              <Icon name={step.icon} size={22} />
+  <div class="content-container section-inner flex flex-col items-center justify-center py-20 md:py-0 w-full">
+
+    <!-- Section badge -->
+    <div class={`inline-flex items-center gap-2 bg-gradient-to-r ${step.color} bg-opacity-10 border border-white/10 rounded-full px-4 py-2 mb-4 md:mb-6 self-center`}>
+      <Icon name={step.icon} size={14} class="text-white/80" />
+      <span class="text-white/80 text-xs md:text-sm font-medium">{step.subtitle}</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-14 w-full items-center">
+
+      <!-- Text content -->
+      <div class={`flex flex-col gap-4 md:gap-6 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+        <h2 class="section-title text-3xl sm:text-4xl md:text-5xl text-white">
+          {step.title}
+        </h2>
+        <p class="text-sm md:text-base lg:text-lg text-slate-300 leading-relaxed">
+          {step.description}
+        </p>
+
+        <!-- Key features (desktop) -->
+        <div class="hidden md:flex flex-col gap-2">
+          <h3 class="text-sm font-semibold text-white/70 uppercase tracking-wider mb-1">Kernfunktionen</h3>
+          {step.details.map((detail) => (
+            <div class="flex items-center gap-3">
+              <div class={`w-1.5 h-1.5 rounded-full flex-shrink-0 bg-gradient-to-r ${step.color}`} />
+              <span class="text-slate-300 text-sm">{detail}</span>
             </div>
-            <span class={`text-gray-700 w-full text-center bg-gradient-to-r ${step.color} bg-clip-text font-medium`}>
-              {step.subtitle}
-            </span>
-          </div>
-
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            {step.title}
-          </h2>
-
-          <p class="text-base lg:text-xl text-slate-300 leading-relaxed">
-            {step.description}
-          </p>
+          ))}
         </div>
 
-        <div class="hidden lg:block space-y-4">
-          <h3 class="text-xl font-bold text-white mb-4">Kernfunktionen</h3>
-          <div class="space-y-3">
-            {step.details.map((detail) => (
-              <div class="flex items-center space-x-3">
-                <div class={`w-2 h-2 rounded-full bg-gradient-to-r ${step.color}`} />
-                <span class="text-slate-300">{detail}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div class="hidden lg:block space-y-4">
-          <h3 class="text-xl font-bold text-white mb-4">Verwendete Tools</h3>
-          <div class="flex flex-wrap gap-3">
+        <!-- Tools -->
+        <div class="flex flex-col gap-2">
+          <h3 class="text-sm font-semibold text-white/70 uppercase tracking-wider mb-1">Verwendete Tools</h3>
+          <div class="flex flex-wrap gap-2">
             {step.tools.map((tool) => (
-              <span class={`px-3 md:px-4 py-1 md:py-2 bg-gradient-to-r ${step.color} bg-opacity-10 border border-white/10 rounded-full text-sm font-medium text-gray-700`}>
+              <span class={`px-3 py-1 bg-gradient-to-r ${step.color} bg-opacity-10 border border-white/10 rounded-full text-xs font-medium text-white/80`}>
                 {tool}
               </span>
             ))}
@@ -68,33 +64,22 @@ const isEven = basis % 2 === 0;
         </div>
       </div>
 
-      <div class={`relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+      <!-- Visual card -->
+      <div class={`${isEven ? "lg:order-1" : "lg:order-2"}`}>
         <div class="relative">
-          <div class={`absolute inset-0 bg-gradient-to-r ${step.color} md:opacity-20 blur-3xl rounded-3xl opacity-0`} />
-
-          <div class="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 h-80 lg:h-96 flex items-center justify-center">
+          <div class={`absolute inset-0 bg-gradient-to-r ${step.color} opacity-20 blur-3xl rounded-3xl`} />
+          <div class="relative landing-card rounded-3xl p-8 flex items-center justify-center" style="min-height: 280px;">
             <div class="text-center">
-              <div class={`w-28 h-28 lg:w-32 lg:h-32 mx-auto mb-6 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center`}>
-                <div class="text-white">
-                  <Icon name={step.icon} size={40} />
-                </div>
+              <div class={`w-24 h-24 md:w-28 md:h-28 mx-auto mb-5 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center`}>
+                <Icon name={step.icon} size={40} class="text-white" />
               </div>
-              <h3 class="text-xl lg:text-2xl font-bold text-white mb-2">{step.title}</h3>
-              <p class="text-slate-300">{step.subtitle}</p>
+              <h3 class="text-xl md:text-2xl font-bold text-white mb-1">{step.title}</h3>
+              <p class="text-slate-400 text-sm">{step.subtitle}</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="block md:hidden space-y-4 md:-mt-10">
-          <h3 class="text-xl font-bold text-white mb-4">Verwendete Tools</h3>
-          <div class="flex flex-wrap gap-3">
-            {step.tools.map((tool) => (
-              <span class={`px-3 md:px-4 py-1 md:py-2 bg-gradient-to-r ${step.color} bg-opacity-10 border border-white/10 rounded-full text-sm font-medium text-gray-700`}>
-                {tool}
-              </span>
-            ))}
-          </div>
-        </div>
     </div>
   </div>
 </section>
+

@@ -3,78 +3,67 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <section class="fullscreen-section" id="hero-section">
-  <div class="content-container h-full flex items-center justify-center px-6">
-    <div class="max-w-6xl mx-auto text-center relative">
+  <div class="content-container section-inner flex flex-col items-center justify-center text-center py-20 md:py-0">
 
-      <div id="hero-badge" class="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-full px-4 py-2 md:px-6 md:py-3 mb-8">
-        <Icon name="lucide:sparkles" size={16} class="text-blue-400 scale-[0.7] md:scale-100" />
-        <span class="text-blue-300 text-xs md:text-sm font-medium">Revolutionary e-Research Platform</span>
-      </div>
+    <h1 id="hero-headline" class="section-title text-4xl sm:text-5xl md:text-7xl text-white mb-4 md:mb-6">
+      Ein Forschungsprozess
+      <br />
+      <span class="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        ohne Unterbrechungen
+      </span>
+    </h1>
 
-      <div id="hero-headline" class="text-[40px] md:text-7xl font-bold text-white mb-6 leading-tight">
-        Ein Forschungsprozess
-        <br />
-        <span class="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-          ohne Unterbrechungen
+    <p id="hero-subtitle" class="text-sm sm:text-base md:text-xl text-slate-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
+      In den Digital Humanities fehlen bislang integrierte Lösungen für einen geschlossenen Forschungsdatenzyklus. HisQu entwickelt eine fachspezifische Anwendung, um den gesamten Forschungsprozess für historische Quellen digital zu unterstützen.
+    </p>
+
+    <div id="hero-cta" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 md:mb-16">
+      <a href="/tools" class="group relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold text-sm md:text-base overflow-hidden transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto text-center">
+        <span class="relative z-10 flex items-center justify-center gap-2">
+          <span>Die Toolchain entdecken</span>
+          <Icon name="lucide:arrow-right" size={18} class="group-hover:translate-x-1 transition-transform" />
         </span>
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
+      </a>
+
+      <a href="#" class="group flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 border border-slate-600 text-white rounded-full font-semibold text-sm md:text-base hover:border-purple-500 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
+        <Icon name="lucide:play" size={18} class="group-hover:scale-110 transition-transform" />
+        <span>Demo ansehen</span>
+      </a>
+    </div>
+
+    <div id="hero-indicators" class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-slate-400 text-xs md:text-sm">
+      <div class="flex items-center gap-2">
+        <div class="indicator-dot w-2 h-2 bg-green-400 rounded-full"></div>
+        <span>6 integrierte Schritte</span>
       </div>
-
-      <p id="hero-subtitle" class="text-base md:text-2xl text-slate-300 mb-12 max-w-4xl p-1 mx-auto leading-relaxed">
-        In den Digital Humanities fehlen bislang integrierte Lösungen für einen geschlossenen Forschungsdatenzyklus. HisQu entwickelt eine fachspezifische Anwendung, um den gesamten Forschungsprozess für historische Quellen digital zu unterstützen.
-      </p>
-
-      <div id="hero-cta" class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-        <button class="group relative px-5 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold text-base md:text-lg overflow-hidden transition-transform hover:scale-105 active:scale-95">
-          <span class="relative z-10 flex items-center space-x-2">
-            <span>Die Toolchain entdecken</span>
-            <Icon name="lucide:arrow-right" size={20} class="group-hover:translate-x-1 transition-transform" />
-          </span>
-          <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
-        </button>
-
-        <button class="group flex items-center space-x-3 px-5 py-2 md:px-8 md:py-4 border border-slate-600 text-white rounded-full font-semibold text-base md:text-lg hover:border-purple-500 transition-all hover:scale-105 active:scale-95">
-          <Icon name="lucide:play" size={20} class="group-hover:scale-110 transition-transform" />
-          <span>Demo ansehen</span>
-        </button>
+      <div class="flex items-center gap-2">
+        <div class="indicator-dot w-2 h-2 bg-blue-400 rounded-full"></div>
+        <span>KI-unterstützt</span>
       </div>
-
-      <div id="hero-indicators" class="flex items-center justify-center space-x-8 text-slate-400">
-        <div class="flex items-center space-x-2">
-          <div class="indicator-dot w-2 h-2 bg-green-400 rounded-full"></div>
-          <span class="text-sm">6 integrierte Schritte</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <div class="indicator-dot w-2 h-2 bg-blue-400 rounded-full"></div>
-          <span class="text-sm">KI-unterstützt</span>
-        </div>
-        <div class="flex items-center space-x-2">
-          <div class="indicator-dot w-2 h-2 bg-purple-400 rounded-full"></div>
-          <span class="text-sm">FAIR-Prinzipien</span>
-        </div>
+      <div class="flex items-center gap-2">
+        <div class="indicator-dot w-2 h-2 bg-purple-400 rounded-full"></div>
+        <span>FAIR-Prinzipien</span>
       </div>
+    </div>
 
-      <div id="hero-scroll-indicator" class="absolute -bottom-24 left-1/2 transform -translate-x-1/2">
-        <div class="text-slate-400 text-center">
-          <p class="text-sm mb-2">Scroll to explore</p>
-          <div class="w-6 h-10 border-2 border-slate-400 rounded-full mx-auto flex justify-center">
-            <div id="scroll-mouse-dot" class="w-1 h-3 bg-slate-400 rounded-full mt-2"></div>
-          </div>
+    <div id="hero-scroll-indicator" class="hidden md:block mt-12">
+      <div class="text-slate-400 text-center">
+        <p class="text-xs mb-2">Scroll to explore</p>
+        <div class="w-5 h-9 border-2 border-slate-400 rounded-full mx-auto flex justify-center">
+          <div id="scroll-mouse-dot" class="w-1 h-2.5 bg-slate-400 rounded-full mt-1.5"></div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <script>
   import { gsap } from "gsap";
 
-  // Diese Funktion animiert die Elemente, wenn die Sektion sichtbar wird
   function playIntroAnimation() {
-    const tl = gsap.timeline({
-      defaults: { duration: 0.8, ease: "power3.out" }
-    });
-
-    // Staggered Entrance Animation (wie in Framer Motion mit delays)
+    const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power3.out" } });
     tl.from("#hero-badge", { opacity: 0, y: 20 })
       .from("#hero-headline", { opacity: 0, y: 20 }, "-=0.6")
       .from("#hero-subtitle", { opacity: 0, y: 20 }, "-=0.6")
@@ -82,67 +71,27 @@ import { Icon } from 'astro-icon/components';
       .from(["#hero-indicators", "#hero-scroll-indicator"], { opacity: 0 }, "-=0.6");
   }
 
-  // Diese Funktion startet die Endlosschleifen-Animationen
   function playLoopingAnimations() {
-    // Pulsierende Indikatoren
     gsap.to(".indicator-dot", {
-      scale: 1.5,
-      opacity: 0.5,
-      duration: 2,
-      repeat: -1, // -1 bedeutet unendlich
-      yoyo: true, // Animiert zurück zum Startwert
-      stagger: 0.5, // Startet jede Animation mit 0.5s Verzögerung
-      ease: "sine.inOut"
+      scale: 1.5, opacity: 0.5, duration: 2, repeat: -1, yoyo: true, stagger: 0.5, ease: "sine.inOut"
     });
-
-    // Scroll-Indikator (Maus-Animation)
-    gsap.to("#hero-scroll-indicator", {
-      y: 10,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
-    gsap.to("#scroll-mouse-dot", {
-      y: 12,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
+    gsap.to("#hero-scroll-indicator", { y: 8, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+    gsap.to("#scroll-mouse-dot", { y: 10, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
   }
 
-  // Intersection Observer, um die Animation nur zu starten, wenn die Sektion sichtbar ist
   const heroSection = document.querySelector('#hero-section');
-
   const observer = new IntersectionObserver((entries) => {
-    const entry = entries[0];
-    if (entry.isIntersecting) {
+    if (entries[0].isIntersecting) {
       playIntroAnimation();
       playLoopingAnimations();
-      observer.unobserve(heroSection!); // Animation nur einmal abspielen
+      observer.unobserve(heroSection!);
     }
-  }, { threshold: 0.4 }); // Löst aus, wenn 40% der Sektion sichtbar sind
+  }, { threshold: 0.4 });
 
-  // Beobachtung starten
-  if (heroSection) {
-    observer.observe(heroSection);
-  }
+  if (heroSection) observer.observe(heroSection);
 </script>
 
-
 <style>
-  #hero-headline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 900; /* Extra bold */
-  }
-
-  #hero-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500; /* Medium */
-  }
-
-  .indicator-dot {
-    transform-origin: center;
-  }
+  .indicator-dot { transform-origin: center; }
 </style>
+
