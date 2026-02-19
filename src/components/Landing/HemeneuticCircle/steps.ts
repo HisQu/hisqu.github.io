@@ -16,7 +16,7 @@ export const steps: Step[] = [
       "Nachträgliche Korrektur der Ergebnisse",
       "Unterstützung komplexer Layouts",
     ],
-    tools: ["Tesseract", "Large Language Models", "Computer Vision APIs"],
+    tools: [],
   },
   {
     id: "modeling",
@@ -32,7 +32,10 @@ export const steps: Step[] = [
       "Weiterentwicklung fachlicher Expertise",
       "Arbeit mit Protégé als Grundlage",
     ],
-    tools: ["Protégé Online", "RG Guidelines", "Semantic Web Standards"],
+    tools: [
+      { name: "Protégé Online", href: "https://protege.stanford.edu/" },
+      { name: "RG Guidelines", href: "/blog/annotation" },
+    ],
   },
   {
     id: "processing",
@@ -48,7 +51,10 @@ export const steps: Step[] = [
       "Python-basierte LLM-Clients",
       "Flexible Ontologie-Erweiterung",
     ],
-    tools: ["Paredros", "OPA", "Python LLM Libraries"],
+    tools: [
+      { name: "Paredros", href: "/tools/paredros" },
+      { name: "OPA", href: "/tools/opa" },
+    ],
   },
   {
     id: "analysis",
@@ -64,7 +70,7 @@ export const steps: Step[] = [
       "SPARQL-Code-Generierung",
       "LLM-Integration für Benutzerfreundlichkeit",
     ],
-    tools: ["Query by Graph", "SPARQL Endpoint", "LLM Integration"],
+    tools: [{ name: "Query by Graph", href: "/tools/quebyg" }],
   },
   {
     id: "archiving",
@@ -80,7 +86,7 @@ export const steps: Step[] = [
       "Zitierfähige (Mikro-)Publikationen",
       "Stärkung der wissenschaftlichen Community",
     ],
-    tools: ["FactGrid Console", "Wikibase", "ORCID Integration"],
+    tools: [{ name: "FactGrid Console", href: "/blog/factgrid" }],
   },
   {
     id: "reuse",
@@ -96,6 +102,6 @@ export const steps: Step[] = [
       "Visueller Editor für Abhängigkeiten",
       "Git-Integration und automatisches Wiki",
     ],
-    tools: ["Interactive Lab Notebook", "Git Integration", "Workflow Editor"],
+    tools: [],
   },
 ];

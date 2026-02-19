@@ -7,7 +7,10 @@ export interface Step {
   color: string; // Tailwind gradient class, e.g. "from-blue-400 to-cyan-400"
   description: string;
   details: string[];
-  tools: string[];
+  tools: {
+    name: string;
+    href: string;
+  }[];
 }
 
 export interface Partner {
