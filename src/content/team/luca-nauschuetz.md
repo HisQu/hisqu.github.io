@@ -1,16 +1,15 @@
 ---
 name: Luca Nauschütz
 academic_title: {}
-description: studentische Hilfskraft
+description: Wissenschaftliche Hilfskraft
 group: fsu-jena
-position: studentische Hilfskraft
+position: Wissenschaftliche Hilfskraft
 publications: []
 image: "../../assets/team/HisQU_Fotos_Luca.jpg"
 ---
-# Luca Nauschütz (studentische Hilfskraft)
 
 ## Kurzvita
-Luca Nauschütz ist studentische Hilfskraft an der Friedrich-Schiller-Universität Jena. Er studiert Germanistik und Geschichte auf Lehramt seit dem Wintersemester 2021/2022.
+Luca Nauschütz ist Wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena. Er studiert Germanistik und Geschichte auf Lehramt seit dem Wintersemester 2021/2022.
 
 ## Ausbildung
 - Lehramtsstudium (Germanistik und Geschichte), Friedrich-Schiller-Universität Jena

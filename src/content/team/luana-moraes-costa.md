@@ -7,8 +7,6 @@ publications: []
 image: "../../assets/team/HisQu_Fotos_Luana_Costa.jpg"
 ---
 
-# Luana Moraes Costa (Wissenschaftliche Mitarbeiterin)
-
 ## Kurzvita
 Luana Moraes Costa ist wissenschaftliche Mitarbeiterin an der Arbeitsstelle **Germania Sacra** der **Niedersächsischen Akademie der Wissenschaften zu Göttingen**. Sie hat einen **Master in Digital Humanities** von der **Universität Göttingen** und hat kürzlich ein **Promotionsstudium in Kommunikationswissenschaft** an der **Universität Münster** aufgenommen.
 

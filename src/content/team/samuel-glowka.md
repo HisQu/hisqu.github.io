@@ -2,14 +2,12 @@
 name: Samuel Glowka
 academic_title:
   suffix: B.A.
-description: Wissenschaftlicher Mitarbeiter
+description: Wissenschaftliche Hilfskraft
 group: fsu-jena
-position: Wissenschaftlicher Mitarbeiter
+position: Wissenschaftliche Hilfskraft
 publications: []
 image: "../../assets/team/HisQu_Fotos_Samuel.jpg"
 ---
-
-# Samuel Glowka (Wissenschaftliche Hilfskraft)
 
 ## Kurzvita
 Samuel Glowka ist Wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena. Derzeit erfolgt das Masterstudium **Historische Musikwissenschaft** (Profil **Musiktheorie**) an der **Hochschule für Musik FRANZ LISZT Weimar**. Arbeitsschwerpunkte liegen an der Schnittstelle von Musikwissenschaft und Digital Humanities, mit Erfahrungen in Lehre, Projektkoordination und Forschungsdateninfrastrukturen.

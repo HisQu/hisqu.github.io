@@ -10,8 +10,6 @@ publications: []
 image: ""
 ---
 
-# Nico Faltin (Wissenschaftlicher Mitarbeiter)
-
 ## Kurzvita
 Nico Faltin, M.A., ist wissenschaftlicher Mitarbeiter an der Friedrich-Schiller-Universität Jena. Sein Studium der Fächer Latein und Englisch (B.A., M.Ed.) absolvierte er an der Humboldt-Universität zu Berlin. Derzeit promoviert er an der Freien Universität Berlin (Institut für Griechische und Lateinische Philologie) zum Thema „Spätmittelalterliche Gnadengesuche aus den Diözesen Magdeburg, Brandenburg, Merseburg, Havelberg, Naumburg und Lebus an der Apostolischen Pönitentiarie in Rom und ihre sprachliche Umsetzung (1431-1523)“; Betreuung: Prof. Dr. Bernd Roling und Dr. Patrick Zutshi. Seine Arbeit verbindet mittellateinische Quellenforschung mit lokal- und rechtsgeschichtlichen Fragestellungen sowie digital gestützten Methoden.
 

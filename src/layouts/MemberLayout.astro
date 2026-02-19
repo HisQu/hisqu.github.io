@@ -18,95 +18,326 @@ const {member} = Astro.props;
 const baseName = member.data.name;
 const prefix = member.data.academic_title?.prefix?.trim() || '';
 const suffix = member.data.academic_title?.suffix?.trim() || '';
-const displayName = [prefix, baseName].filter(Boolean).join(prefix ? ' ' : '') + (suffix ? ", " + suffix : '');
+const displayName = [prefix, baseName].filter(Boolean).join(' ') + (suffix ? ', ' + suffix : '');
 
 const headTitle = `${displayName} — Team`;
 const headDescription = member.data.description;
-
-// Prepare SEO image only if valid; SEO expects ImageMetadata or string
 const seoImage = member.data.image;
+
+// Group → short badge label and full institution name
+const groupLabels: Record<string, { label: string; institution: string }> = {
+    'fsu-jena':       { label: 'FSU Jena',        institution: 'Friedrich-Schiller-Universität Jena' },
+    'germania-sacra': { label: 'Germania Sacra',  institution: 'Niedersächsische Akademie der Wissenschaften zu Göttingen' },
+    'dhi-rom':        { label: 'DHI Rom',         institution: 'Deutsches Historisches Institut Rom' },
+    'factgrid':        { label: 'FactGrid',       institution: 'Forschungszentrum Gotha der Universität Erfurt' },
+};
+const groupEntry = groupLabels[member.data.group];
+const groupLabel = groupEntry?.label ?? member.data.group;
+const institution = groupEntry?.institution ?? null;
 
 // Initials for placeholder avatar
 const initials = baseName
-    ? baseName
-            .split(',')[0]
-            .split(' ')
-            .map((part:string) => part[0])
-            .join('')
-            .toUpperCase()
+    ? baseName.split(',')[0].split(' ').map((p: string) => p[0]).join('').toUpperCase()
     : '?';
+
+const orcidUrl = member.data.orcid
+    ? `https://orcid.org/${member.data.orcid}`
+    : null;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
-        <BaseHead
-            title={headTitle}
-            description={headDescription}
-            image={seoImage}
-        />
+    <BaseHead title={headTitle} description={headDescription} image={seoImage}/>
 </head>
 <body class="dark:bg-gray-900">
 <div class="glow"></div>
 <Header/>
 
-<div class="post single max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" transition:persist transition:name="post">
-    <!-- Profile -->
-    <article class="content mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- Image -->
-        <div class="lg:col-span-4">
-                        {(() => {
-                              const img = member.data.image;
-                            if (img && typeof img === 'object' && 'src' in img) {
-                                return (
-                                    <div class="overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-gray-800">
-                                        <Image
-                                            src={img}
-                                            alt={displayName}
-                                            sizes="(min-width: 1024px) 320px, 100vw"
-                                            loading="eager"
-                                        />
-                                    </div>
-                                );
-                            }
-                            return (
-                                <div class="aspect-3/2 w-full flex items-center justify-center rounded-2xl bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 text-3xl font-bold">
-                                    {initials}
-                                </div>
-                            );
-                        })()}
+<!-- ── HERO HEADER ─────────────────────────────────────────────── -->
+<div class="member-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-2">
+    <div class="member-hero__inner">
+
+        <!-- Photo -->
+        <div class="member-hero__photo">
+            {(() => {
+                const img = member.data.image;
+                if (img && typeof img === 'object' && 'src' in img) {
+                    return (
+                        <Image
+                            src={img}
+                            alt={displayName}
+                            class="member-hero__img"
+                            sizes="(min-width: 1024px) 220px, 50vw"
+                            loading="eager"
+                        />
+                    );
+                }
+                return (
+                    <div class="member-hero__initials">{initials}</div>
+                );
+            })()}
         </div>
 
-        <!-- Text -->
-        <div class="lg:col-span-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                {displayName}
-            </h1>
+        <!-- Identity -->
+        <div class="member-hero__identity">
 
-            <p class="mt-4 text-lg leading-7 text-gray-700 dark:text-gray-300">
-                {member.data.description}
-            </p>
+            <!-- Name -->
+            <h1 class="member-hero__name">{displayName}</h1>
 
-            <!-- Optional publications -->
-            {Array.isArray(member.data.publications) && member.data.publications.length > 0 && (
-                    <section class="mt-6">
-                        <h2 class="text-base font-semibold text-gray-900 dark:text-gray-100">Publications</h2>
-                        <ul class="mt-2 list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
-                            {member.data.publications.map((pub) => (
-                                    <li>{pub}</li>
-                            ))}
-                        </ul>
-                    </section>
+            <!-- Badges: position + group -->
+            <div class="member-hero__badges">
+                {member.data.position && (
+                    <span class="badge badge--position">{member.data.position}</span>
+                )}
+                <span class="badge badge--group">{groupLabel}</span>
+            </div>
+
+            <!-- Short description / tagline -->
+            {member.data.description && (
+                <p class="member-hero__desc">{member.data.description}</p>
             )}
 
-            <!-- Markdown/body content from the member .md file -->
-            <div class="prose dark:prose-invert mt-8 max-w-none">
-                <slot/>
-            </div>
+            <!-- Metadata links -->
+            <dl class="member-hero__meta">
+                {institution && (
+                    <>
+                        <dt>Institution</dt>
+                        <dd>{institution}</dd>
+                    </>
+                )}
+                {member.data.email && (
+                    <>
+                        <dt>E-Mail</dt>
+                        <dd><a href={`mailto:${member.data.email}`}>{member.data.email}</a></dd>
+                    </>
+                )}
+                {orcidUrl && (
+                    <>
+                        <dt>ORCID</dt>
+                        <dd>
+                            <a href={orcidUrl} target="_blank" rel="noopener noreferrer"
+                               class="member-hero__orcid">
+                                <!-- ORCID icon inline SVG -->
+                                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 256 256"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128Z"/>
+                                    <path fill="#fff" d="M86.3 186.2H70.9V79.1h15.4v107.1Zm22.8-107.1h-15v107.1h15c32.4 0 56-19.5 56-53.7 0-35-23.7-53.4-56-53.4Zm-.4 93h-0.1V93.2h.2c25.1 0 41.2 15.2 41.2 39.4 0 25.2-16.2 39.5-41.3 39.5Zm-39.1-121a10.1 10.1 0 1 1 0-20.2 10.1 10.1 0 0 1 0 20.2Z"/>
+                                </svg>
+                                {member.data.orcid}
+                            </a>
+                        </dd>
+                    </>
+                )}
+                {member.data.website && (
+                    <>
+                        <dt>Website</dt>
+                        <dd><a href={member.data.website} target="_blank" rel="noopener noreferrer">{member.data.website}</a></dd>
+                    </>
+                )}
+            </dl>
         </div>
-    </article>
+    </div>
+</div>
+
+<!-- ── DIVIDER ──────────────────────────────────────────────────── -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <hr class="member-divider"/>
+</div>
+
+<!-- ── BODY CONTENT ─────────────────────────────────────────────── -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="prose dark:prose-invert mt-10 max-w-none">
+        <slot/>
+    </div>
 </div>
 
 <Footer/>
 </body>
 </html>
+
+<style lang="scss">
+@use '../styles/colors.scss' as colors;
+
+/* ── Hero wrapper ───────────────────────────────────────────────── */
+.member-hero {
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        gap: 2.5rem;
+
+        @media (max-width: 640px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    /* Photo */
+    &__photo {
+        flex-shrink: 0;
+        width: 200px;
+
+        @media (max-width: 640px) {
+            width: 140px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 1rem;
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        box-shadow: 0 4px 24px rgba(0,0,0,.12);
+        border: 1px solid colors.color(gray, 100);
+
+        @media (prefers-color-scheme: dark) {
+            border-color: colors.color(gray, 700);
+        }
+    }
+
+    &__initials {
+        width: 100%;
+        aspect-ratio: 3/4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        background: colors.color(gray, 100);
+        color: colors.color(gray, 500);
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        @media (prefers-color-scheme: dark) {
+            background: colors.color(gray, 800);
+            color: colors.color(gray, 400);
+        }
+    }
+
+    /* Identity column */
+    &__identity {
+        flex: 1;
+        padding-top: .25rem;
+    }
+
+    &__name {
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        font-weight: 800;
+        letter-spacing: -.02em;
+        line-height: 1.15;
+        color: colors.color(gray, 900);
+        margin: 0 0 .85rem;
+
+        @media (prefers-color-scheme: dark) {
+            color: #f1f5f9;
+        }
+    }
+
+    /* Badges */
+    &__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        margin-bottom: 1rem;
+
+        @media (max-width: 640px) {
+            justify-content: center;
+        }
+    }
+
+    &__desc {
+        font-size: 1rem;
+        color: colors.color(gray, 600);
+        margin: 0 0 1.25rem;
+        max-width: 56ch;
+        line-height: 1.6;
+
+        @media (prefers-color-scheme: dark) {
+            color: colors.color(gray, 300);
+        }
+    }
+
+    /* Metadata definition list */
+    &__meta {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: 1.25rem;
+        row-gap: .35rem;
+        font-size: .875rem;
+
+        dt {
+            font-weight: 600;
+            color: colors.color(gray, 500);
+            white-space: nowrap;
+
+            @media (prefers-color-scheme: dark) {
+                color: colors.color(gray, 400);
+            }
+        }
+
+        dd {
+            color: colors.color(gray, 800);
+            margin: 0;
+
+            @media (prefers-color-scheme: dark) {
+                color: colors.color(gray, 200);
+            }
+
+            a {
+                color: colors.color(purple, 600);
+                text-decoration: none;
+
+                &:hover { text-decoration: underline; }
+
+                @media (prefers-color-scheme: dark) {
+                    color: colors.color(purple, 300);
+                }
+            }
+        }
+    }
+
+    &__orcid {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+    }
+}
+
+/* ── Badges ─────────────────────────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: .2rem .75rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+
+    &--position {
+        background: colors.color(purple, 100);
+        color: colors.color(purple, 700);
+
+        @media (prefers-color-scheme: dark) {
+            background: colors.color(purple, 800);
+            color: colors.color(purple, 200);
+        }
+    }
+
+    &--group {
+        background: colors.color(gray, 100);
+        color: colors.color(gray, 700);
+
+        @media (prefers-color-scheme: dark) {
+            background: colors.color(gray, 800);
+            color: colors.color(gray, 300);
+        }
+    }
+}
+
+/* ── Divider ────────────────────────────────────────────────────── */
+.member-divider {
+    margin: 2rem 0 0;
+    border: none;
+    border-top: 3px solid colors.color(purple, 500);
+    opacity: .25;
+}
+</style>

@@ -10,8 +10,6 @@ publications: [ ]
 image: "../../assets/team/HisQu_Fotos_Clemens_Beckstein.jpg"
 ---
 
-# Clemens Beckstein (Professor für Künstliche Intelligenz; Projektleiter)
-
 ## Kurzvita
 Univ.-Prof. Dr. Clemens Beckstein ist Professor für Künstliche Intelligenz an der Friedrich-Schiller-Universität Jena und leitet die Arbeitsgruppe Künstliche Intelligenz. Seine Forschung verbindet wissenschaftstheoretische und philosophische Perspektiven der KI mit methodischen Arbeiten zu symbolischer Wissensrepräsentation, Constraint-Programmierung sowie digitalen Infrastrukturen für die Geisteswissenschaften (u. a. Netzwerkanalyse für historisches Arbeiten).
 

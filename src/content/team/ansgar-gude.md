@@ -7,7 +7,5 @@ publications: []
 image: ""
 ---
 
-# Ansgar Gude (studentische Hilfskraft)
-
 ## Kurzvita
-Ansgar Gude ist studentische Hilfskraft an der Friedrich-Schiller-Universität Jena. Er studiert Informatik im Bachelor.
+Ansgar Gude ist Wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena. Er studiert Informatik im Bachelor.

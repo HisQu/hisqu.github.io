@@ -6,7 +6,7 @@ description: Teilprojektleiter
 group: germania-sacra
 position: Teilprojektleiter
 publications: []
-image: "../../assets/team/HisQu_Fotos_Christian_Popp.jpg"
+image: "../../assets/team/placeholder.png"
 ---
 
 # Dr. Christian Popp (Teilprojektleiter, Germania Sacra)

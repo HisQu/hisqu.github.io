@@ -1,12 +1,11 @@
 ---
 name: Tobias Eckardt
-description: studentische Hilfskraft
+description: Wissenschaftliche Hilfskraft
 group: fsu-jena
-position: studentische Hilfskraft
+position: Wissenschaftliche Hilfskraft
 publications: []
 image: ""
 ---
-# Tobias Eckardt (studentische Hilfskraft)
 
 ## Kurzvita
 Tobias Eckardt studiert Informatik und Geschichte auf Lehramt an der Friedrich-Schiller-Universität Jena seit dem Wintersemester 2023/2024.

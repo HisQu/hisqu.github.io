@@ -10,7 +10,6 @@ publications: []
 image: ""
 ---
 
-# Robert Gramsch-Stehfest (Teilprojektleiter)
 ## Kurzvita
 apl. Prof. Dr. Robert Gramsch-Stehfest ist Mediävist am Historischen Institut der Friedrich-Schiller-Universität Jena. Nach dem M.A. in Geschichte/Philosophie (1997) und der Promotion (2002) habilitierte er 2010 in Jena. Er vertrat Lehrstühle in Jena (2009/10) und Bochum (WS 2015/16) und Osnabrück. Seine Forschung vereint Eliten- und Universitätsgeschichte mit kurialen Netzwerken, Reichs- und Verfassungsgeschichte des 13. Jahrhunderts sowie historischer Netzwerkanalyse und Prosopographie.
 

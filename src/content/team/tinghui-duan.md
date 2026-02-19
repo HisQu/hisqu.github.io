@@ -7,8 +7,6 @@ publications: []
 image: "../../assets/team/HisQU_Fotos_-01.jpg"
 ---
 
-# Tinghui Duan, M.A. (Wissenschaftlicher Mitarbeiter bei **FactGrid**)
-
 ## Kurzvita
 Tinghui Duan, M.A., ist wissenschaftlicher Mitarbeiter bei FactGrid und seit Februar 2025 Projektmitarbeiter am Forschungszentrum Gotha der Universität Erfurt im DFG-Projekt „Forschungsdateninfrastruktur Historische Quellen (HisQu)“. Zuvor war er wissenschaftlicher Mitarbeiter am Trier Center for Digital Humanities (TCDH) sowie am DFG-Graduiertenkolleg „Modell Romantik“ an der Friedrich-Schiller-Universität Jena. Weitere Stationen umfassten den Lehrstuhl für Computerlinguistik (Prof. Dr. Udo Hahn) in Jena als wissenschaftlicher Mitarbeiter und zuvor als wissenschaftliche Hilfskraft sowie den Lehrstuhl Deutsch als Fremd- und Zweitsprache (Prof. Dr. Bernt Ahrenholz) in Jena.  
 Sein fachliches Profil verbindet Korpuslinguistik, Natural Language Processing und Linked Open Data*mit digitalen Methoden der Geistes- und Kulturwissenschaften (Wikibase/Wikidata, Netzwerkanalyse).

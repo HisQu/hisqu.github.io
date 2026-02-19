@@ -67,6 +67,7 @@ const compareMembers = (a: any, b: any) => {
                                             const img = partner.srcLight || partner.srcDark;
                                             if (img && typeof img === 'object' && 'src' in img) {
                                                 return (
+                                                        <Image src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-12 w-auto max-h-12 object-contain align-middle inline-block" loading="lazy" />
                                                 );
                                             }
                                             if (typeof img === 'string') {

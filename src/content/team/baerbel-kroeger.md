@@ -5,11 +5,11 @@ academic_title:
 description: Teilprojektleiterin
 position: Teilprojektleiterin
 group: germania-sacra
+email: baerbel.kroeger@adwgoe.de
+orcid: "0000-0001-7179-6438"
 publications: []
 image: "../../assets/team/HisQu_Fotos_Bärbel_Kröger.jpg"
 ---
-
-# Bärbel Kröger, M.A. (Teilprojektleiterin, Germania Sacra)
 
 ## Kurzvita
 Bärbel Kröger, M.A., ist Teilprojektleiterin und wissenschaftliche Mitarbeiterin an der Arbeitsstelle Germania Sacra der Niedersächsischen Akademie der Wissenschaften zu Göttingen. Nach dem Studium der Germanistik, Publizistik und Volkswirtschaft an der Georg-August-Universität Göttingen (Magister 1991) arbeitete sie von 1995 bis 2007 in der Redaktion des Reallexikons der Germanischen Altertumskunde. Seit 2008 gehört sie dem Team der Germania Sacra an, mit Schwerpunkten auf digitalen Forschungsportalen und der Erschließung kirchengeschichtlicher Quellen.

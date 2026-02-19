@@ -4,12 +4,11 @@ name: Clemens Beck
 academic_title:
   suffix: M.A.
 description: Projektkoordinator
-position: Projektkoordinator
+position: Projektkoordinator, Doktorand
 group: fsu-jena
 publications: []
 image: "../../assets/team/Foto_ClemensBeck.png"
 ---
-# Clemens Beck (M.A. ist Projektkoordinator an der Friedrich-Schiller-Universität Jena)
 
 ## Kurzvita
 Clemens Beck ist Doktorand im Bereich Digital History. Nach dem Studium der Mittelalterlichen Geschichte an der Friedrich-Schiller-Universität Jena forschte er mehrere Jahre an der Ludwig-Maximilians-Universität München sowie am Lehrstuhl für Künstliche Intelligenz in Jena. Seit 2022 ist er Mitarbeiter an der Juniorprofessur für Digital Humanities (FSU Jena); seit 01/2025 zusätzlich Wissenschaftlicher Mitarbeiter an der Professur für Künstliche Intelligenz (FSU Jena). Neben seiner Promotion ist er Herausgeber des _Journal of Historical Network Research (JHNR)_.

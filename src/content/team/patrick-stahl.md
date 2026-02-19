@@ -9,8 +9,6 @@ publications: []
 image: "../../assets/team/HisQU_Fotos_-04.jpg"
 ---
 
-# Patrick Stahl (Wissenschaftliche Hilfskraft)
-
 ## Kurzvita
 Patrick Stahl ist wissenschaftliche Hilfskraft an der Friedrich-Schiller-Universität Jena. Er befindet sich im Masterstudium der Informatik: Nach sieben Fachsemestern im B.Sc. studiert er seit dem Wintersemester 2025/2026 im 1. Fachsemester des M.Sc. Informatik.
 
