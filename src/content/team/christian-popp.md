@@ -6,10 +6,8 @@ description: Teilprojektleiter
 group: germania-sacra
 position: Teilprojektleiter
 publications: []
-image: "../../assets/team/placeholder.png"
+image: ""
 ---
-
-# Dr. Christian Popp (Teilprojektleiter, Germania Sacra)
 
 ## Kurzvita
 Dr. Christian Popp ist Teilprojektleiter an der Arbeitsstelle Germania Sacra der Niedersächsischen Akademie der Wissenschaften zu Göttingen. Seit 2008 arbeitet er in der Redaktion/Leitung der Arbeitsstelle. 2005 wurde er an der Humboldt-Universität zu Berlin mit einer Arbeit zum Domstift St. Nikolai in Stendal promoviert; 2006 folgte eine Postdoc-Stelle zum Frauenstift Gandersheim an der Universität Göttingen. Frühere Stationen umfassen Studium und Tätigkeiten in der mittelalterlichen Landes- und Kirchengeschichte. 
