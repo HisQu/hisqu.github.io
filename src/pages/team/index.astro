@@ -59,29 +59,34 @@ const compareMembers = (a: any, b: any) => {
                 const partner = partnersMap[groupKey];
                 return (
                     <section class="mt-20" aria-labelledby={`team-group-${groupKey}`}>
-                        <div class="flex items-center gap-4 mb-8">
+                        <div class="mb-8">
                             {partner ? (
-                                <h2 id={`team-group-${groupKey}`} class="flex items-center gap-4 text-2xl font-semibold tracking-tight text-white m-0">
-                                    <span class="inline-flex items-center h-12">
+                                <div id={`team-group-${groupKey}`} class="flex flex-row items-center gap-4">
+                                    <span class="hidden sm:flex items-center">
                                         {(() => {
                                             const img = partner.srcLight || partner.srcDark;
                                             if (img && typeof img === 'object' && 'src' in img) {
                                                 return (
-                                                        <Image src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-12 w-auto max-h-12 object-contain align-middle inline-block" loading="lazy" />
+                                                    <Image src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-12 w-auto max-h-12 object-contain" loading="lazy" />
                                                 );
                                             }
                                             if (typeof img === 'string') {
                                                 return (
-                                                        <img src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-20 w-auto max-h-20 object-contain align-middle inline-block bg-white p-1 rounded-2xl" loading="lazy" />
+                                                    <img src={img} alt={partner.alt || partner.name} width={partner.width || 158} height={partner.height || 48} class="h-20 w-auto max-h-20 object-contain bg-white p-1 rounded-2xl" loading="lazy" />
                                                 );
                                             }
                                             return null;
                                         })()}
                                     </span>
-                                    <span class="inline-flex items-center leading-tight">
-                                        {partner.unit} &middot; {partner.name}
-                                    </span>
-                                </h2>
+                                    <div>
+                                        <h2 class="text-2xl sm:text-4xl font-semibold tracking-tight text-white leading-tight m-0">
+                                            {partner.unit}
+                                        </h2>
+                                        <p class="text-sm sm:text-base text-slate-400 mt-0.5 m-0">
+                                            {partner.name}
+                                        </p>
+                                    </div>
+                                </div>
                             ) : (
                                 <h2 id={`team-group-${groupKey}`} class="text-2xl font-semibold tracking-tight text-white">
                                     {groupKey || 'Sonstiges'}
