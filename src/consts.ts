@@ -222,4 +222,5 @@ export const dfg: Partner = {
   width: 158,
   height: 48,
   href: "https://www.dfg.de/",
+  numerical_position: 1
 };

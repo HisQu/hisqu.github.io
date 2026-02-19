@@ -57,18 +57,6 @@ body {
 	}
 }
 
-a,
-a:visited {
-	color: colors.color(purple, 600);
-	transition: 0.1s ease;
-	@media (prefers-color-scheme: dark) {
-		color: colors.color(purple, 300);
-	}
-
-	&:hover {
-		color: colors.color(purple, 500);
-	}
-}
 
 hr {
 	margin: 1em 0;
