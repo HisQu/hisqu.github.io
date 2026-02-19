@@ -8,7 +8,7 @@ export const MatrixLink =
   "https://matrix.to/#/!PcrBuOrnEqLlUmmMNv:uni-goettingen.de?via=uni-goettingen.de&via=uni-jena.de&via=matrix.org";
 export const GitHubIssuesLink = "https://github.com/HisQu/Organisation/issues";
 export const ContactPageEmailLink =
-  "mailto:clemens.beck@uni-jena.de?subject=Interesse%20an%20einer%20Zusammenarbeit%20im%20Projekt%20HisQu&body=Sehr%20geehrter%20Herr%20Beck%2C%0D%0A%0D%0Awir%20haben%20Interesse%20an%20einer%20Zusammenarbeit%20an%20Ihrem%20Forschungsprojekt%20HisQu!%20Unser%20Arbeitsbereich%20ist%20...%20und%20wir%20k%C3%B6nnen%20an%20...%20beitragen.%0D%0A%0D%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0D%0A%3CName%3E";
+  "mailto:clemens.beck@uni-jena.de?subject=HisQu-Projekt";
 
 import {
   dfgLogo,
