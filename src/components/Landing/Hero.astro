@@ -14,21 +14,23 @@ import { Icon } from 'astro-icon/components';
     </h1>
 
     <p id="hero-subtitle" class="text-sm sm:text-base md:text-xl text-slate-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-      In den Digital Humanities fehlen bislang integrierte Lösungen für einen geschlossenen Forschungsdatenzyklus. HisQu entwickelt eine fachspezifische Anwendung, um den gesamten Forschungsprozess für historische Quellen digital zu unterstützen.
+      In den Digital Humanities fehlen bislang integrierte Lösungen für einen geschlossenen Forschungsdatenzyklus.
+      HisQu entwickelt eine integrierte Plattform, um den Forschungsprozess mit Quellen digital zu
+      unterstützen.
     </p>
 
     <div id="hero-cta" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 md:mb-16">
-      <a href="/tools" class="group relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold text-sm md:text-base overflow-hidden transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto text-center">
+      <a href="https://github.com/HisQu" class="group relative px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold text-sm md:text-base overflow-hidden transition-transform hover:scale-105 active:scale-95 w-full sm:w-auto text-center">
         <span class="relative z-10 flex items-center justify-center gap-2">
-          <span>Die Toolchain entdecken</span>
+          <span>Unser GitHub</span>
           <Icon name="lucide:arrow-right" size={18} class="group-hover:translate-x-1 transition-transform" />
         </span>
         <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
       </a>
 
-      <a href="#" class="group flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 border border-slate-600 text-white rounded-full font-semibold text-sm md:text-base hover:border-purple-500 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
+      <a href="#problem-section" class="group flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 border border-slate-600 text-white rounded-full font-semibold text-sm md:text-base hover:border-purple-500 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
         <Icon name="lucide:play" size={18} class="group-hover:scale-110 transition-transform" />
-        <span>Demo ansehen</span>
+        <span>Was ist unser Vorschlag?</span>
       </a>
     </div>
 
@@ -77,6 +79,15 @@ import { Icon } from 'astro-icon/components';
     });
     gsap.to("#hero-scroll-indicator", { y: 8, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
     gsap.to("#scroll-mouse-dot", { y: 10, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+  }
+
+  const nextSectionBtn = document.querySelector('a[href="#problem-section"]');
+  if (nextSectionBtn) {
+    nextSectionBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('problem-section');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
   }
 
   const heroSection = document.querySelector('#hero-section');
