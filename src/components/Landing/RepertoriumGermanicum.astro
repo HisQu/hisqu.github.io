@@ -107,10 +107,12 @@ import Image from 'astro/components/Image.astro';
 
     container.addEventListener('click', (e) => { if (!isDragging) { removeAnimationClass(); updateSliderFromEvent(e as MouseEvent); } });
 
-    const root = scrollContainer ?? null;
+    const isMobile = window.innerWidth < 768;
+    const threshold = isMobile ? 0 : 0.5;
+    const root = isMobile ? null : (scrollContainer ?? null);
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        if (entry.isIntersecting && (isMobile || entry.intersectionRatio >= 0.5)) {
           factsContainer.classList.add('is-visible');
           overlay.classList.add('slider-animating');
           sliderLine.classList.add('slider-animating');
@@ -118,7 +120,7 @@ import Image from 'astro/components/Image.astro';
           observer.unobserve(section);
         }
       });
-    }, { root, threshold: 0.5 });
+    }, { root, threshold });
 
     observer.observe(section);
   });

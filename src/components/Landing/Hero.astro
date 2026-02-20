@@ -80,13 +80,14 @@ import { Icon } from 'astro-icon/components';
   }
 
   const heroSection = document.querySelector('#hero-section');
+  const isMobile = window.innerWidth < 768;
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       playIntroAnimation();
       playLoopingAnimations();
       observer.unobserve(heroSection!);
     }
-  }, { threshold: 0.4 });
+  }, { threshold: isMobile ? 0 : 0.4 });
 
   if (heroSection) observer.observe(heroSection);
 </script>

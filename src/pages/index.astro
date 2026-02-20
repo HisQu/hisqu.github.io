@@ -29,9 +29,20 @@ import RepertoriumGermanicum from "../components/Landing/RepertoriumGermanicum.a
     const scrollRoot = document.getElementById("presentation-container");
     const isMobile = window.innerWidth < 768;
 
+      if (isMobile) {
+      // On mobile there is no snap scrolling, so just make all content visible
+      sections.forEach((section) => {
+        const content = section.querySelector(".content-container");
+        if (content) {
+          gsap.set(content, { opacity: 1, y: 0 });
+        }
+      });
+      return;
+    }
+
     const options: IntersectionObserverInit = {
       root: scrollRoot,
-      threshold: isMobile ? 0.2 : 0.4,
+      threshold: 0.4,
     };
 
     const observer = new IntersectionObserver((entries) => {

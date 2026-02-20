@@ -66,15 +66,15 @@ body {
   scrollbar-width: none;
 }
 
-/* Mobile: disable mandatory snap to allow free scrolling on small screens */
+/* Mobile: disable snap scrolling entirely to allow free scrolling on small screens */
 @media (max-width: 767px) {
   #presentation-container {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
   }
 
   .fullscreen-section {
     min-height: 100svh;
-    scroll-snap-align: start;
+    scroll-snap-align: none;
   }
 
   .fullscreen-section.blog-section {
