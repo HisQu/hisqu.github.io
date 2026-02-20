@@ -7,6 +7,9 @@ location: "Jena"
 image:
   src: "../../assets/blog/kg.png"
   alt: "Visualisierung historischer Daten in FactGrid"
+readTime: "8 min"
+category: "FactGrid"
+featured: true
 ---
 
 # Fakten vernetzen mit FactGrid

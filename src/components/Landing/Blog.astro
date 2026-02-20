@@ -1,56 +1,26 @@
 ---
 import Image from 'astro/components/Image.astro';
 import { Calendar, Clock, ArrowRight, Bookmark } from 'lucide-astro';
-import TEMPTODO from "../../assets/KickOff_03_2025.jpg"
-import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
 
-const blogPosts = [
-  {
-    title: "Fakten vernetzen mit FactGrid",
-    excerpt: "Ein Projekt zur modellhaften Erfassung historischer Daten in einer offenen Wissensdatenbank.",
-    date: "2024-01-15",
-    readTime: "8 min",
-    category: "FactGrid",
-    featured: true
-  },
-  {
-    title: "Annotation historischer Regesten",
-    excerpt: "Die manuelle Annotation von Regesten dient als Grundlage für das Validieren und Entwickeln automatischer Extraktionsverfahren.",
-    date: "2024-01-10",
-    readTime: "12 min",
-    category: "Methodik",
-    featured: false
-  },
-  {
-    title: "Large Language Models in der Geschichtswissenschaft",
-    excerpt: "Wie KI-Technologien die historische Forschung revolutionieren und neue Möglichkeiten der Quellenerschließung eröffnen.",
-    date: "2024-01-05",
-    readTime: "15 min",
-    category: "KI & ML",
-    featured: false
-  },
-  {
-    title: "SPARQL-Abfragen für Historiker:innen",
-    excerpt: "Ein praktischer Leitfaden für den Einstieg in semantische Datenbankabfragen für geschichtswissenschaftliche Forschung.",
-    date: "2023-12-20",
-    readTime: "10 min",
-    category: "Tutorial",
-    featured: false
-  }
-];
+const allPosts = await getCollection('blog');
+// Sort by date descending
+const blogPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const allCategories = ["Alle", ...new Set(blogPosts.map(post => post.category))];
+const allCategories = ["Alle", ...new Set(blogPosts.map(post => post.data.category ?? "Allgemein"))];
 const categories = allCategories.map((cat, index) => ({
   name: cat,
-  count: cat === "Alle" ? blogPosts.length : blogPosts.filter(p => p.category === cat).length,
+  count: cat === "Alle" ? blogPosts.length : blogPosts.filter(p => (p.data.category ?? "Allgemein") === cat).length,
   active: index === 0
 }));
 
-const formatDate = (dateString: string) => {
-  return new Date(dateString).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
 };
 
-const [mainPost, ...otherPosts] = blogPosts;
+// Featured post first (or the most recent one)
+const featuredPost = blogPosts.find(p => p.data.featured) ?? blogPosts[0];
+const otherPosts = blogPosts.filter(p => p.id !== featuredPost.id);
 ---
 
 <section class="fullscreen-section blog-section scrollbar-hide" id="blog-section">
@@ -93,23 +63,23 @@ const [mainPost, ...otherPosts] = blogPosts;
     <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10">
 
       <!-- Featured post -->
-      <article class="md:col-span-2 lg:col-span-2 grid-item group" data-category={mainPost.category}>
+      <article class="md:col-span-2 lg:col-span-2 grid-item group" data-category={featuredPost.data.category ?? "Allgemein"}>
         <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
           <div class="relative h-48 md:h-56 overflow-hidden">
-            <Image src={TEMPTODO} alt={mainPost.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <Image src={featuredPost.data.image.src} alt={featuredPost.data.image.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="absolute top-3 left-3">
               <span class="px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded-full">Featured</span>
             </div>
           </div>
           <div class="p-5 md:p-6 flex flex-col flex-grow">
-            <span class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-2">{mainPost.category}</span>
+            <span class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-2">{featuredPost.data.category ?? "Allgemein"}</span>
             <div class="flex items-center gap-4 text-slate-400 text-xs mb-3">
-              <div class="flex items-center gap-1"><Calendar size={12} /><span>{formatDate(mainPost.date)}</span></div>
-              <div class="flex items-center gap-1"><Clock size={12} /><span>{mainPost.readTime} read</span></div>
+              <div class="flex items-center gap-1"><Calendar size={12} /><span>{formatDate(featuredPost.data.date)}</span></div>
+              {featuredPost.data.readTime && <div class="flex items-center gap-1"><Clock size={12} /><span>{featuredPost.data.readTime} read</span></div>}
             </div>
-            <h3 class="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{mainPost.title}</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">{mainPost.excerpt}</p>
-            <a href="#" class="self-start flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium group/link">
+            <h3 class="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{featuredPost.data.title}</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">{featuredPost.data.description}</p>
+            <a href={`/blog/${featuredPost.id}`} class="self-start flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium group/link">
               <span>Weiterlesen</span>
               <ArrowRight size={14} class="transition-transform duration-300 group-hover/link:translate-x-1" />
             </a>
@@ -119,20 +89,20 @@ const [mainPost, ...otherPosts] = blogPosts;
 
       <!-- Other posts -->
       {otherPosts.map((post) => (
-        <article class="lg:col-span-1 grid-item group" data-category={post.category}>
+        <article class="lg:col-span-1 grid-item group" data-category={post.data.category ?? "Allgemein"}>
           <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
             <div class="relative h-36 md:h-40 overflow-hidden">
-              <Image src={TEMPTODO} alt={post.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <Image src={post.data.image.src} alt={post.data.image.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <div class="p-4 md:p-5 flex flex-col flex-grow">
-              <span class="text-purple-400 text-xs font-semibold uppercase tracking-wider mb-1.5">{post.category}</span>
+              <span class="text-purple-400 text-xs font-semibold uppercase tracking-wider mb-1.5">{post.data.category ?? "Allgemein"}</span>
               <div class="flex items-center gap-3 text-slate-400 text-xs mb-2">
-                <div class="flex items-center gap-1"><Calendar size={11} /><span>{formatDate(post.date)}</span></div>
-                <div class="flex items-center gap-1"><Clock size={11} /><span>{post.readTime}</span></div>
+                <div class="flex items-center gap-1"><Calendar size={11} /><span>{formatDate(post.data.date)}</span></div>
+                {post.data.readTime && <div class="flex items-center gap-1"><Clock size={11} /><span>{post.data.readTime}</span></div>}
               </div>
-              <h3 class="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors leading-snug">{post.title}</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-3 flex-grow">{post.excerpt}</p>
-              <a href="#" class="self-start flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors text-xs font-medium group/link">
+              <h3 class="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors leading-snug">{post.data.title}</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-3 flex-grow">{post.data.description}</p>
+              <a href={`/blog/${post.id}`} class="self-start flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors text-xs font-medium group/link">
                 <span>Lesen</span>
                 <ArrowRight size={12} class="transition-transform duration-300 group-hover/link:translate-x-1" />
               </a>

@@ -39,6 +39,9 @@ const blog = defineCollection({
 			authors: z.array(z.string()).optional(),
 			// Transform string to Date object
 			date: z.date({ coerce: true }),
+			readTime: z.string().optional(),
+			category: z.string().optional(),
+			featured: z.boolean().optional(),
 		}),
 });
 

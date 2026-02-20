@@ -6,6 +6,9 @@ location: "Jena"
 image:
   src: "../../assets/Beckstein_Gramsch.avif"
   alt: "Prof. Dr. Robert Gramsch-Stehfest und Prof. Dr. Clemens Beckstein"
+readTime: "6 min"
+category: "Presse"
+featured: false
 ---
 
 ## Überblick

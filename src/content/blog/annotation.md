@@ -9,12 +9,9 @@ location: "Jena"
 image:
   src: "../../assets/tools/rg.png"
   alt: "Historische Handschrift mit Annotationen"
----
-
-# Annotation historischer Regesten
-
-![Eine Handschrift aus dem Repertorium Germanicum](../../assets/blog/rg-blog.png)
-
+readTime: "4 min"
+category: "Methodik"
+featured: false
 ---
 
 Die Annotation von Regesten – verdichteten Inhaltszusammenfassungen historischer Urkunden – steht im Mittelpunkt unseres
