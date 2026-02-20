@@ -12,12 +12,6 @@ category: "FactGrid"
 featured: true
 ---
 
-# Fakten vernetzen mit FactGrid
-
-![Beispielhafte Datenvisualisierung aus FactGrid](../../assets/blog/kg.png)
-
----
-
 FactGrid ist eine kollaborative Datenbank, die historische Informationen in einer strukturierten, maschinenlesbaren Form
 bereitstellt. Sie basiert auf der Wikibase-Technologie und ermöglicht es, komplexe historische Zusammenhänge durch
 semantische Verknüpfungen sichtbar zu machen. Unser Forschungsprojekt nutzt FactGrid, um Daten nicht nur zu sammeln,

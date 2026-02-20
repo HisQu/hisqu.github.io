@@ -66,8 +66,7 @@ import { Icon } from 'astro-icon/components';
 
   function playIntroAnimation() {
     const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power3.out" } });
-    tl.from("#hero-badge", { opacity: 0, y: 20 })
-      .from("#hero-headline", { opacity: 0, y: 20 }, "-=0.6")
+    tl.from("#hero-headline", { opacity: 0, y: 20 })
       .from("#hero-subtitle", { opacity: 0, y: 20 }, "-=0.6")
       .from("#hero-cta", { opacity: 0, y: 20 }, "-=0.6")
       .from(["#hero-indicators", "#hero-scroll-indicator"], { opacity: 0 }, "-=0.6");

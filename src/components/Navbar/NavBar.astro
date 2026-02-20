@@ -21,6 +21,7 @@ import Team from "../../assets/team.jpg";
     <div class="menu-overlay bg-gradient-to-br from-slate-900 to-blue-950">
       <div class="menu-overlay-content">
         <div class="menu-media-wrapper">
+          <div class="menu-media-hover-circle"><p>View</p></div>
           <Image src={Team} alt="Media" />
         </div>
         <div class="menu-content-wrapper">
@@ -378,12 +379,11 @@ import Team from "../../assets/team.jpg";
 
       splitTextByContainer.push(containerSplits);
     });
-    
+
     // Flatten all lines into a single array for one animation call
     const allLines = splitTextByContainer.flat().flatMap(split => split.lines);
 
     /* Animation Constants */
-    const container = document.querySelector(".container");
     const menuToggleBtn = document.querySelector(".menu-toggle-btn");
     const menuOverlay = document.querySelector(".menu-overlay");
     const menuOverlayContainer = document.querySelector(
@@ -417,7 +417,6 @@ import Team from "../../assets/team.jpg";
         });
 
         tl.to(menuToggleLabel, { y: "-110%", duration: 1, ease: "hop" })
-          .to(container, { y: "100svh", duration: 1, ease: "hop" }, "<")
           .to(
             menuOverlay,
             {
@@ -461,8 +460,7 @@ import Team from "../../assets/team.jpg";
           },
         });
 
-        tl.to(container, { y: "0svh", duration: 1, ease: "hop" })
-          .to(
+        tl.to(
             menuOverlay,
             {
               clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
