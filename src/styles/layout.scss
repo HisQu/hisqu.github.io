@@ -52,8 +52,12 @@ body {
 
 ::selection {
 	background: colors.color(purple, 200);
+	color: #fff;
+	-webkit-text-fill-color: #fff;
 	@media (prefers-color-scheme: dark) {
 		background: colors.color(purple, 600);
+		color: #fff;
+		-webkit-text-fill-color: #fff;
 	}
 }
 
