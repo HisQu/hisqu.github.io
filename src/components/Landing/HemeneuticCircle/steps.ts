@@ -33,8 +33,9 @@ export const steps: Step[] = [
       "Arbeit mit Protégé als Grundlage",
     ],
     tools: [
-      { name: "Protégé Online", href: "https://protege.stanford.edu/" },
-      { name: "RG Guidelines", href: "/blog/annotation" },
+      { name: "Datamodel Workflow", href: "https://datamodel.hisqu.de/" },
+      { name: "RG Annotation Guidelines", href: "/blog/annotation" },
+      { name: "Protégé", href: "https://protege.stanford.edu/" },
     ],
   },
   {
