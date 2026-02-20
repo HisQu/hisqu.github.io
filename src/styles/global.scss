@@ -121,4 +121,16 @@ body {
   border-color: rgba(139, 92, 246, 0.4); /* purple-500/40 */
 }
 
+/* Like landing-card but without padding — for cards where media bleeds to edges */
+.team-card {
+  background: rgba(30, 41, 59, 0.4); /* slate-800/40 */
+  border: 1.5px solid rgba(71, 85, 105, 0.5); /* slate-700/50 */
+  border-radius: 0.875rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.team-card:hover {
+  border-color: rgba(139, 92, 246, 0.4); /* purple-500/40 */
+}
+
 
