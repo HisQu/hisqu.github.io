@@ -24,12 +24,12 @@ import RepertoriumGermanicum from "../components/Landing/RepertoriumGermanicum.a
 <script>
   import { gsap } from "gsap";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initSectionObserver() {
     const sections = document.querySelectorAll(".fullscreen-section");
     const scrollRoot = document.getElementById("presentation-container");
     const isMobile = window.innerWidth < 768;
 
-      if (isMobile) {
+    if (isMobile) {
       // On mobile there is no snap scrolling, so just make all content visible
       sections.forEach((section) => {
         const content = section.querySelector(".content-container");
@@ -70,5 +70,9 @@ import RepertoriumGermanicum from "../components/Landing/RepertoriumGermanicum.a
     }, options);
 
     sections.forEach((section) => observer.observe(section));
-  });
+  }
+
+  // astro:page-load fires on both the initial page load and after every
+  // View Transitions navigation, ensuring the observer is always set up.
+  document.addEventListener("astro:page-load", initSectionObserver);
 </script>

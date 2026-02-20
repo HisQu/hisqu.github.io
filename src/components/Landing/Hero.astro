@@ -81,26 +81,32 @@ import { Icon } from 'astro-icon/components';
     gsap.to("#scroll-mouse-dot", { y: 10, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
   }
 
-  const nextSectionBtn = document.querySelector('a[href="#problem-section"]');
-  if (nextSectionBtn) {
-    nextSectionBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.getElementById('problem-section');
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
+  function initHero() {
+    const nextSectionBtn = document.querySelector('a[href="#problem-section"]');
+    if (nextSectionBtn) {
+      nextSectionBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById('problem-section');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    const heroSection = document.querySelector('#hero-section');
+    const isMobile = window.innerWidth < 768;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        playIntroAnimation();
+        playLoopingAnimations();
+        observer.unobserve(heroSection!);
+      }
+    }, { threshold: isMobile ? 0 : 0.4 });
+
+    if (heroSection) observer.observe(heroSection);
   }
 
-  const heroSection = document.querySelector('#hero-section');
-  const isMobile = window.innerWidth < 768;
-  const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      playIntroAnimation();
-      playLoopingAnimations();
-      observer.unobserve(heroSection!);
-    }
-  }, { threshold: isMobile ? 0 : 0.4 });
-
-  if (heroSection) observer.observe(heroSection);
+  // astro:page-load fires on both the initial page load and after every
+  // View Transitions navigation.
+  document.addEventListener("astro:page-load", initHero);
 </script>
 
 <style>
