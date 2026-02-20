@@ -1,0 +1,201 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/IndexLayout.astro';
+import Image from 'astro/components/Image.astro';
+import { Calendar, Clock, ArrowRight, Bookmark } from 'lucide-astro';
+
+const allPosts = (await getCollection('blog'))
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const allCategories = ["Alle", ...new Set(allPosts.map(p => p.data.category ?? "Allgemein"))];
+const categories = allCategories.map((cat, i) => ({
+    name: cat,
+    count: cat === "Alle" ? allPosts.length : allPosts.filter(p => (p.data.category ?? "Allgemein") === cat).length,
+    active: i === 0,
+}));
+
+const formatDate = (date: Date) =>
+    date.toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const featuredPost = allPosts.find(p => p.data.featured) ?? allPosts[0];
+const otherPosts = allPosts.filter(p => p.id !== featuredPost.id);
+---
+
+<Layout title="Blog | HisQu">
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6">
+                <Bookmark size={14} class="text-blue-400" />
+                <span class="text-blue-300 text-sm font-medium">Latest Insights</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+                Blog &amp;
+                <span class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Updates</span>
+            </h1>
+
+            <p class="text-base text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Aktuelle Entwicklungen, Forschungsergebnisse und Einblicke in die Welt der digitalen Geisteswissenschaften.
+            </p>
+
+            <!-- Filter buttons -->
+            <div id="blog-filter" class="flex flex-wrap items-center justify-center gap-2">
+                {categories.map((cat) => (
+                    <button
+                        data-filter={cat.name}
+                        class:list={[
+                            "px-3 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300",
+                            cat.active
+                                ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                                : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-white border border-slate-700/50',
+                        ]}
+                    >
+                        {cat.name} ({cat.count})
+                    </button>
+                ))}
+            </div>
+        </div>
+
+        <!-- Blog grid -->
+        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+            <!-- Featured post -->
+            <article class="md:col-span-2 lg:col-span-2 grid-item group" data-category={featuredPost.data.category ?? "Allgemein"}>
+                <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
+                    <div class="relative h-48 md:h-56 overflow-hidden">
+                        <Image
+                            src={featuredPost.data.image.src}
+                            alt={featuredPost.data.image.alt}
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div class="absolute top-3 left-3">
+                            <span class="px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded-full">Featured</span>
+                        </div>
+                    </div>
+                    <div class="p-5 md:p-6 flex flex-col flex-grow">
+                        <span class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-2">
+                            {featuredPost.data.category ?? "Allgemein"}
+                        </span>
+                        <div class="flex items-center gap-4 text-slate-400 text-xs mb-3">
+                            <div class="flex items-center gap-1">
+                                <Calendar size={12} />
+                                <span>{formatDate(featuredPost.data.date)}</span>
+                            </div>
+                            {featuredPost.data.readTime && (
+                                <div class="flex items-center gap-1">
+                                    <Clock size={12} />
+                                    <span>{featuredPost.data.readTime} read</span>
+                                </div>
+                            )}
+                        </div>
+                        <h2 class="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                            {featuredPost.data.title}
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4 flex-grow">{featuredPost.data.description}</p>
+                        <a
+                            href={`/blog/${featuredPost.id}`}
+                            class="self-start flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium group/link"
+                        >
+                            <span>Weiterlesen</span>
+                            <ArrowRight size={14} class="transition-transform duration-300 group-hover/link:translate-x-1" />
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Other posts -->
+            {otherPosts.map((post) => (
+                <article class="lg:col-span-1 grid-item group" data-category={post.data.category ?? "Allgemein"}>
+                    <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
+                        <div class="relative h-36 md:h-40 overflow-hidden">
+                            <Image
+                                src={post.data.image.src}
+                                alt={post.data.image.alt}
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </div>
+                        <div class="p-4 md:p-5 flex flex-col flex-grow">
+                            <span class="text-purple-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                                {post.data.category ?? "Allgemein"}
+                            </span>
+                            <div class="flex items-center gap-3 text-slate-400 text-xs mb-2">
+                                <div class="flex items-center gap-1">
+                                    <Calendar size={11} />
+                                    <span>{formatDate(post.data.date)}</span>
+                                </div>
+                                {post.data.readTime && (
+                                    <div class="flex items-center gap-1">
+                                        <Clock size={11} />
+                                        <span>{post.data.readTime}</span>
+                                    </div>
+                                )}
+                            </div>
+                            <h2 class="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors leading-snug">
+                                {post.data.title}
+                            </h2>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3 flex-grow line-clamp-3">{post.data.description}</p>
+                            <a
+                                href={`/blog/${post.id}`}
+                                class="self-start flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors text-xs font-medium group/link"
+                            >
+                                <span>Lesen</span>
+                                <ArrowRight size={12} class="transition-transform duration-300 group-hover/link:translate-x-1" />
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            ))}
+        </div>
+    </main>
+</Layout>
+
+<script>
+    import gsap from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        gsap.fromTo(
+            '#blog-grid .grid-item',
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.3 }
+        );
+
+        const filterButtons = document.querySelectorAll<HTMLButtonElement>('#blog-filter button');
+        const blogArticles = document.querySelectorAll<HTMLElement>('#blog-grid .grid-item');
+
+        const activeClasses = ['bg-gradient-to-r', 'from-blue-500', 'to-purple-600', 'text-white'];
+        const inactiveClasses = [
+            'bg-slate-800/50', 'text-slate-300', 'hover:bg-slate-700/50',
+            'hover:text-white', 'border', 'border-slate-700/50',
+        ];
+
+        const applyFilter = (selectedFilter: string) => {
+            filterButtons.forEach(btn => {
+                btn.classList.remove(...activeClasses, ...inactiveClasses);
+                if (btn.dataset.filter === selectedFilter) {
+                    btn.classList.add(...activeClasses);
+                } else {
+                    btn.classList.add(...inactiveClasses);
+                }
+            });
+
+            const visible: HTMLElement[] = [];
+            blogArticles.forEach(article => {
+                const isVisible = selectedFilter === 'Alle' || selectedFilter === article.dataset.category;
+                article.style.display = isVisible ? '' : 'none';
+                if (isVisible) visible.push(article);
+            });
+            gsap.fromTo(visible, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.05 });
+        };
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.dataset.filter) applyFilter(btn.dataset.filter);
+            });
+        });
+
+        applyFilter('Alle');
+    });
+</script>
+
