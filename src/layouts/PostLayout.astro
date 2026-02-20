@@ -7,6 +7,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import NavBar from '../components/Navbar/NavBar.astro';
+import { ClientRouter } from 'astro:transitions';
 
 type Props = {
 	blogpost: CollectionEntry<'blog'> | CollectionEntry<'events'> | CollectionEntry<'publications'>;
@@ -27,6 +28,7 @@ const date = 'date' in blogpost.data ? blogpost.data.date : undefined;
 			description={description}
 			image={image as any}
 		/>
+		<ClientRouter />
 	</head>
 	<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
 		<div class="glow"></div>

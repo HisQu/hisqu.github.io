@@ -5,6 +5,7 @@ import "../styles/global.scss";
 import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import NavBar from "../components/Navbar/NavBar.astro";
+import { ClientRouter } from 'astro:transitions';
 
 type Props = HeadProps & { showFooter?: boolean };
 
@@ -15,6 +16,7 @@ const { showFooter = true, ...head } = Astro.props;
 <html lang="en">
     <head>
         <BaseHead {...head} />
+        <ClientRouter />
     </head>
     <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen bg-fixed">
         <div class="glow"></div>

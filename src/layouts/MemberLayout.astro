@@ -7,6 +7,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import NavBar from '../components/Navbar/NavBar.astro';
 import {Image} from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
 
 type Props = {
     member: CollectionEntry<'team'>;
@@ -49,6 +50,7 @@ const orcidUrl = member.data.orcid
 <html lang="de">
 <head>
     <BaseHead title={headTitle} description={headDescription} image={seoImage}/>
+    <ClientRouter />
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
 <div class="glow"></div>

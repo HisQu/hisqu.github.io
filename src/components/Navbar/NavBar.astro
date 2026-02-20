@@ -26,14 +26,14 @@ import Team from "../../assets/team.jpg";
         <div class="menu-content-wrapper">
           <div class="menu-content-main">
             <div class="menu-col">
-              <div class="menu-link"> <a href="https://github.com/HisQu">GitHub</a></div>
               <div class="menu-link"> <a href="/events/">Events</a></div>
               <div class="menu-link"> <a href="/publications/">Publikationen</a></div>
               <div class="menu-link"> <a href="/team/">Team</a></div>
               <div class="menu-link"> <a href="/contact/">Kontakt</a></div>
+              <div class="menu-link"> <a href="https://github.com/HisQu">GitHub</a></div>
             </div>
             <div class="menu-col">
-              <div class="menu-tag"> <a href="/imprint/">Imprint/GDPR</a></div>
+              <!--<div class="menu-tag"> <a href="/imprint/">Imprint/GDPR</a></div>-->
             </div>
           </div>
           <div class="menu-footer">
@@ -355,17 +355,17 @@ import Team from "../../assets/team.jpg";
   import { CustomEase } from "gsap/CustomEase";
   import { SplitText } from "gsap/SplitText";
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initMenu() {
     gsap.registerPlugin(CustomEase, SplitText);
     CustomEase.create("hop", ".87, 0, .13, 1");
 
     // --- SETUP SPLITTEXT ---
     const textContainers = document.querySelectorAll(".menu-col");
-    const splitTextByContainer: SplitText[][] = [];
+    const splitTextByContainer = [];
 
     textContainers.forEach((container) => {
       const textElements = container.querySelectorAll("a, p");
-      let containerSplits: SplitText[] = [];
+      let containerSplits = [];
 
       textElements.forEach((element) => {
         const split = new SplitText(element, {
@@ -389,7 +389,7 @@ import Team from "../../assets/team.jpg";
     const menuOverlayContainer = document.querySelector(
       ".menu-overlay-content"
     );
-    const menuMediaWrapper = document.querySelector(".menu-media-wrapper") as HTMLElement;
+    const menuMediaWrapper = document.querySelector(".menu-media-wrapper");
     const menuToggleLabel = document.querySelector(".menu-toggle-label p");
     const hamburgerIcon = document.querySelector(".menu-hamburger-icon");
     const menuMediaHoverCircle = document.querySelector(".menu-media-hover-circle"); // NEW: Get the hover circle element
@@ -399,6 +399,7 @@ import Team from "../../assets/team.jpg";
     let isAnimating = false;
 
     menuToggleBtn?.addEventListener("click", () => {
+      console.log("Hamburger clicked", { isMenuOpen, isAnimating });
       if (isAnimating) return;
 
       if (!isMenuOpen) {
@@ -490,7 +491,7 @@ import Team from "../../assets/team.jpg";
       gsap.to(menuMediaHoverCircle, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.out" });
     });
 
-    menuMediaWrapper?.addEventListener("mousemove", (e: MouseEvent) => {
+    menuMediaWrapper?.addEventListener("mousemove", (e) => {
       if (menuMediaHoverCircle) {
         // Get the bounding rectangle of the wrapper to calculate local coordinates
         const rect = menuMediaWrapper.getBoundingClientRect();
@@ -507,8 +508,11 @@ import Team from "../../assets/team.jpg";
         });
       }
     });
-  });
+  }
+
+  document.addEventListener("astro:page-load", initMenu);
 </script>
+
 
 
 <!-- TODO:
