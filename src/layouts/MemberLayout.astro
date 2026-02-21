@@ -4,6 +4,7 @@ import "../styles/global.scss";
 
 import type {CollectionEntry} from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
+import { SiteTitle } from '../consts';
 import Footer from '../components/Footer.astro';
 import NavBar from '../components/Navbar/NavBar.astro';
 import {Image} from 'astro:assets';
@@ -21,7 +22,7 @@ const prefix = member.data.academic_title?.prefix?.trim() || '';
 const suffix = member.data.academic_title?.suffix?.trim() || '';
 const displayName = [prefix, baseName].filter(Boolean).join(' ') + (suffix ? ', ' + suffix : '');
 
-const headTitle = `${displayName} — Team`;
+const headTitle = `${displayName} | ${SiteTitle}`;
 const headDescription = member.data.description;
 const seoImage = member.data.image;
 
