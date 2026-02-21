@@ -92,23 +92,17 @@ nav {
 		display: flex;
 		align-items: center;
 		gap: 10px;
-		color: colors.color(gray, 950);
+		color: colors.$white;
 		font-size: 16px;
 		font-weight: 700;
 		letter-spacing: 2px;
 		line-height: 1;
 		text-decoration: none;
 		text-transform: uppercase;
-		@media (prefers-color-scheme: dark) {
-			color: colors.$white;
-		}
 	}
 	.links a {
 		margin-left: 1em;
-		color: colors.color(gray, 800);
-		@media (prefers-color-scheme: dark) {
-			color: colors.color(gray, 200);
-		}
+		color: colors.color(gray, 200);
 	}
 }
 
@@ -219,15 +213,12 @@ nav {
 
 .date {
 	clear: both;
-	color: colors.color(gray, 800);
+	color: colors.color(gray, 200);
 	font-family: type.$codeFont;
 	font-size: type.$fontSizeSmall;
 	@media (max-width: $tablet) {
 		display: inline;
 		margin-left: 1em;
-	}
-	@media (prefers-color-scheme: dark) {
-		color: colors.color(gray, 200);
 	}
 }
 
