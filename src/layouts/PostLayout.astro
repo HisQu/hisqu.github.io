@@ -5,6 +5,7 @@ import "../styles/global.scss";
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
+import { SiteTitle } from '../consts';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import NavBar from '../components/Navbar/NavBar.astro';
@@ -18,7 +19,7 @@ type Props = {
 
 const { blogpost } = Astro.props;
 const { data } = blogpost;
-const title = data.title;
+const title = `${data.title} | ${SiteTitle}`;
 const description = data.description;
 const image = 'image' in data ? data.image : undefined;
 
