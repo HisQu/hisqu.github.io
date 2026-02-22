@@ -15,5 +15,5 @@ Patrick Stahl ist wissenschaftlicher Assistent an der Friedrich-Schiller-Univers
 
 ## Ausbildung
 - M. Sc. Informatik, 1. Fachsemester, Friedrich-Schiller-Universität Jena (laufend)
-- B. Sc. Informatik, 7. Fachsemester, Friedrich-Schiller-Universität Jena 
+- B. Sc. Informatik, 6. Fachsemester, Friedrich-Schiller-Universität Jena 
 
