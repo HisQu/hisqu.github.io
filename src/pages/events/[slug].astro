@@ -26,9 +26,6 @@ const { Content } = await render(ev);
         {ev.data.url && (
                 <p><a href={ev.data.url} rel="noopener noreferrer">Event website</a></p>
         )}
-        {ev.data.image && (
-                <Image src={ev.data.image.src} alt={ev.data.image.alt} />
-        )}
     </header>
 
     <Content />
