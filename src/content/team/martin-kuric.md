@@ -6,7 +6,7 @@ description: Wissenschaftlicher Mitarbeiter
 group: germania-sacra
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image: ""../../assets/team/HisQu_Fotos_Martin_Kuric.jpg""
+image: "../../assets/team/HisQu_Fotos_Martin_Kuric.jpg"
 ---
 
 # Dr. Martin Kuric (Wissenschaftlicher Mitarbeiter / Softwareentwickler, Germania Sacra – HisQu)
