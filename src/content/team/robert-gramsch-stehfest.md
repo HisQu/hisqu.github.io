@@ -7,7 +7,7 @@ description: Teilprojektleiter
 position: Teilprojektleiter
 group: fsu-jena
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Fotos_Robert.jpg"
 ---
 
 ## Kurzvita
