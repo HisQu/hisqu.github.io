@@ -6,7 +6,7 @@ description: Teilprojektleiter
 group: germania-sacra
 position: Teilprojektleiter
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Foto_Christian_Popp.jpg"
 ---
 
 ## Kurzvita
