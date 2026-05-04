@@ -3,9 +3,9 @@ numerical_position: 6
 name: Daniel Motz
 academic_title:
   suffix: B.Sc.
-description: Wissenschaftlicher Assistent
+description: Wissenschaftlicher Mitarbeiter
 group: fsu-jena
-position: Wissenschaftlicher Assistent
+position: Wissenschaftlicher Mitarbeiter
 publications: []
 image: "../../assets/team/danielmotz.jpg"
 email: daniel.motz@uni-jena.de
@@ -14,7 +14,7 @@ orcid: "0009-0005-5380-5464"
 
 ## Kurzvita
 Daniel Motz ist M. Sc.-Student an der Friedrich-Schiller-Universität Jena mit Schwerpunkt auf theoretischer Informatik. 
-Seit 2025 arbeitet er als wissenschaftlicher Assistent im DFG-Projekt **HisQu** und entwickelt dort eine Infrastruktur zur strukturierten 
+Seit 2025 arbeitet er als wissenschaftlicher Mitarbeiter im DFG-Projekt **HisQu** und entwickelt dort eine Infrastruktur zur strukturierten 
 Erfassung, Versionierung und Analyse heterogener historischer Primärdaten in einem interdisziplinären Verbund. Seine 
 praktische Expertise umfasst Full-Stack-Entwicklung (u. a. React/Vue, TypeScript) sowie System- und Softwarearchitektur 
 mit Fokus auf robuste, wartbare Systeme (u. a. Python, Rust).
@@ -28,6 +28,7 @@ mit Fokus auf robuste, wartbare Systeme (u. a. Python, Rust).
     - Sprachzertifikate (CEFR): Englisch (C1), Russisch (B2), Spanisch (B1)
 
 ## Werdegang (Auswahl)
+- seit 2026 – **Wissenschaftlicher Mitarbeiter**
 - seit 2025 – **Wissenschaftlicher Assistent**, DFG-Projekt *HisQu*
     - Entwicklung einer Forschungsdateninfrastruktur für historische Quellen (strukturierte Erfassung, Versionierung, Analyse heterogener Primärdaten)
     - Mitarbeit an Systemarchitektur, Datenmodellierung und ETL-Workflows im interdisziplinären Forschungsverbund (Informatik/Geschichtswissenschaft)
