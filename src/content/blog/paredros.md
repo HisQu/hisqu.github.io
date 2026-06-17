@@ -1,7 +1,7 @@
 ---
 title: "Warum funktioniert meine Regex nicht?"
 description: "Reguläre Ausdrücke sind das non plus ultra zur automatischen Extraktion aus Texten. Sie bieten aber auch eine Hürde: komplexe Syntax und unerwartete Fehler. Zur korrekten Anwendung bedarf es gewissen Versiertheit, wobei selbst Erfahrene gelegentlich nicht erklären können, wieso ein Ausdruck nicht passt. Paredros erklärt den Parsingprozess visuell und unterstützt das Debugging."
-date: "2025-08-01T09:00:00"
+date: "2026-06-17T15:00:00"
 authors: [ "dm" ]
 location: "Jena"
 image:
