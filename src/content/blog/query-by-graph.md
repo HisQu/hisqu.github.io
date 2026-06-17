@@ -1,7 +1,7 @@
 ---
 title: "Abfragen an Wissensgraphen ohne SPARQL"
 description: "Wissensgraphen sind eine vielsversprechende Technologie zur Aggregation diverser Datenquellen, unter anderme in den Geschichtswissenschaften. Die Syntax der Abfragesprache SPARQL ist jedoch komplex. Unser Ansatz, Query by Graph, ermöglicht das Entwerfen einfacher SPARQL-Abfragen über eine graphische Benutzeroberfläche. Mit Mausklicks und einer Suchfunktion können Abfragen erstellt werden, ohne eine Zeile \"Code\" zu schreiben."
-date: "2026-06-18T15:00:00"
+date: "2026-06-18T20:00:00"
 authors: [ "dm" ]
 location: "Jena"
 image:
