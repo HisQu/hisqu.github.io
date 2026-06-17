@@ -9,7 +9,7 @@ image:
   alt: "Visualisierung historischer Daten in FactGrid"
 readTime: "8 min"
 category: "FactGrid"
-featured: true
+featured: false
 ---
 
 FactGrid ist eine kollaborative Datenbank, die historische Informationen in einer strukturierten, maschinenlesbaren Form
