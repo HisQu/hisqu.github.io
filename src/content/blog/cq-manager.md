@@ -21,6 +21,9 @@ Die Domänenexperten bzw. Stakeholder können CQs, also Fragen, die sie von der 
 
 # Funktionen
 
+## Bearbeitung und Versionierung
+ Die Inhalte und Metadaten können verändert und versioniert werden -- eine wichtige Grundlage zur Verwendung und Publikation der CQs.
+
 ## Konsolidierung
 
  Häufig haben unterschiedliche Stakeholder gleiche Anforderungen. Sind zwei Fragen gleichbedeutend (bzw. hinreichend ähnlich) können Ontologieingenieure sie in einer neuen Frage zusammenfassen (häufig konsolidieren genannt), statt sie durch eine Neue zu ersetzen. Dadurch werden die ursprünglichen Fragen und Metadaten erhalten.
@@ -30,14 +33,10 @@ Die Domänenexperten bzw. Stakeholder können CQs, also Fragen, die sie von der 
  In Projekten mit vielen und diversen Stakoldern ist es notwendig die Organisationsstruktur abzubilden. Zu diesem Zweck kann der CQ-Manager Projekte (zu jeder Ontologie existiert ein Projekt) und innerhalb der Projekte Gruppen verwalten. Zur thematischen Gruppierung können CQs Katalogen
 
 ## Klassifizierung
-Keet et al., 2024 motiviert die Klassifzierung von CQs. Der CQ-Manager ermöglicht das und führt weiters den Typ "Forschungsfrage" bzw. "Research Question" ein. Das ermöglicht eine strukturierte Bearbeitung 
+ [Keet et al., 2024](https://arxiv.org/abs/2412.13688) führt eine mit [NeOn](https://doi.org/10.20868/UPM.thesis.3879) kompatible Klassifzierung von CQs ein. Der CQ-Manager ermöglicht das und führt weiters den Typ "Forschungsfrage" bzw. "Research Question" ein. Die Unterteilung von CQs in Typen liefert eine Orientierung zur Erstellung.
 
-_**Klassifizierung**._
+## Indizierung von Begriffen
+ CQs liefern für die zu modellierende Domäne mitunter Begriffe und Abgrenzungen derselben. CQs können manuell annotiert werden, wodurch die Begriffe in einen Index aufgenommen werden. Dies ermöglicht eine Übersicht der in CQs verwendeten Begriffe. Darüber kann unter anderem festgestellt werden, welche CQs dieselben Begrifflichkeiten verwenden. Das ist zur Gruppierung von CQs in Cluster (bzw. im CQ-Manager Kataloge genannt) hilfreich.
 
-_**Indizierung von Begriffen**._
-
-_**Bearbeitung**._
-
-_**Versionierung**._
-
-_**Diskussion**._
+## Diskussion
+ Der CQ-Manager bietet für jede CQ eine Kommentarfunktion. Domänen- und Ontologieexperten können damit ihre Kommunikation direkt bei den CQs sammeln, was die Nachvollziehbarkeit verbessert.
