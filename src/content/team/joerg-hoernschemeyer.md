@@ -6,7 +6,7 @@ description: Teilprojektleiter
 group: dhi-rom
 position: Teilprojektleiter
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Hoernschemeyer.jpg"
 ---
 
 # Jörg Hörnschemeyer (Teilprojektleiter am Deutschen Historischen Institut Rom)
