@@ -6,7 +6,7 @@ end: "2026-03-24T12:30:00"
 location: "Jena"
 image:
   src: "../../assets/blog/Jenaer_Teamrun-2026.jpg"
-  alt: "Teamlauf Jena"
+  alt: "Teamlauf_Jena"
 ---
 
 Dass Historikerinnen, Historiker und Informatikerinnen, Informatiker nicht nur im stillen Kämmerlein an ihren Projekten arbeiten, bewies die Jenaer Projektgruppe beim diesjährigen Teamlauf in Jena eindrucksvoll. Als Teil des Team-Verbunds der Universität Jena gingen die "Mephisto-Runners" mit der Startnummer 29 beim Staffellauf in Wenigenjena an den Start.
