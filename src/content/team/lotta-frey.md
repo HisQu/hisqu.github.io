@@ -5,7 +5,7 @@ description: Wissenschaftliche Hilfskraft
 group: fsu-jena
 position: Wissenschaftliche Hilfskraft
 publications: []
-image: ""
+image: "../../assets/team/HisQu_Fotos_Lotta.jpg"
 ---
 
 ## Kurzvita
