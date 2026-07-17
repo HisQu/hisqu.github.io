@@ -4,7 +4,7 @@ description: Wissenschaftliche Hilfskraft
 group: fsu-jena
 position: Wissenschaftliche Hilfskraft
 publications: []
-image: ""../../assets/team/HisQu_Fotos_Tobias.jpg"
+image: "../../assets/team/HisQu_Fotos_Tobias.jpg"
 ---
 
 ## Kurzvita
