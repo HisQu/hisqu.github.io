@@ -118,7 +118,7 @@ const otherPosts = blogPosts.filter(p => p.id !== featuredPost.id);
 <script>
   import gsap from 'gsap';
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     gsap.fromTo("#blog-grid .grid-item",
       { opacity: 0, y: 16 },
       { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.3 }

@@ -147,7 +147,7 @@ const otherPubs = allPubs.slice(1);
 <script>
     import gsap from 'gsap';
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('astro:page-load', () => {
         gsap.fromTo(
             '#pub-grid .grid-item',
             { opacity: 0, y: 16 },
