@@ -3,6 +3,7 @@ import {getCollection} from 'astro:content';
 import BaseLayout from '../../layouts/IndexLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Image from 'astro/components/Image.astro';
+import { ImageSizes } from '../../consts';
 
 const events = await getCollection('events');
 
@@ -30,7 +31,7 @@ const past = events
                             <div class="flex flex-col sm:flex-row gap-6">
                                 {ev.data.image && (
                                     <a href={`/events/${ev.id}`} class="shrink-0">
-                                        <Image src={ev.data.image.src} alt={ev.data.image.alt}
+                                        <Image src={ev.data.image.src} {...ImageSizes.eventThumb} alt={ev.data.image.alt}
                                                class="w-full sm:w-48 h-32 object-cover rounded-xl" loading="lazy"/>
                                     </a>
                                 )}
@@ -60,7 +61,7 @@ const past = events
                             <div class="flex flex-col sm:flex-row gap-6">
                                 {ev.data.image && (
                                     <a href={`/events/${ev.id}`} class="shrink-0">
-                                        <Image src={ev.data.image.src} alt={ev.data.image.alt}
+                                        <Image src={ev.data.image.src} {...ImageSizes.eventThumb} alt={ev.data.image.alt}
                                                class="w-full sm:w-48 h-32 object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all" loading="lazy"/>
                                     </a>
                                 )}

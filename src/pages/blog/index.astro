@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/IndexLayout.astro';
 import Image from 'astro/components/Image.astro';
+import { ImageSizes } from '../../consts';
 import { Calendar, Clock, ArrowRight, Bookmark } from 'lucide-astro';
 
 const allPosts = (await getCollection('blog'))
@@ -66,7 +67,7 @@ const otherPosts = allPosts.filter(p => p.id !== featuredPost.id);
                 <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
                     <div class="relative h-48 md:h-56 overflow-hidden">
                         <Image
-                            src={featuredPost.data.image.src}
+                            src={featuredPost.data.image.src} {...ImageSizes.featuredCard}
                             alt={featuredPost.data.image.alt}
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
@@ -111,7 +112,7 @@ const otherPosts = allPosts.filter(p => p.id !== featuredPost.id);
                     <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
                         <div class="relative h-36 md:h-40 overflow-hidden">
                             <Image
-                                src={post.data.image.src}
+                                src={post.data.image.src} {...ImageSizes.card}
                                 alt={post.data.image.alt}
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />

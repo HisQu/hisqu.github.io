@@ -58,7 +58,7 @@ const orcidUrl = member.data.orcid
 <NavBar/>
 
 <!-- ── HERO HEADER ─────────────────────────────────────────────── -->
-<div class="member-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-2">
+<div class="member-hero max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 mb-2">
     <div class="member-hero__inner">
 
         <!-- Photo -->
@@ -71,7 +71,7 @@ const orcidUrl = member.data.orcid
                             src={img}
                             alt={displayName}
                             class="member-hero__img"
-                            sizes="(min-width: 1024px) 220px, 50vw"
+                            width={200}
                             loading="eager"
                         />
                     );

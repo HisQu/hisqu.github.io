@@ -8,7 +8,7 @@ import Team from "../../assets/team.jpg";
   <nav>
     <div class="menu-bar">
       <div class="menu-logo">
-        <a href="/"> <Image src={Logo} alt="Logo" /> </a>
+        <a href="/"> <Image src={Logo} alt="Logo" width={76} /> </a>
       </div>
       <div class="menu-toggle-btn">
         <div class="menu-toggle-label"> <p>Menu</p> </div>
@@ -22,7 +22,7 @@ import Team from "../../assets/team.jpg";
       <div class="menu-overlay-content">
         <div class="menu-media-wrapper">
           <div class="menu-media-hover-circle"><p>View</p></div>
-          <Image src={Team} alt="Media" />
+          <Image src={Team} alt="Media" layout="full-width" />
         </div>
         <div class="menu-content-wrapper">
           <div class="menu-content-main">
@@ -55,7 +55,7 @@ import Team from "../../assets/team.jpg";
   :root {
     --fg: #ffffff;
     --menu-bg: #0f0f0f;
-    --menu-fg-secondary: #5f5f5f;
+    --menu-fg-secondary: var(--color-slate-300);
     --hamburger-icon-border: rgba(255, 255, 255, 0.1);
   }
 

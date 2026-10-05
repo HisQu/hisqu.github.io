@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/IndexLayout.astro';
 import Image from 'astro/components/Image.astro';
+import { ImageSizes } from '../../consts';
 import { Calendar, BookOpen, ArrowRight, Library } from 'lucide-astro';
 
 const allPubs = (await getCollection('publications'))
@@ -62,7 +63,7 @@ const otherPubs = allPubs.slice(1);
                     {featuredPub.data.image && (
                         <div class="relative h-48 md:h-56 overflow-hidden">
                             <Image
-                                src={featuredPub.data.image.src}
+                                src={featuredPub.data.image.src} {...ImageSizes.featuredCard}
                                 alt={featuredPub.data.image.alt}
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
@@ -106,7 +107,7 @@ const otherPubs = allPubs.slice(1);
                         {pub.data.image && (
                             <div class="relative h-36 md:h-40 overflow-hidden">
                                 <Image
-                                    src={pub.data.image.src}
+                                    src={pub.data.image.src} {...ImageSizes.card}
                                     alt={pub.data.image.alt}
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />

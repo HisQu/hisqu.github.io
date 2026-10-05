@@ -1,5 +1,6 @@
 ---
 import Image from 'astro/components/Image.astro';
+import { ImageSizes } from '../../consts';
 import { Calendar, Clock, ArrowRight, Bookmark } from 'lucide-astro';
 import { getCollection } from 'astro:content';
 
@@ -34,8 +35,7 @@ const otherPosts = blogPosts.filter(p => p.id !== featuredPost.id);
       </div>
 
       <h2 class="section-title text-3xl sm:text-4xl md:text-6xl text-white mb-3 md:mb-4">
-        Blog &
-        <span class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Updates</span>
+        Blog & <span class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Updates</span>
       </h2>
 
       <p class="text-sm md:text-base text-slate-300 max-w-2xl mx-auto mb-5 md:mb-8 leading-relaxed">
@@ -66,7 +66,7 @@ const otherPosts = blogPosts.filter(p => p.id !== featuredPost.id);
       <article class="md:col-span-2 lg:col-span-2 grid-item group" data-category={featuredPost.data.category ?? "Allgemein"}>
         <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
           <div class="relative h-48 md:h-56 overflow-hidden">
-            <Image src={featuredPost.data.image.src} alt={featuredPost.data.image.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <Image src={featuredPost.data.image.src} {...ImageSizes.featuredCard} alt={featuredPost.data.image.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             <div class="absolute top-3 left-3">
               <span class="px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded-full">Featured</span>
             </div>
@@ -92,7 +92,7 @@ const otherPosts = blogPosts.filter(p => p.id !== featuredPost.id);
         <article class="lg:col-span-1 grid-item group" data-category={post.data.category ?? "Allgemein"}>
           <div class="landing-card overflow-hidden h-full flex flex-col rounded-2xl">
             <div class="relative h-36 md:h-40 overflow-hidden">
-              <Image src={post.data.image.src} alt={post.data.image.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <Image src={post.data.image.src} {...ImageSizes.card} alt={post.data.image.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <div class="p-4 md:p-5 flex flex-col flex-grow">
               <span class="text-purple-400 text-xs font-semibold uppercase tracking-wider mb-1.5">{post.data.category ?? "Allgemein"}</span>
