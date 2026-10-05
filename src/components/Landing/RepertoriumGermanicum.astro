@@ -25,9 +25,9 @@ import Image from 'astro/components/Image.astro';
       <!-- Image compare -->
       <div class="relative w-full max-w-xl lg:max-w-2xl flex-shrink-0">
         <div class="image-compare-container relative rounded-xl overflow-hidden select-none">
-          <img src={rg2_improved.src} alt="Repertorium Germanicum Improved" class="w-full h-auto object-contain" />
+          <Image src={rg2_improved} width={672} alt="Repertorium Germanicum Improved" class="w-full h-auto object-contain" />
           <div class="image-overlay absolute inset-0" style="clip-path: inset(0 0 0 100%);">
-            <img src={rg2_normal.src} alt="Repertorium Germanicum Original" class="w-full h-full object-contain" />
+            <Image src={rg2_normal} width={672} alt="Repertorium Germanicum Original" class="w-full h-full object-contain" />
           </div>
           <div class="slider-line absolute top-0 bottom-0 w-0.5 bg-purple-500 shadow-lg" style="left: 100%;">
             <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl cursor-ew-resize flex items-center justify-center">

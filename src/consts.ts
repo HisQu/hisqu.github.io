@@ -20,6 +20,15 @@ import {
 
 import type { ImageMetadata } from "astro";
 
+// <Image> props for images repeated across card grids (max rendered width + responsive sizes).
+export const ImageSizes = {
+  // md:col-span-2 in the 1/2/3-column grid of max-w-7xl
+  featuredCard: { width: 960, sizes: "(min-width: 1280px) 800px, (min-width: 1024px) 66vw, 100vw" },
+  card: { width: 736, sizes: "(min-width: 1280px) 400px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" },
+  // full width on mobile, sm:w-48 next to the text
+  eventThumb: { width: 576, sizes: "(min-width: 640px) 192px, 100vw" },
+};
+
 type Img = string | ImageMetadata;
 
 export type Partner = {
@@ -28,8 +37,6 @@ export type Partner = {
   unit?: string;
   institution?: string;
   alt?: string;
-  width?: number;
-  height?: number;
   srcLight: Img; // ← fix
   srcDark?: Img; // ← fix
   className?: string;
@@ -49,8 +56,6 @@ export const partners: Partner[] = [
     href: "https://mephisto.uni-jena.de",
     srcLight: mephisto03,
     srcDark: mephisto03,
-    width: 158,
-    height: 48,
     leads: [
       { name: "Clemens Beckstein", title: "Prof. Dr." },
       { name: "Robert Gramsch-Stehfest", title: "Apl. Prof. Dr." },
@@ -67,8 +72,6 @@ export const partners: Partner[] = [
     href: "https://adw-goe.de/germania-sacra/",
     srcLight: gsLogo_rmvb,
     srcDark: gsLogo_rmvb,
-    width: 158,
-    height: 48,
     leads: [
       { name: "Hedwig Röckelein", title: "Prof. Dr." },
       { name: "Bärbel Kröger", title: "M.A." },
@@ -85,8 +88,6 @@ export const partners: Partner[] = [
     href: "https://dhi-roma.it/",
     srcLight: dhiLogo_rmvb,
     srcDark: dhiLogo_rmvb,
-    width: 158,
-    height: 48,
     leads: [
       { name: "Martin Baumeister", title: "Prof. Dr." },
       { name: "Jörg Hörnschemeyer", title: "Dr." },
@@ -102,8 +103,6 @@ export const partners: Partner[] = [
     href: "https://factgrid.de/",
     srcLight: factGridLogo_rmvb,
     srcDark: factGridLogo_rmvb,
-    width: 158,
-    height: 48,
     leads: [
       { name: "Martin Mulsow", title: "Prof. Dr." },
       { name: "Olaf Simons", title: "Dr." },
@@ -146,8 +145,6 @@ export const dfg: Partner = {
   name: "Deutsche Forschungsgemeinschaft",
   srcLight: dfgLogo,
   srcDark: dfgLogo, // gleiches Asset in Dark erlaubt
-  width: 158,
-  height: 48,
   href: "https://www.dfg.de/",
   numerical_position: 1
 };
