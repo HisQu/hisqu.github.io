@@ -129,76 +129,72 @@ const buildInitials = (member: any) =>
                     </div>
 
                     <!-- Member cards grid -->
-                    <ul role="list" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 items-start">
+                    <ul role="list" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 auto-rows-fr">
                         {members.map(member => {
                             const name = buildName(member.data);
                             const initials = buildInitials(member.data);
                             const rawImage = member.data.image;
                             return (
                                 <li class="team-member grid-item group">
-                                    <a href={`/team/${member.id}`} class="block">
-                                        <div class="team-card overflow-hidden flex flex-col rounded-2xl transition-all duration-300 group-hover:-translate-y-1">
+                                    <div class="team-card relative h-full overflow-hidden flex flex-col rounded-2xl transition-all duration-300 group-hover:-translate-y-1">
 
-                                            <!-- Photo -->
-                                            <div class="relative overflow-hidden aspect-square shrink-0">
-                                                {rawImage && typeof rawImage === 'object' && 'src' in rawImage
-                                                    ? (
-                                                        <Image
-                                                            src={rawImage}
-                                                            alt={name}
-                                                            width={320}
-                                                            sizes="(min-width: 1280px) 230px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                                            loading="lazy"
-                                                        />
-                                                    ) : (
-                                                        <div class="w-full h-full flex items-center justify-center bg-slate-800 text-slate-400 text-2xl font-bold">
-                                                            {initials}
-                                                        </div>
-                                                    )
-                                                }
-                                                <!-- Group colour accent -->
-                                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                            </div>
+                                        <!-- Photo -->
+                                        <div class="relative overflow-hidden aspect-square shrink-0">
+                                            {rawImage && typeof rawImage === 'object' && 'src' in rawImage
+                                                ? (
+                                                    <Image
+                                                        src={rawImage}
+                                                        alt={name}
+                                                        width={320}
+                                                        sizes="(min-width: 1280px) 230px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        loading="lazy"
+                                                    />
+                                                ) : (
+                                                    <div class="w-full h-full flex items-center justify-center bg-slate-800 text-slate-400 text-2xl font-bold">
+                                                        {initials}
+                                                    </div>
+                                                )
+                                            }
+                                            <!-- Group colour accent -->
+                                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        </div>
 
-                                            <!-- Info -->
-                                            <div class="p-3 md:p-4 flex flex-col flex-grow">
-                                                <h3 class="text-sm md:text-base font-bold text-white leading-snug mb-1 group-hover:text-purple-400 transition-colors">
-                                                    {name}
-                                                </h3>
-                                                {member.data.position && (
-                                                    <p class="text-slate-400 text-xs leading-snug mb-2 flex-grow">{member.data.position}</p>
+                                        <!-- Info -->
+                                        <div class="p-3 md:p-4 flex flex-col flex-grow">
+                                            <h3 class="text-sm md:text-base font-bold text-white leading-snug mb-1 group-hover:text-purple-400 transition-colors">
+                                                <a href={`/team/${member.id}`} class="after:absolute after:inset-0">{name}</a>
+                                            </h3>
+                                            {member.data.position && (
+                                                <p class="text-slate-400 text-xs leading-snug mb-2 flex-grow">{member.data.position}</p>
+                                            )}
+                                            <div class="flex items-center gap-2 mt-auto">
+                                                {member.data.email && (
+                                                    <a
+                                                        href={`mailto:${member.data.email}`}
+                                                        class="relative z-10 text-slate-500 hover:text-purple-400 transition-colors"
+                                                        title="E-Mail"
+                                                    >
+                                                        <Mail size={13} />
+                                                    </a>
                                                 )}
-                                                <div class="flex items-center gap-2 mt-auto">
-                                                    {member.data.email && (
-                                                        <a
-                                                            href={`mailto:${member.data.email}`}
-                                                            class="text-slate-500 hover:text-purple-400 transition-colors"
-                                                            onclick="event.stopPropagation()"
-                                                            title="E-Mail"
-                                                        >
-                                                            <Mail size={13} />
-                                                        </a>
-                                                    )}
-                                                    {member.data.website && (
-                                                        <a
-                                                            href={member.data.website}
-                                                            class="text-slate-500 hover:text-purple-400 transition-colors"
-                                                            target="_blank"
-                                                            rel="noopener"
-                                                            onclick="event.stopPropagation()"
-                                                            title="Website"
-                                                        >
-                                                            <Globe size={13} />
-                                                        </a>
-                                                    )}
-                                                    <span class="ml-auto flex items-center gap-1 text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium">
-                                                        Profil <ArrowRight size={11} />
-                                                    </span>
-                                                </div>
+                                                {member.data.website && (
+                                                    <a
+                                                        href={member.data.website}
+                                                        class="relative z-10 text-slate-500 hover:text-purple-400 transition-colors"
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                        title="Website"
+                                                    >
+                                                        <Globe size={13} />
+                                                    </a>
+                                                )}
+                                                <span class="ml-auto flex items-center gap-1 text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium">
+                                                    Profil <ArrowRight size={11} />
+                                                </span>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </li>
                             );
                         })}
