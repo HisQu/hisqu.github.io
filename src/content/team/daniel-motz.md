@@ -7,7 +7,7 @@ description: Wissenschaftlicher Mitarbeiter
 group: fsu-jena
 position: Wissenschaftlicher Mitarbeiter
 publications: []
-image: "../../assets/team/danielmotz.jpg"
+image: "../../assets/team/danielmotz.png"
 email: daniel.motz@uni-jena.de
 orcid: "0009-0005-5380-5464"
 ---
