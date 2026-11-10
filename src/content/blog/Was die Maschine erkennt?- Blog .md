@@ -5,7 +5,7 @@ date: "2026-09-02T20:00:00"
 authors: [ "LN" ]
 location: "Jena"
 image:
-  src: ""../../assets/blog/Blog_Maschine_RG.png""
+  src: "../../assets/blog/Blog_Maschine_RG.png"
   alt: ""
 readTime: "7 min"
 category: "Methodik"
