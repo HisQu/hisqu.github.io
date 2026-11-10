@@ -11,6 +11,7 @@ readTime: "7 min"
 category: "Methodik"
 featured: false
 ---
+
 Die zentrale Frage in unserem Forschungsproekt HisQu ist jene, ob die aktuellen KI-Modelle in der Lage sind, nicht nur Orte und Personen in historischen Quellen zu erkennen, sondern vielmehr die oftmals hochkomplexe Struktur historischer Quellen zu analysieren und die relevante semantische Struktur zu erschließen. Die Relevanz der Untersuchung liegt damit weniger bei dem Erkennen einer Kirche oder eines Datums und der Unterscheidung dieser Ausdrücke, sondern eher bei der Rollenzuschreibung, die diese in einem historischen Zusammenhang erhalten. Welche Kirche empfängt einen päpstlichen Ablass? Für welche konkreten Handlungen oder Tage wird ein Ablass erbeten? Und wer hat die Bitte um diesen Ablass überhaupt vorgebracht?
 
 Diese Beziehungen müssen abgebildet werden, und hierfür nimmt HisQu eine wichtige Rolle ein. Wir entwickeln anhand der Rollenzuschreibungen im Repertorium Germanicum eine Ontologie, die genau diese Rollen formalisiert darstellbar macht: Die Ontologie modelliert die historischen Vorgänge, die daran beteiligten Personen und Institutionen sowie die Beziehungen, die sie zueinander haben. Dadurch sollen die stark verkürzten Inhalte der mehr als 160.000 Regesten auch mithilfe automatisierter Verfahren auswertbar werden. Ein einzelnes Regest kann damit in ein Netz aus historisch sinnvollen Entitäten und Relationen übersetzt werden. Die digitale Erschließung ist erst damit mehr als das bloße Herausziehen einzelner Wörter: Sie macht  dieses komplexes historisches Wissen strukturiert zugänglich.
@@ -28,4 +29,4 @@ Erst wenn diese Beziehungen zuverlässig erfasst erden, lässt sich untersuchen,
 
 Moraes Costa, Luana / Kröger, Bärbel / Popp, Christian (2026): Schema-Driven Information Extraction from Medieval Latin Regesten: A Four-Way Evaluation of GLiNER2 for Ontology Population. In: Bruns, Oleksandra et al. (Hg.): Proceedings of the Third International Workshop of Semantic Digital Humanities (SemDH 2026). CEUR Workshop Proceedings, Vol. 4212.
 
-Open Access: https://ceur-ws.org/Vol-4212/short2.pdf 
+Open Access: [PDF](https://ceur-ws.org/Vol-4212/short2.pdf)
