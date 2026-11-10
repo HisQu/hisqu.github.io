@@ -24,7 +24,7 @@ partner: "GS"
 
 ### Neue Forschungsansätze mit digitalen Möglichkeiten
 
--Gramsch-Stehfest, Robert: Data Mining in der mittelalterlichen Matrikel der Universität Erfurt. In: Theologie der Gegenwart Bd. 64 (2022) S. 242-253
+- Gramsch-Stehfest, Robert: Data Mining in der mittelalterlichen Matrikel der Universität Erfurt. In: Theologie der Gegenwart Bd. 64 (2022) S. 242-253
 - Beckstein, Clemens/Gramsch-Stehfest, Robert/Beck, Clemens/Engelhardt, Jan/Knüpfer, Christian/Jauch, Oskar: Digitale Prosopographie. Automatisierte Auswertung und Netzwerkanalyse eines Quellenkorpus zur Geschichte gelehrter deutscher Eliten des 15. Jahrhunderts, in: Döring, Karoline Dominika/Haas, Stefan/König, Mareike/Wettlaufer, Jörg (Hrsg.): _Digital History. Konzepte, Methoden und Kritiken digitaler Geschichtswissenschaften_ (= Studies in Digital History and Hermeneutics, 6), Oldenburg 2022, S. 151–170. [https://doi.org/10.1515/9783110757101-009](https://doi.org/10.1515/9783110757101-009)
 - Gramsch-Stehfest, Robert: Von der Metapher zur Methode. Netzwerkanalyse als Instrument zur Erforschung vormoderner Gesellschaften, in: _Zeitschrift für Historische Forschung_ 47 (2020), S. 1–39.
 - Kuczera, Andreas: Big Data History, in: _Mittelalter. Interdisziplinäre Forschung und Rezeptionsgeschichte_, 10. Oktober 2014.
