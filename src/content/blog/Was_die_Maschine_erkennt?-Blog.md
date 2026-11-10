@@ -6,7 +6,7 @@ authors: [ "LN" ]
 location: "Jena"
 image:
   src: "../../assets/blog/Blog_Maschine_RG.png"
-  alt: ""
+  alt: "Visualisierung RG und lesen"
 readTime: "7 min"
 category: "Methodik"
 featured: false
